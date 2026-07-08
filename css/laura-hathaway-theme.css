@@ -1,0 +1,411 @@
+/* ================================================================
+   TEMA SAUMON ROSÉ & CHAMPANHE
+   ÍCONES e BORDAS em VINHO CLARO
+   Elegância quente com toque sofisticado de vinho
+   ================================================================ */
+
+/* 1. VARIÁVEIS GLOBAIS – PALETA SALMÃO COM VINHO NOS ÍCONES/BORDAS */
+:root {
+	/* Cores Salmão/Champanhe (mantidas para textos, títulos, links, fundos) */
+	--salmon-base: #EAA68C;        /* Títulos, links, elementos internos */
+	--salmon-glow: #FFDBC5;        /* (não mais usado para ícones, mas mantido para outros usos) */
+	--salmon-soft: #F5C8B0;        /* Subtítulos, hovers de texto */
+	--salmon-deep: #C28169;        /* Degradês e sombras internas */
+  
+	--velvet-warm: #2B1A18;        /* Fundo aveludado */
+	--velvet-ebony: #150D0C;       /* Fundo escuro para caixas */
+	--cream-warm: #FFF8F2;         /* Texto claro */
+	--pure-white: #FFFFFF;         /* Branco puro para hovers de ícones */
+  
+	/* NOVAS CORES DE VINHO – aplicadas aos ícones e bordas */
+	--wine-border: #A85C60;        /* Vinho claro – ícones e bordas principais */
+	--wine-deep: #773A3E;          /* Vinho profundo – bordas secundárias e degradês */
+	--wine-soft: #C97A7E;          /* Vinho suave – hovers de bordas */
+  
+	/* MAPEAMENTO PARA AS VARIÁVEIS EXISTENTES DO SISTEMA */
+	--profile-border-1: var(--wine-border);       /* BORDA VINHO */
+	--profile-border-2: var(--cream-warm);
+	--link-color: var(--salmon-base);             /* Links continuam Salmão */
+	--link-bgcolor: rgba(21, 13, 12, 0.85);
+	--icon-color: var(--wine-border);             /* ÍCONES EM VINHO */
+	--share-icons-bgcolor: rgba(21, 13, 12, 0.95);
+	--title-color: var(--cream-warm);
+	--newtitle-color: var(--salmon-base);         /* Títulos continuam Salmão */
+	--primary-color: var(--velvet-ebony);
+	--secondary-color: var(--wine-border);
+	--text-color: var(--cream-warm);
+	--menu-link-active-color: var(--wine-soft);   /* Ativo em vinho suave */
+	--degrade-color: rgba(43, 26, 24, 0.95);
+	--contacts-icons-color: var(--wine-border);   /* ÍCONES CONTATOS EM VINHO */
+	--contacts-border-color: var(--wine-border);  /* BORDA CONTATOS EM VINHO */
+	--contacts-text-color: var(--cream-warm);
+	--social-icons-color: var(--wine-border);     /* ÍCONES REDES EM VINHO */
+	--social-border-color: var(--wine-border);    /* BORDA REDES EM VINHO */
+	--social-text-color: var(--cream-warm);
+	--fullscreentextcolor: var(--cream-warm);
+	--fullscreentextbordertopleft: var(--wine-border);   /* BORDA VINHO */
+	--fullscreentextborderbottomright: var(--cream-warm);
+	--addtobtntextcolor: var(--velvet-ebony);
+	--addtobtnbordertopleft: var(--wine-border);         /* BORDA VINHO */
+	--addtobtnborderbottomright: var(--cream-warm);
+	--mainfootertext: #b5a09a;
+	--mainfootertopborder: #4a3130;
+	--mainfooterlink: var(--salmon-base);          /* Links rodapé Salmão */
+	--content-circular-image-border: var(--wine-border); /* BORDA VINHO */
+	--call-to-action-link: var(--salmon-base);
+	--top-line-border: rgba(168, 92, 96, 0.3);    /* BORDA VINHO (transparente) */
+  }
+  
+  /* 2. TÍTULOS E SUBTÍTULOS – Elegância Salmão (mantido) */
+  .text-wrapper h2 {
+	color: var(--salmon-base) !important;
+	border-left: 4px solid var(--wine-deep) !important; /* BORDA VINHO PROFUNDO */
+	text-shadow: 0 2px 12px rgba(234, 166, 140, 0.25) !important;
+  }
+  
+  .text-wrapper h3 {
+	color: var(--salmon-soft) !important;
+	font-weight: 400 !important;
+	letter-spacing: 0.08em !important;
+  }
+  
+  .text-wrapper p,
+  .text-wrapper li {
+	color: var(--cream-warm) !important;
+	text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6) !important;
+  }
+  
+  /* 3. LINKS E AÇÕES – Salmão (mantido) */
+  a.calltoaction,
+  .mainfooter a,
+  .text-wrapper p a {
+	color: var(--salmon-base) !important;
+	transition: all 0.3s ease !important;
+  }
+  
+  a.calltoaction:hover,
+  .mainfooter a:hover,
+  .text-wrapper p a:hover {
+	color: var(--salmon-soft) !important;
+	text-shadow: 0 0 15px rgba(245, 200, 176, 0.4) !important;
+  }
+  
+  /* ================================================================
+	 [FIX DOS ÍCONES] – AGORA EM VINHO CLARO
+	 ================================================================ */
+  
+  /* Remove qualquer degradê antigo e aplica a cor vinho */
+  .contact-btn i, .contact-container .contact-btn i {
+    background-image: none !important;
+	background-image: unset !important;
+}
+  .contact-btn i,
+  .social-btn i,
+  .share-menu .share-item a i,
+  .nav-icons a i {
+	background-image: none !important;
+	background: none !important;
+	/*-webkit-text-fill-color: var(--wine-border) !important;*/
+	/*color: var(--wine-border) !important;*/
+	color: rgba(40, 12, 9, 0.8) !important;
+	text-shadow: 0 0 12px rgba(168, 92, 96, 0.3) !important;
+	transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1) !important;
+  }
+  .nav-icons li a {
+    border: 2px solid #D97A60;
+    background-color: rgba(40, 12, 9, 0.8);
+  }
+  .nav-icons a i {
+	/*background: linear-gradient(145deg, var(--salmon-base), rgba(242, 79, 19, 1)) !important;*/
+	/*background: linear-gradient(145deg, var(--salmon-base), #D97A60) !important;*/
+	background: linear-gradient(145deg, var(--salmon-base), #F5C8B0) !important;
+	-webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+  }
+  
+  /* HOVER DOS ÍCONES – Vinho suave com brilho */
+  .contact-item:hover .contact-btn i,
+  .social-btn:hover i,
+  .share-menu .share-item a:hover i,
+  .nav-icons a:hover i {
+	color: var(--wine-soft) !important;
+	-webkit-text-fill-color: var(--wine-soft) !important;
+	text-shadow: 0 0 25px rgba(168, 92, 96, 0.6) !important;
+	transform: scale(1.1) !important;
+  }
+  
+  /* ESTADO ATIVO (NAVEGAÇÃO) – Destaque em vinho claro */
+  .nav-icons a.nav-active i {
+	color: var(--wine-border) !important;
+	/*-webkit-text-fill-color: var(--wine-border) !important;*/
+	text-shadow: 0 0 30px rgba(168, 92, 96, 0.8) !important;
+  }
+  
+  /* ================================================================
+	 BOTÕES (CÍRCULOS) – BORDAS AGORA EM VINHO
+	 ================================================================ */
+  
+  .contact-btn,
+  .social-btn,
+  .share-menu .share-item a {
+	background-color: rgba(21, 13, 12, 0.8) !important;
+	border: 2px solid var(--wine-border) !important; /* BORDA VINHO */
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3) !important;
+	transition: all 0.3s ease !important;
+  }
+  
+  .contact-item:hover .contact-btn,
+  .social-btn:hover,
+  .share-menu .share-item a:hover {
+	background: rgba(43, 26, 24, 0.95) !important;
+	border-color: var(--wine-soft) !important; /* BORDA VINHO SUAVE no hover */
+	box-shadow: 0 4px 25px rgba(168, 92, 96, 0.3) !important;
+	transform: translateY(-3px) !important;
+  }
+  
+  /* Pseudo-elemento da borda degradê – agora em VINHO */
+  .contact-btn::before,
+  .social-btn::before,
+  .share-menu .share-item a::before {
+	/*background: linear-gradient(145deg, var(--salmon-base), var(--salmon-deep)) !important;*/
+	background: linear-gradient(145deg, var(--salmon-base), #F5C8B0) !important;
+	/*background: linear-gradient(145deg, var(--wine-border), var(--wine-deep)) !important;*/
+  }
+  
+  /* 5. CAIXAS DE TEXTO – BORDA VINHO SUAVE */
+  .text-wrapper {
+	/*background: linear-gradient(145deg, rgba(21, 13, 12, 0.92), rgba(43, 26, 24, 0.8)) !important;*/
+	/*background: linear-gradient(145deg, rgba(26, 17, 19, 0.75), rgba(58, 35, 38, 0.85)) !important;*/
+	background: linear-gradient(135deg, rgba(48, 14, 13, 0.7), rgba(0, 0, 0, 0.7));
+	backdrop-filter: blur(14px) !important;
+	-webkit-backdrop-filter: blur(14px) !important;
+	border: 1px solid rgba(168, 92, 96, 0.4) !important; /* BORDA VINHO */
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 0 40px rgba(168, 92, 96, 0.03) !important;
+  }
+  
+  .text-wrapper::before {
+	background: linear-gradient(135deg, rgba(168, 92, 96, 0.08), rgba(119, 58, 62, 0.02)) !important;
+  }
+  
+  /* 6. COMPARTILHAMENTO – BORDA VINHO */
+  .share-buttons.show {
+	border: 1px solid rgba(168, 92, 96, 0.5) !important; /* BORDA VINHO */
+	background: rgba(21, 13, 12, 0.94) !important;
+	backdrop-filter: blur(18px) !important;
+	-webkit-backdrop-filter: blur(18px) !important;
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(168, 92, 96, 0.05) !important;
+  }
+  
+  /* 7. BOTÕES FULLSCREEN / ADD-TO – Fundo Salmão com Borda Vinho */
+  .fullscreenline button,
+  .add-to-btn {
+    border: 1px solid var(--salmon-base) !important;
+    color: var(--salmon-base) !important;
+    background: rgba(21, 13, 12, 0.7) !important;
+	/*
+	background: linear-gradient(145deg, var(--salmon-base), var(--salmon-deep)) !important;
+	color: var(--velvet-ebony) !important;
+	border: 1px solid var(--wine-border) !important;
+	*/
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  .fullscreenline button:hover,
+  .add-to-btn:hover {
+	background: linear-gradient(145deg, var(--salmon-soft), var(--salmon-base)) !important;
+	color: var(--velvet-ebony) !important;
+	border-color: var(--wine-soft) !important; /* BORDA VINHO SUAVE */
+	box-shadow: 0 6px 25px rgba(168, 92, 96, 0.4) !important;
+	transform: scale(1.02);
+  }
+  
+  /* 8. TOOLTIP – BORDA VINHO */
+  .tooltip-mask-wrapper {
+    border-radius: 100px 100px;
+  }
+  .tooltip-appendix {
+	/*background: linear-gradient(135deg, rgba(21, 13, 12, 0.95), rgba(43, 26, 24, 0.9)) !important;*/
+	background: linear-gradient(135deg, rgba(40, 12, 9, 0.9), rgba(43, 26, 24, 0.9)) !important;
+	border: 1px solid var(--wine-border) !important; /* BORDA VINHO */
+	backdrop-filter: blur(8px) !important;
+  }
+  
+  .tooltip-text .name {
+	color: var(--salmon-base) !important; /* Salmão mantido */
+  }
+  .tooltip-text .role,
+  .tooltip-text .company {
+	color: var(--cream-warm) !important;
+  }
+  .close-trigger {
+	color: var(--salmon-base) !important;
+  }
+  
+  /* 9. QRCODE – BORDA VINHO */
+  .qrcode-img {
+	border: 3px solid var(--wine-border) !important; /* BORDA VINHO */
+	box-shadow: 0 4px 16px rgba(168, 92, 96, 0.2) !important;
+  }
+  .qrcode-legend {
+	color: var(--salmon-base) !important; /* Salmão mantido */
+  }
+  
+  /* 10. MODAL – BORDA VINHO */
+  .modal-content {
+	background: linear-gradient(145deg, rgba(21, 13, 12, 0.98), rgba(43, 26, 24, 0.95)) !important;
+	border-top: 3px solid var(--wine-border) !important; /* BORDA VINHO */
+  }
+  .modal-header h2 {
+	color: var(--salmon-base) !important;
+  }
+  .close {
+	color: var(--salmon-base) !important;
+  }
+  .close:hover {
+	color: var(--salmon-soft) !important;
+  }
+  
+  /* 11. BORDA DA FOTO DE PERFIL – VINHO + SALMÃO (bordas em vinho) */
+  .circular-image::before {
+	border-bottom: 3px solid #4A0404 !important;
+	border-right: 2px solid #4A0404 !important;
+	border-left: 1px solid var(--salmon-soft) !important;
+	border-top: 2px solid var(--salmon-soft) !important;
+	filter: drop-shadow(0 0 10px rgba(168, 92, 96, 0.3)) !important;
+  }
+  
+  .circular-image::after {
+	border-top: 3px solid var(--salmon-glow) !important;
+    border-right: 2px solid var(--salmon-glow) !important;
+    border-left: 1px solid #4A0404 !important;
+    border-bottom: 2px solid #4A0404 !important;
+	/*
+	border-top: 3px solid var(--wine-deep) !important;
+	border-right: 2px solid var(--wine-deep) !important;
+	border-left: 1px solid var(--wine-border) !important;
+	border-bottom: 2px solid var(--wine-border) !important;
+	*/
+	filter: drop-shadow(0 0 15px rgba(119, 58, 62, 0.2)) !important;
+  }
+  
+  /* 12. BOTÃO NFC – BORDA VINHO */
+/*
+  .nfc-button {
+	border: 1px solid var(--wine-border) !important;
+	color: var(--wine-border) !important;
+	background: rgba(21, 13, 12, 0.7) !important;
+  }
+*/
+  .nfc-button {
+    border: 1px solid var(--salmon-base) !important;
+    color: var(--salmon-base) !important;
+    background: rgba(21, 13, 12, 0.7) !important;
+}
+  
+  .nfc-button:hover {
+	background: var(--velvet-warm) !important;
+	border-color: var(--wine-soft) !important;
+	color: var(--wine-soft) !important;
+	box-shadow: 0 0 25px rgba(168, 92, 96, 0.3) !important;
+  }
+  
+  /* 13. DESTAQUES E CARDS – BORDAS EM VINHO */
+  .mj-highlight-item {
+	background: linear-gradient(135deg, rgba(21, 13, 12, 0.7), rgba(168, 92, 96, 0.08)) !important;
+	border-left: 4px solid var(--wine-deep) !important; /* BORDA VINHO PROFUNDO */
+    gap: 0.8em;
+    padding: 0.8em 1em;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(154, 42, 42, 0.15));
+    border-left: 4px solid var(--ruby-passion);
+  }
+  
+  .mj-highlight-item:hover {
+	border-left-color: var(--wine-soft) !important; /* BORDA VINHO SUAVE */
+	background: rgba(21, 13, 12, 0.9) !important;
+  }
+  .mj-highlight-item i {
+	color: var(--wine-border) !important; /* Ícone em vinho */
+  }
+  .mj-highlight-item p strong {
+	color: var(--salmon-soft) !important;
+  }
+  .mj-highlight-item span {
+    font-size: 1em;
+  }
+  
+  .mj-cta-card {
+	/*background: linear-gradient(145deg, rgba(21, 13, 12, 0.8), rgba(43, 26, 24, 0.4)) !important;*/
+	/*background: linear-gradient(145deg, rgba(38, 4, 1, 0.8), rgba(242, 79, 79, 0.4)) !important;*/
+	/*background: linear-gradient(145deg, rgba(64, 30, 26, 0.8), rgba(230, 107, 94, 0.4)) !important;*/
+	background: linear-gradient(145deg, rgba(230, 107, 94, 0.55), rgba(64, 30, 26, 0.55)) !important;
+	border: 1px solid rgba(168, 92, 96, 0.25) !important; /* BORDA VINHO */
+  }
+  
+  .mj-cta-card:hover {
+	border-color: var(--wine-border) !important; /* BORDA VINHO */
+	background: linear-gradient(145deg, rgba(21, 13, 12, 0.9), rgba(168, 92, 96, 0.08)) !important;
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(168, 92, 96, 0.05) !important;
+  }
+  .mj-cta-card strong {
+	color: var(--salmon-soft) !important;
+  }
+  .mj-cta-card span:last-child {
+	color: var(--salmon-base) !important;
+  }
+  
+  /* 14. INDICADOR DE SCROLL – Fundo Salmão com Borda Vinho */
+  .scroll-indicator {
+	/*background: linear-gradient(145deg, var(--salmon-base), var(--salmon-deep)) !important;*/
+	background: linear-gradient(145deg, var(--salmon-base), #F5C8B0) !important;
+	box-shadow: 0 0 15px rgba(168, 92, 96, 0.3) !important;
+	border: 1px solid var(--wine-border) !important; /* BORDA VINHO */
+  }
+  .scroll-indicator i {
+	color: var(--velvet-ebony) !important;
+  }
+  .scroll-indicator:hover {
+	transform: translateX(-50%) scale(1.1) !important;
+	box-shadow: 0 0 30px rgba(201, 122, 126, 0.5) !important;
+  }
+  
+  /* 15. BOTÃO DE FORMULÁRIO – Fundo Salmão com Borda Vinho */
+  .btn-form-contato {
+	/*background: linear-gradient(145deg, var(--salmon-base), var(--salmon-deep)) !important;*/
+	background: linear-gradient(145deg, var(--salmon-base), #F5C8B0) !important;
+	color: var(--velvet-ebony) !important;
+	border: 1px solid var(--wine-border) !important; /* BORDA VINHO */
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+	letter-spacing: 0.03em !important;
+  }
+  
+  .btn-form-contato:hover {
+	background: linear-gradient(145deg, var(--salmon-soft), var(--salmon-base)) !important;
+	color: var(--velvet-ebony) !important;
+	border-color: var(--wine-soft) !important; /* BORDA VINHO SUAVE */
+	box-shadow: 0 6px 30px rgba(168, 92, 96, 0.4) !important;
+	transform: scale(1.02);
+  }
+  
+  /* 16. FUNDO DO SIDEBAR – Degradê Aveludado (mantido) */
+  .sidebar {
+	background-image: linear-gradient(to right, rgba(168, 92, 96, 0), var(--degrade-color)) !important;
+  }
+
+ .overlay-list li {
+    color: var(--salmon-base);
+}
+.close-btn {
+    color: var(--salmon-base);
+}
+.close-form {
+	color: var(--salmon-base);
+}
+.form-container {
+	border: 1px solid rgba(168, 92, 96, 0.4);
+}
+.feature-card {
+    background: rgba(0, 0, 0, 0.45);
+	backdrop-filter: unset; */
+    -webkit-backdrop-filter: unset;
+}
