@@ -1,4 +1,4 @@
-var CACHE_NAME = 'dcard-laura-hathaway-v01-03';
+var CACHE_NAME = 'dcard-laura-hathaway-v01-04';
 var urlsToCache = [
 	'./',
 	'./index.html',
@@ -26,27 +26,32 @@ var urlsToCache = [
 	'./webfonts/fa-solid-900.ttf',
 	'./webfonts/fa-solid-900.woff',
 	'./webfonts/fa-solid-900.woff2',
-	'./imgs/logo-vertical-laura-hathaway.png',
-	'./imgs/mauricio-jun-ti-v02.png',
-	'./imgs/gemima-mansoor-qrcode.png',
 	'./imgs/icone-cartao-digital-puro-v01-02.png',
 	'./imgs/laura-hathaway-background-01.png',
+	'./imgs/laura-hathaway-background-04.png',
+	'./imgs/laura-hathaway-background-07.png',
+	'./imgs/laura-hathaway-background-08.png',
+	'./imgs/laura-hathaway-background-12.png',
+	'./imgs/laura-hathaway-background-15.png',
 	'./imgs/laura-hathaway-foto-01.png',
 	'./imgs/laura-hathaway-foto-02.png',
-	'./imgs/laura-hathaway-foto-03.png',
 	'./imgs/laura-hathaway-foto-04.png',
 	'./imgs/laura-hathaway-foto-05.png',
-	'./imgs/laura-hathaway-foto-06.png',
 	'./imgs/laura-hathaway-foto-07.png',
 	'./imgs/laura-hathaway-foto-08.png',
-	'./imgs/laura-hathaway-foto-09.png',
 	'./imgs/laura-hathaway-foto-10.png',
 	'./imgs/laura-hathaway-foto-11.png',
-	'./imgs/laura-hathaway-foto-12.png',
-	'./imgs/laura-hathaway-background-01.png',
+	'./imgs/laura-hathaway-na-praia-03.png',
+	'./imgs/laura-hathaway-na-praia-05.png',
+	'./imgs/laura-hathaway-perfil-mask-02.png',
+	'./imgs/laura-hathaway-qr-code.png',
 	'./imgs/laura-hathaway-vcf-foto-01.png',
-	'./imgs/logo-horizontal-laura-hathaway.png',
-	'./imgs/logo-flower-gemima-m-mansoor.png'
+	'./imgs/laura-hathaway-video-01.mp4',
+	'./imgs/laura-hathaway-video-02.mp4',
+	'./imgs/laura-hathaway-video-thumb-01.png',
+	'./imgs/laura-hathaway-video-thumb-02.png',
+	'./imgs/logo-vertical-laura-hathaway.png',
+	'./imgs/mauricio-jun-ti-v02.png'
 ];
 self.addEventListener('install', (event) => {
 	event.waitUntil( // Ensures the service worker doesn't finish installing until all files are cached
@@ -61,23 +66,6 @@ self.addEventListener('install', (event) => {
 		})
 	);
 });
-/*
-self.addEventListener('activate', function(event) {
-	event.waitUntil(
-		caches.keys().then(function(cacheNames) {
-			return Promise.all(
-				cacheNames.filter(function(cacheName) {
-					// Return true if you want to remove this cache,
-					// but remember that caches are shared across
-					// the whole origin
-				}).map(function(cacheName) {
-					return caches.delete(cacheName);
-				})
-			);
-		})
-	);
-});
-*/
 self.addEventListener('activate', function(event) {
 	const currentCache = CACHE_NAME;
 	event.waitUntil(
@@ -94,25 +82,31 @@ self.addEventListener('activate', function(event) {
 });
 /* FETCH */
 self.addEventListener('fetch', function(event) {
+	const requestUrl = new URL(event.request.url);
+	const isRoot = requestUrl.pathname === '/' || requestUrl.pathname === '/laura-hathaway/';
+  
 	event.respondWith(
-	// Try the cache
-		caches.match(event.request).then(function(response) {
-			//console.log('response 01 = ' + response);
-			if (response) {
-				return response;
-			}
-			return fetch(event.request).then(function(response) {
-				//console.log('response.status = ' + response.status);
-				if (response.status === 404) {
-					return caches.match('./404.html');
-				}
-				//console.log('response 02 = ' + response);
-				return response
-			});
+	  caches.match(event.request).then(function(response) {
+		if (response) return response;
+  
+		// Se for requisição para a raiz, tenta buscar do cache primeiro
+		if (isRoot) {
+		  // Tenta buscar do cache o index.html
+		  return caches.match('./index.html').then(function(cached) {
+			if (cached) return cached;
+			// Se não estiver em cache, tenta fetch da rede
+			return fetch('./index.html').catch(() => caches.match('./offline.html'));
+		  });
+		}
+  
+		return fetch(event.request).then(function(response) {
+		  if (response.status === 404 && !isRoot) {
+			return caches.match('./404.html') || response;
+		  }
+		  return response;
 		}).catch(function() {
-			// If both fail, show a generic fallback:
-			//console.log('offline event = ' + event);
-			return caches.match('./offline.html');
-		})
+		  return caches.match('./offline.html');
+		});
+	  })
 	);
 });

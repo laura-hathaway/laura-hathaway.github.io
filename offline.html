@@ -40,7 +40,6 @@
 	<link rel="icon" href="https://laura-hathaway.github.io/favicon/favicon-96x96.png" sizes="96x96" type="image/png"/>
 	<link rel="icon" href="https://laura-hathaway.github.io/favicon/favicon.svg" type="image/svg+xml"/>
 	<link rel="apple-touch-icon" sizes="180x180" href="https://laura-hathaway.github.io/favicon/apple-touch-icon.png" />
-	<link rel="apple-touch-icon" sizes="180x180" href="https://laura-hathaway.github.io/favicon/apple-touch-icon.png" />
 	<meta name="apple-mobile-web-app-title" content="Laura Hathaway | Conteúdo Adulto Exclusivo • Privacy • OnlyFans" />
 
 	<!-- CANONICAL -->
@@ -228,7 +227,7 @@
             /*width: calc(75dvw + .4em);*/
 			width: 75dvw;
 			/*max-width: 1200px;*/
-            height: 100%; 
+            height: 100%;
             position: relative; 
             transform-style: preserve-3d;
         }
@@ -269,7 +268,7 @@
             background: rgba(0, 0, 0, 0.5);
             padding: 2em 1em 1em 1em;
             border-radius: 15px; 
-            backdrop-filter: blur(15px);
+            /*backdrop-filter: blur(15px);*/
             border: 1px solid rgba(255,255,255,0.1);
             margin-bottom: 60px;
             text-align: left;
@@ -453,7 +452,7 @@
 			/* Novo border-radius aprimorado para o conjunto */
 			border-radius: 25px; 
 			border: 1px solid rgba(255, 255, 255, 0.1);
-			backdrop-filter: blur(10px);
+			/*backdrop-filter: blur(10px);*/
 			flex-direction: row; /* QRCode à esquerda, Menu à direita */
 			gap: 1.5rem;
 			/* Limite solicitado de 65% da largura da área visível */
@@ -980,7 +979,8 @@
 			right: 0;
 			top: 0;
 			height: 100%;
-			width: max-content;
+			/*width: max-content;*/
+			width: fit-content;
 			max-width: 88dvw;
 			
 			/* OPÇÃO: Fundo Branco Translúcido (Efeito Vidro) */
@@ -990,10 +990,10 @@
 			/* OPÇÃO: Totalmente sem cor (Remover a linha de background acima e usar apenas o blur) */
 			/* background: transparent; */
 
-			backdrop-filter: blur(12px); 
-			-webkit-backdrop-filter: blur(12px);
+			/*backdrop-filter: blur(12px);*/
+			/*-webkit-backdrop-filter: blur(12px);*/
 			
-			padding: .5em 7.5em .5em 1em;
+			padding: .5em 6em .5em .5em;
 			border-radius: 100px 100px;
 			
 			/* Borda subtil para definir o limite no fundo claro */
@@ -1014,7 +1014,8 @@
 			justify-content: flex-start;
 			gap: 1em;
 			height: 100%;
-			min-width: max-content; 
+			/*min-width: max-content;*/
+			width: 100%;
 			text-shadow: none;
 		}
 		.tooltip-text h1, .tooltip-text h2, .tooltip-text h3, .tooltip-text h4, .tooltip-text h5, .tooltip-text h6, .tooltip-text p, .tooltip-text a {
@@ -1065,9 +1066,14 @@
 			margin: 0;
 		}
 
-		@media (min-width: 600px) {
+		@media (min-width: 540px) {
 			.tooltip-appendix {
 				padding: .5em 9em .5em 1em;
+			}
+		}
+		@media (min-width: 600px) {
+			.tooltip-appendix {
+				padding: .5em 10em .5em 1em;
 			}
 		}
 		@media (max-height: 430px) {
@@ -1556,7 +1562,7 @@
 			box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 			z-index: 10;
 			text-align: center;
-			backdrop-filter: blur(2px);
+			/*backdrop-filter: blur(2px);*/
 		}
 		.btn-form-contato:hover {
 			transform: scale(1.02);
@@ -1574,7 +1580,7 @@
 			width: 100%;
 			height: 100%;
 			background-color: rgba(0, 0, 0, 0.85);
-			backdrop-filter: blur(8px);
+			/*backdrop-filter: blur(8px);*/
 			z-index: 20000;
 			display: none;
 			justify-content: center;
@@ -1597,7 +1603,7 @@
 			padding: 1em;
 			box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 			border: 1px solid rgba(95, 179, 179, 0.5);
-			backdrop-filter: blur(4px);
+			/*backdrop-filter: blur(4px);*/
 			overflow-y: auto;
 			animation: fadeInUp 0.3s ease-out;
 		}
@@ -1786,8 +1792,8 @@
 		.mj-highlight-item {
 			display: flex;
 			align-items: flex-start;
-			gap: .8rem;
-			padding: 1rem;
+			gap: .5em;
+			padding: 1em;
 			border-radius: 18px;
 			/*
 			background: rgba(255,255,255,.04);
@@ -1809,7 +1815,7 @@
 		}
 		.mj-highlight-item span {
 			color: #D6BA84;
-			font-size: 1.2rem;
+			font-size: 1em;
 			line-height: 1;
 		}
 		.mj-highlight-item p {
@@ -1827,9 +1833,9 @@
 			position: relative;
 			display: flex;
 			flex-direction: column;
-			gap: .5rem;
+			gap: 0;
 			text-decoration: none;
-			padding: 1.3rem;
+			padding: 1em;
 			border-radius: 22px;
 			/*
 			background:
@@ -1869,6 +1875,38 @@
 			color: rgba(255,255,255,.72);
 			font-size: .92rem;
 			line-height: 1.6;
+		}
+		/* ===== VARIANTE DO GRID: 2 COLUNAS EM TELAS GRANDES ===== */
+		.mj-cta-links-2columns {
+			display: grid;
+			grid-template-columns: 1fr 1fr !important; /* Força 2 colunas fixas */
+			/*gap: 1.2rem;*/
+			justify-content: center; /* Centraliza o grid no container */
+		}
+
+		/* Em telas médias (tablets), mantém 2 colunas */
+		@media (max-width: 768px) {
+			.mj-cta-links-2columns {
+				grid-template-columns: 1fr 1fr !important;
+				/*gap: 0.8rem;*/
+			}
+		}
+
+		/* Em telas pequenas (celular), passa para 1 coluna */
+		@media (max-width: 480px) {
+			.mj-cta-links-2columns {
+				grid-template-columns: 1fr !important;
+				/*gap: 0.8rem;*/
+			}
+		}
+
+		/* (Opcional) centraliza o terceiro card se estiver sozinho na linha */
+		.mj-cta-links-2columns .mj-cta-card:last-child:nth-child(3n+1) {
+			/* Se houver apenas 3 cards, o terceiro ficará centralizado */
+			justify-self: center;
+			/* Ou, se preferir que ele ocupe toda a largura: */
+			/* grid-column: 1 / -1; */
+			/* max-width: 60%; */
 		}
 	</style>
 	<style>
@@ -2117,7 +2155,7 @@
 		/* 10. ÁREA DE TEXTO E SCROLL – Sutileza apaixonante */
 		.text-wrapper {
 			background: rgba(0, 0, 0, 0.5);
-			backdrop-filter: blur(12px);
+			/*backdrop-filter: blur(12px);*/
 			border: 1px solid rgba(212, 175, 55, 0.3);
 			box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(212, 175, 55, 0.05);
 		}
@@ -2129,7 +2167,7 @@
 
 		.scroll-indicator {
 			background: rgba(212, 175, 55, 0.8);
-			backdrop-filter: blur(5px);
+			/*backdrop-filter: blur(5px);*/
 			color: #000;
 			width: 32px;
 			height: 32px;
@@ -2184,7 +2222,7 @@
 		.share-buttons.show {
 			border: 1px solid var(--gold-primary);
 			background: rgba(0, 0, 0, 0.9);
-			backdrop-filter: blur(16px);
+			/*backdrop-filter: blur(16px);*/
 			box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
 		}
 
@@ -2377,7 +2415,7 @@
 			width: 100%;
 			height: 100%;
 			background-color: rgba(0, 0, 0, 0.92);
-			backdrop-filter: blur(10px);
+			/*backdrop-filter: blur(10px);*/
 			z-index: 30000;
 			display: none;
 			justify-content: center;
@@ -2454,7 +2492,7 @@
 			border: 1px solid rgba(212, 175, 55, 0.3);
 			border-radius: 16px;
 			background: rgba(0,0,0,0.4);
-			backdrop-filter: blur(4px);
+			/*backdrop-filter: blur(4px);*/
 			overflow: hidden;
 		}
 		.accordion-header {
@@ -2498,13 +2536,197 @@
 		.accordion-item.open .accordion-header i {
 			transform: rotate(180deg);
 		}
+		/* ACCORDION REFEITO */
+		.accordion-header {
+			background: rgba(0,0,0,0.7);
+			padding: 1rem 1.2rem;
+			cursor: pointer;
+			display: grid;
+			grid-template-columns: 1fr auto; /* título | coluna direita (valor + seta) */
+			align-items: stretch;
+			gap: 0 1rem;
+			font-weight: 600;
+			color: #D4AF37;
+			border-bottom: 1px solid transparent;
+			transition: 0.2s;
+		}
+		.accordion-header:hover {
+			background: rgba(212,175,55,0.2);
+		}
+
+		/* Área do título – alinhado ao topo e à esquerda */
+		.accordion-title-area {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+			min-width: 0;
+		}
+		.accordion-title {
+			font-weight: 600;
+			color: #D4AF37;
+			word-break: break-word;
+			white-space: normal;
+			line-height: 1.3;
+			text-align: left;
+		}
+		/* Coluna direita – empilha valor e seta */
+		.accordion-right-area {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-width: fit-content;
+			gap: 0.1rem;
+		}
+		/* Área do valor – centralizado */
+		.accordion-value-area {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+		}
+		/*
+		.accordion-badge {
+			background: var(--gold-primary, #D4AF37);
+			color: #0A0A0A;
+			padding: 0.1rem 0.6rem;
+			border-radius: 20px;
+			font-size: 0.75rem;
+			font-weight: 700;
+			white-space: nowrap;
+		}
+		*/
+		.accordion-badge {
+			background: unset;
+			color: var(--icon-color);
+			padding: 0.1rem 0.6rem;
+			/* border-radius: 20px; */
+			/* border: 2px solid #c99e50; */
+			/* border-right: 1px solid #c99e50; */
+			font-size: 0.75em;
+			font-weight: 700;
+			white-space: nowrap;
+		}
+		/* Área da seta – centralizada */
+		.accordion-icon-area {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+		}
+		.accordion-header i {
+			font-size: 1.2rem;
+			transition: transform 0.3s;
+		}
+		.accordion-item.open .accordion-header i {
+			transform: rotate(180deg);
+		}
+		/* Quando o item está aberto, a seta gira */
+		.accordion-item.open .accordion-header i {
+			transform: rotate(180deg);
+		}
+		/* Call to action dentro do preview */
+		.accordion-cta {
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+			margin-top: 0.6rem;
+			color: var(--call-to-action-link, #D4AF37);
+			font-size: 0.85rem;
+			font-weight: 500;
+			opacity: 0.9;
+			transition: opacity 0.2s;
+		}
+		.accordion-cta i {
+			font-size: 0.9rem;
+		}
+		.accordion-item.open .accordion-cta {
+			display: none; /* some quando o conteúdo é expandido */
+		}
+		.accordion-preview {
+			padding: 0.8rem 1.2rem;
+			color: #f0f0f0;
+			font-style: italic;
+			opacity: 0.9;
+			border-top: 1px solid rgba(255,255,255,0.1);
+			display: block;
+		}
+		/* ========== SEÇÃO VALORES (SEM ACCORDION) ========== */
+		.valores-wrapper {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+			margin-top: 1rem;
+		}
+		.valores-item {
+			border: 1px solid rgba(212, 175, 55, 0.3);
+			border-radius: 16px;
+			background: rgba(0, 0, 0, 0.4);
+			/*backdrop-filter: blur(4px);*/
+			overflow: hidden;
+			transition: border-color 0.3s ease;
+		}
+		.valores-item:hover {
+			border-color: var(--gold-primary, #D4AF37);
+		}
+		.valores-header {
+			background: rgba(0, 0, 0, 0.7);
+			padding: 1rem 1.2rem;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 0.5rem 1rem;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+		}
+		.valores-title {
+			font-weight: 600;
+			color: #D4AF37;
+			font-size: 1rem;
+			word-break: break-word;
+		}
+		.valores-badge {
+			background: var(--gold-primary, #D4AF37);
+			color: #0A0A0A;
+			padding: 0.1rem 0.6rem;
+			border-radius: 20px;
+			font-size: 0.75rem;
+			font-weight: 700;
+			white-space: nowrap;
+			flex-shrink: 0;
+		}
+		.valores-content {
+			padding: 0.8rem 1.2rem;
+			color: #f0f0f0;
+		}
+		.valores-content p,
+		.valores-content ul,
+		.valores-content li {
+			color: #f0f0f0;
+		}
+		.valores-content ul {
+			padding-left: 1.5rem;
+			margin-bottom: 0.5rem;
+		}
+		.valores-content ul li {
+			line-height: 1.6;
+		}
+		.valores-content p {
+			line-height: 1.6;
+			margin-bottom: 0.5rem;
+		}
+		.valores-content p:last-child,
+		.valores-content ul:last-child {
+			margin-bottom: 0;
+		}
 
 		.faq-item {
 			/*margin-bottom: 1rem;*/
 			border: 1px solid rgba(212, 175, 55, 0.3);
 			border-radius: 16px;
 			/*background: rgba(0,0,0,0.4);*/
-			backdrop-filter: blur(4px);
+			/*backdrop-filter: blur(4px);*/
 			overflow: hidden;
 		}
 		.faq-question {
@@ -2568,7 +2790,7 @@
 			-webkit-background-clip: text !important;
 			-webkit-text-fill-color: transparent !important;
 			background-clip: text !important;
-			font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+			/*font-size: clamp(1.5rem, 5vw, 2.5rem) !important;*/
 			transition: all 0.3s ease !important;
 		}
 		.nav-icons a:hover {
@@ -2582,7 +2804,9 @@
 			background-clip: text !important;
 		}
 		.nav-icons a.nav-active {
-			border-color: var(--ruby-glow);
+			box-shadow: 0 0 12px rgba(229, 192, 139, 0.4) !important;
+			background: rgba(100, 29, 58, .88) !important;
+			border-color: var(--ruby-glow) !important;
 		}
 		.nav-icons a.nav-active i {
 			background-image: linear-gradient(145deg, #f5d79a, #e9b56a) !important;
@@ -2631,7 +2855,7 @@
 			width: 100%;
 			height: 2px;
 			background: radial-gradient(circle, rgba(147, 112, 80, 0.8) 0%, rgba(147, 112, 80, 0) 95%);
-			z-index: -1;
+			/*z-index: -1;*/
 		}
 		.line-image span.bottom-line {
 			top: unset;
@@ -2692,8 +2916,10 @@
 			display: inline-flex !important;
 			align-items: center !important;
 			justify-content: center !important;
+			/*
 			width: clamp(2.851rem, 10vw, 4rem) !important;
 			height: clamp(2.851rem, 10vw, 4rem) !important;
+			*/
 			border-radius: 50% !important;
 			/*background: rgba(56, 14, 15, 0.3) !important;*/
 			background-color: rgba(40, 12, 9, 0.8) !important;
@@ -2749,8 +2975,10 @@
 			display: inline-flex !important;
 			align-items: center !important;
 			justify-content: center !important;
+			/*
 			width: clamp(2.851rem, 10vw, 4rem) !important;
 			height: clamp(2.851rem, 10vw, 4rem) !important;
+			*/
 			border-radius: 50% !important;
 			/*background: rgba(56, 14, 15, 0.3) !important;*/
 			background-color: rgba(40, 12, 9, 0.8) !important;
@@ -2783,9 +3011,8 @@
 			background-clip: text !important;
 			*/
 			/*background-image: linear-gradient(145deg, #e9b56a, #a36415) !important;*/
-			font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+			/*font-size: clamp(1.5rem, 5vw, 2.5rem) !important;*/
 			color: rgba(40, 12, 9, 0.8) !important;
-			font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
 		}
 		.social-btn::before:hover {
 			border-color: var(--ruby-glow);
@@ -2811,8 +3038,10 @@
 			display: inline-flex !important;
 			align-items: center !important;
 			justify-content: center !important;
-			width: clamp(2.851rem, 10vw, 4rem) !important;
-			height: clamp(2.851rem, 10vw, 4rem) !important;
+			/*
+			width: clamp(2.851rem, 10vw, 4rem);
+			height: clamp(2.851rem, 10vw, 4rem);
+			*/
 			border-radius: 50% !important;
 			background: rgba(56, 14, 15, 0.3) !important;
 			background-clip: padding-box !important;
@@ -2843,7 +3072,7 @@
 			-webkit-text-fill-color: transparent !important;
 			background-clip: text !important;
 			*/
-			font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+			/*font-size: clamp(1.5rem, 5vw, 2.5rem) !important;*/
 			color: rgba(40, 12, 9, 0.8) !important;
 		}
 		.share-menu .share-item a:hover {
@@ -3007,8 +3236,10 @@
 		}
 		.feature-card {
 			background: rgba(0, 0, 0, 0.45);
+			/*
 			backdrop-filter: blur(8px);
 			-webkit-backdrop-filter: blur(8px);
+			*/
 			border: 1px solid rgba(212, 175, 55, 0.25);
 			border-radius: 20px;
 			padding: 1em;
@@ -3049,13 +3280,13 @@
 		.mj-highlight-item {
 			display: flex;
 			align-items: center;
-			gap: 1rem;
-			padding: 1rem 1.2rem;
+			gap: .5em;
+			padding: 1em;
 			background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(154,42,42,0.15));
 			border-left: 4px solid var(--ruby-passion);
 			border-radius: 16px;
 			transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-			backdrop-filter: blur(4px);
+			/*backdrop-filter: blur(4px);*/
 		}
 		.mj-highlight-item:hover {
 			transform: translateX(8px);
@@ -3065,8 +3296,8 @@
 		}
 		.mj-highlight-item i {
 			color: var(--gold-primary);
-			font-size: 1.6rem;
-			width: 2.2rem;
+			font-size: 1.6em;
+			width: 1.6em;
 			text-align: center;
 			filter: drop-shadow(0 0 4px rgba(212,175,55,0.2));
 			flex-shrink: 0;
@@ -3074,7 +3305,7 @@
 		.mj-highlight-item p {
 			margin: 0;
 			color: #f5ede0;
-			/*font-size: 0.95rem;*/
+			font-size: 1em;
 			line-height: 1.5;
 		}
 		.mj-highlight-item p strong {
@@ -3083,6 +3314,498 @@
 		}
 		.mj-highlight-item p span {
 			color: #d0c8b8;
+		}
+
+		/* ===== ÍCONE HOME – ESTILO SEMELHANTE AO NAV-ICONS ===== */
+		.home-icon-wrapper {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			margin-right: 8px;
+		}
+		.home-icon-wrapper a {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 28px;
+			height: 28px;
+			border-radius: 50%;
+			background-color: rgba(40, 12, 9, 0.8);
+			border: 2px solid #c99e50;
+			text-decoration: none;
+			transition: all 0.3s ease;
+			cursor: pointer;
+			position: relative;
+		}
+		.home-icon-wrapper a i {
+			background-image: linear-gradient(145deg, #e9b56a, #a36415);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			font-size: 0.8em;
+			transition: all 0.3s ease;
+		}
+		.home-icon-wrapper a:hover {
+			transform: scale(1.1);
+			box-shadow: 0 0 12px rgba(229, 192, 139, 0.4);
+		}
+		.home-icon-wrapper a:hover i {
+			background-image: linear-gradient(145deg, #f5d79a, #c98a2a);
+		}
+		.language-selector-container {
+			pointer-events: auto;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			width: 100%;
+			margin-top: 10px;
+			position: relative;
+			transform: translateZ(50px);
+			z-index: 100;
+			cursor: pointer;
+			justify-content: left
+		}
+		.flag-link img {
+			margin-top: 3px;
+		}
+
+		/* ===== FEED X-TWITTER ===== */
+		.x-feed {
+			display: flex;
+			flex-direction: column;
+			gap: 1.2rem;
+			max-width: 600px;
+			margin: 0 auto;
+			padding: 0 0 1em 0;
+		}
+		.x-feed-container {
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+			/*
+			max-width: 600px;
+			margin: 0 auto;
+			*/
+			margin: 0 auto 1em auto;
+			padding: 0;
+		}
+		.x-post {
+			background: rgba(0, 0, 0, 0.65);
+			/*backdrop-filter: blur(8px);*/
+			border: 1px solid rgba(212, 175, 55, 0.25);
+			border-radius: 20px;
+			padding: 1em 1em;
+			transition: border-color 0.3s ease, box-shadow 0.3s ease;
+		}
+		.x-post:hover {
+			border-color: var(--gold-primary, #D4AF37);
+			box-shadow: 0 4px 20px rgba(212, 175, 55, 0.1);
+		}
+		.x-post-header {
+			display: flex;
+			align-items: center;
+			gap: 0.8rem;
+			margin-bottom: 0.5rem;
+		}
+		.x-avatar {
+			width: 48px;
+			height: 48px;
+			border-radius: 50%;
+			object-fit: cover;
+			border: 2px solid var(--gold-primary, #D4AF37);
+			flex-shrink: 0;
+		}
+		.x-user-info {
+			display: flex;
+			flex-direction: column;
+			line-height: 1.3;
+		}
+		.x-display-name {
+			font-weight: 700;
+			color: #fff;
+			font-size: 1rem;
+		}
+		.x-username {
+			color: #8899aa;
+			font-size: 0.85rem;
+		}
+		.x-timestamp {
+			color: #8899aa;
+			font-size: 0.75rem;
+			margin-left: auto;
+			white-space: nowrap;
+		}
+		.x-post-text {
+			color: #f5ede0;
+			font-size: 1em;
+			line-height: 1.6;
+			margin: 0.3rem 0 0.8rem 0;
+			word-break: break-word;
+		}
+		.x-post-text a {
+			color: var(--gold-primary, #D4AF37);
+			text-decoration: none;
+			font-weight: 600;
+		}
+		.x-post-text a:hover {
+			text-decoration: underline;
+		}
+		.x-post-media {
+			margin: 0.6rem 0 0.8rem 0;
+			border-radius: 16px;
+			overflow: hidden;
+			background: #1a1a1a;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.x-post-media img,
+		.x-post-media video {
+			width: 100%;
+			max-height: 320px;
+			object-fit: cover;
+			display: block;
+			border-radius: 16px;
+		}
+		.x-post-actions {
+			/*display: flex;*/
+			display: none;
+			justify-content: space-around;
+			padding-top: 0.6rem;
+			border-top: 1px solid rgba(255, 255, 255, 0.08);
+			margin-top: 0.4rem;
+		}
+		.x-action-btn {
+			background: transparent;
+			border: none;
+			color: #8899aa;
+			font-size: 0.9rem;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			gap: 0.4rem;
+			transition: color 0.2s;
+			padding: 0.3rem 0.8rem;
+			border-radius: 30px;
+		}
+		.x-action-btn:hover {
+			color: var(--gold-primary, #D4AF37);
+			background: rgba(212, 175, 55, 0.08);
+		}
+		.x-action-btn i {
+			font-size: 1.1rem;
+		}
+
+		.x-cta-link {
+			/*display: inline-block;*/
+			display: flex;
+			margin-top: 0.3rem;
+			background: linear-gradient(145deg, var(--gold-primary, #D4AF37), #b8860b);
+			color: #000 !important;
+			font-weight: 700;
+			padding: 0.3rem 1.2rem;
+			border-radius: 40px;
+			font-size: 0.85rem;
+			text-decoration: none;
+			transition: transform 0.2s, box-shadow 0.2s;
+			border: none;
+			justify-content: center;
+		}
+		.x-cta-link:hover {
+			transform: scale(1.03);
+			box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+		}
+		.x-post-media img[style*="display: none"] + .x-post-media {
+			display: none;
+		}
+		/* ===== OVERLAY DE MÍDIA ===== */
+		.media-overlay {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.92);
+			z-index: 99999;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			cursor: pointer;
+		}
+		.media-overlay.active {
+			display: flex;
+		}
+		.media-overlay-content {
+			max-width: 95vw;
+			max-height: 90vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.media-overlay-content img,
+		.media-overlay-content video {
+			max-width: 95vw;
+			max-height: 90vh;
+			border-radius: 12px;
+			box-shadow: 0 0 40px rgba(0,0,0,0.8);
+			object-fit: contain;
+		}
+		.media-overlay-close {
+			position: absolute;
+			top: 25px;
+			right: 35px;
+			font-size: 48px;
+			color: #fff;
+			cursor: pointer;
+			transition: 0.2s;
+			z-index: 100000;
+			line-height: 1;
+			background: rgba(0,0,0,0.5);
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.media-overlay-close:hover {
+			color: var(--gold-primary, #D4AF37);
+			transform: scale(1.1);
+		}
+		@media (max-width: 640px) {
+			.media-overlay-close {
+				top: 15px;
+				right: 20px;
+				width: 40px;
+				height: 40px;
+				font-size: 36px;
+			}
+		}
+		/* Mobile */
+		@media (max-width: 480px) {
+			.x-post {
+				padding: 1rem;
+			}
+			.x-avatar {
+				width: 40px;
+				height: 40px;
+			}
+			.x-post-text {
+				font-size: 1em;
+			}
+		}
+		/* ===== CORREÇÕES MOBILE ===== */
+		@media (max-width: 480px) {
+			/* HEADER DO POST – evita estouro */
+			.x-post-header {
+				flex-wrap: wrap;
+				gap: 0.4rem 0.6rem;
+			}
+			.x-avatar {
+				width: 36px;
+				height: 36px;
+				flex-shrink: 0;
+			}
+			.x-user-info {
+				flex: 1 1 auto;
+				min-width: 0; /* permite encolher */
+			}
+			.x-display-name {
+				font-size: 0.9rem;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				max-width: 60%;
+			}
+			.x-username {
+				font-size: 0.75rem;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				max-width: 60%;
+			}
+			.x-timestamp {
+				font-size: 0.65rem;
+				white-space: nowrap;
+				flex-shrink: 0;
+				margin-left: auto;
+				max-width: 40%;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				text-align: right;
+			}
+			/* AÇÕES DO POST – evita botões extrapolarem */
+			.x-post-actions {
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 0.2rem;
+				padding-top: 0.4rem;
+			}
+			.x-action-btn {
+				font-size: 0.75rem;
+				padding: 0.2rem 0.4rem;
+				gap: 0.2rem;
+				flex: 0 1 auto;
+			}
+			.x-action-btn i {
+				font-size: 0.9rem;
+			}
+			.x-action-btn span {
+				display: none; /* esconde os números (12, 8, 47) para ganhar espaço */
+			}
+			/* Se quiser manter os números, use este bloco em vez do acima:
+			.x-action-btn {
+				font-size: 0.7rem;
+				padding: 0.2rem 0.3rem;
+			}
+			.x-action-btn span {
+				font-size: 0.65rem;
+			}
+			*/
+			/* BOTÃO CTA */
+			.x-cta-link {
+				font-size: 0.7rem;
+				padding: 0.2rem 0.8rem;
+			}
+		}
+		@media (max-width: 480px) {
+			.x-post-actions {
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 0.3rem;
+			}
+			.x-action-btn {
+				font-size: 0.65rem;
+				padding: 0.2rem 0.4rem;
+				flex: 1 1 auto;
+				min-width: 60px;
+				justify-content: center;
+			}
+			.x-action-btn i {
+				font-size: 0.9rem;
+				margin-right: 2px;
+			}
+			.x-action-btn span {
+				display: inline; /* Mostra o texto, mas reduzido */
+				font-size: 0.6rem;
+			}
+		}
+
+		/* ===== PÍLULAS DE NAVEGAÇÃO PREMIUM ===== */
+		.quick-nav-pills {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.8rem;
+			justify-content: center;
+			margin: 0.5rem 0 1.8rem 0;
+		}
+
+		.quick-nav-pill {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.6rem;
+			padding: 0.6rem 1.4rem;
+			background: rgba(0, 0, 0, 0.55);
+			/*
+			backdrop-filter: blur(8px);
+			-webkit-backdrop-filter: blur(8px);
+			*/
+			border: 1px solid rgba(212, 175, 55, 0.25);
+			border-radius: 50px;
+			color: #f5ede0;
+			font-size: 0.75rem;
+			font-weight: 600;
+			letter-spacing: 0.8px;
+			text-transform: uppercase;
+			cursor: pointer;
+			transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+			position: relative;
+			overflow: hidden;
+			user-select: none;
+		}
+
+		/* Efeito de brilho sutil no hover */
+		.quick-nav-pill::before {
+			content: '';
+			position: absolute;
+			top: -50%;
+			left: -50%;
+			width: 200%;
+			height: 200%;
+			background: radial-gradient(circle at center, rgba(212, 175, 55, 0.1), transparent 70%);
+			opacity: 0;
+			transition: opacity 0.6s ease;
+			pointer-events: none;
+		}
+
+		.quick-nav-pill i {
+			color: var(--gold-primary, #D4AF37);
+			font-size: 0.95rem;
+			transition: all 0.3s ease;
+			filter: drop-shadow(0 0 2px rgba(212, 175, 55, 0.2));
+		}
+
+		.quick-nav-pill span {
+			position: relative;
+			z-index: 2;
+		}
+
+		/* Hover - Efeito de elevação e brilho */
+		.quick-nav-pill:hover {
+			transform: translateY(-5px) scale(1.03);
+			background: rgba(212, 175, 55, 0.12);
+			border-color: var(--gold-primary, #D4AF37);
+			box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25), 0 0 15px rgba(212, 175, 55, 0.05);
+		}
+
+		.quick-nav-pill:hover::before {
+			opacity: 1;
+		}
+
+		.quick-nav-pill:hover i {
+			transform: scale(1.2) rotate(-5deg);
+			color: var(--gold-bright, #F1C40F);
+			filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.6));
+		}
+
+		/* Efeito de clique (feedback tátil) */
+		.quick-nav-pill:active {
+			transform: scale(0.94);
+			transition-duration: 0.1s;
+		}
+
+		/* Variação para cada pílula (toque de cor no hover) */
+		.quick-nav-pill[data-pill="servicos"]:hover {
+			border-color: #D4AF37;
+			box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+		}
+
+		.quick-nav-pill[data-pill="publicacoes"]:hover {
+			border-color: #C41E3A;
+			box-shadow: 0 8px 25px rgba(196, 30, 58, 0.3);
+		}
+
+		.quick-nav-pill[data-pill="vip"]:hover {
+			border-color: #F1C40F;
+			box-shadow: 0 8px 25px rgba(241, 196, 15, 0.3);
+		}
+
+		/* Mobile */
+		@media (max-width: 480px) {
+			.quick-nav-pills {
+				gap: 0.6rem;
+				margin: 0.3rem 0 1.2rem 0;
+			}
+			.quick-nav-pill {
+				padding: 0.4rem 1rem;
+				font-size: 0.65rem;
+				gap: 0.4rem;
+			}
+			.quick-nav-pill i {
+				font-size: 0.8rem;
+			}
 		}
 	</style>
 	<link rel="stylesheet" href="./css/laura-hathaway-theme.css" />
@@ -3096,11 +3819,11 @@
 			"description": "Assine o conteúdo premium de Laura Hathaway. Fotos, vídeos e interação direta. Junte‑se a mais de 1.000 assinantes e tenha acesso ao universo sensual exclusivo.",
 			"image": "https://laura-hathaway.github.io/imgs/icone-cartao-digital-puro-v01-02.png",
 			"sameAs": [
-				"https://www.instagram.com/laurahathaway/",
+				"https://www.instagram.com/laurahathaway.vip/",
 				"https://twitter.com/laurahathaway",
-				"https://www.facebook.com/laurahathaway",
+				"https://www.facebook.com/laurahathaway.vip/",
 				"https://privacy.com.br/profile/LauraHathaway",
-				"https://t.me/LauraHathaway"
+				"https://t.me/laurahathawayprevia"
 			],
 			"url": "https://laura-hathaway.github.io/",
 			"worksFor": {
@@ -3112,11 +3835,16 @@
 	</script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		
+
 	<script>
-		//if (navigator.onLine === false) {
-		//	location.replace("./offline.html");
-		//}
+		// ============================================================
+		// EVENTOS ONLINE/OFFLINE
+		// ============================================================
+		/*
+		if (navigator.onLine === false) {
+			location.replace("./offline.html");
+		}
+		*/
 	</script>
 </head>
 <body>
@@ -3138,6 +3866,12 @@
                             <img src="./imgs/logo-vertical-laura-hathaway.png" alt="Logo">
                         </div>
 						<div class="language-selector-container">
+							<!-- Ícone Home (novo) -->
+							<div class="home-icon-wrapper">
+								<a href="./" onclick="changeContent('INICIO'); return false;" title="Página inicial">
+									<i class="fas fa-home"></i>
+								</a>
+							</div>
 							<div class="flags-wrapper">
 								<a href="javascript:void(0);" onclick="translateLanguage('en')" class="flag-link flag-en" title="English">
 									<img src="https://flagcdn.com/16x12/gb.png" alt="English">
@@ -3159,12 +3893,12 @@
                     <aside class="sidebar">
 						<div class="profile-area">
 							<div class="circular-image">
-								<img src="./imgs/laura-hathaway-vcf-foto-01.png" class="profile-pic" alt="Gemima Mansoor">
+								<img src="./imgs/icone-cartao-digital-puro-v01-02.png" class="profile-pic" alt="Gemima Mansoor">
 							</div>    
 							<div class="tooltip-mask-wrapper">
 								<div class="tooltip-appendix">
 									<div class="tooltip-content">
-										<div class="close-trigger" onclick="handleTooltipToggle(event)">
+										<div class="close-trigger" onclick="handleTooltipToggle(event)" title="Profile: Fechar perfil">
 											<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
 												<polyline points="9 18 15 12 9 6"></polyline>
 											</svg>
@@ -3180,23 +3914,23 @@
 						</div>
 						<div id="shareButtons" class="share-buttons-container share-buttons">
 							<div class="qrcode-wrapper">
-								<img src="./imgs/gemima-mansoor-qrcode.png" alt="QRCode do site" class="qrcode-img">
+								<img src="./imgs/laura-hathaway-qr-code.png" alt="QRCode do site" class="qrcode-img">
 								<span class="qrcode-legend">QRCode do site</span>
 							</div>
 							<ul class="share-menu">
-								<li class="share-item"><a href="#" class="share-link whatsapp"><i class="fab fa-whatsapp"></i></a></li>
-								<li class="share-item"><a href="#" class="share-link telegram"><i class="fa-brands fa-telegram"></i></a></li>
-								<li class="share-item"><a href="#" class="share-link x-twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
-								<li class="share-item"><a href="#" class="share-link facebook"><i class="fab fa-facebook-f"></i></a></li>
-								<li class="share-item"><a href="#" class="share-link link copy-link"><i class="fas fa-link"></i><span class="copy-tooltip">Link Copiado!</span></a></li>
-								<li class="share-item"><a href="#" class="share-link email"><i class="fas fa-envelope"></i></a></li>
+								<li class="share-item"><a href="#" class="share-link whatsapp" title="Share Buttons: Whatsapp"><i class="fab fa-whatsapp"></i></a></li>
+								<li class="share-item"><a href="#" class="share-link telegram" title="Share Buttons: Telegram"><i class="fa-brands fa-telegram"></i></a></li>
+								<li class="share-item"><a href="#" class="share-link x-twitter" title="Share Buttons: X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a></li>
+								<li class="share-item"><a href="#" class="share-link facebook" title="Share Buttons: Facebook"><i class="fab fa-facebook-f"></i></a></li>
+								<li class="share-item"><a href="#" class="share-link link copy-link" title="Share Buttons: Link Copiado"><i class="fas fa-link"></i><span class="copy-tooltip">Link Copiado!</span></a></li>
+								<li class="share-item"><a href="#" class="share-link email" title="Share Buttons: E-mail"><i class="fas fa-envelope"></i></a></li>
 							</ul>
 						</div>
                         <ul class="nav-icons">
-                            <li><a href="#" onclick="changeContent('SOBRE')" title="Experiências"><i class="fa-solid fa-info"></i></a></li>
-                            <li><a href="#" onclick="changeContent('CONTATOS')" title="Contatos"><i class="fa-solid fa-address-book"></i></a></li>
-                            <li><a href="#" onclick="toggleOverlay()" title="Mais links"><i class="fa-solid fa-ellipsis"></i></a></li>
-                            <li><a href="#" class="share-trigger" title="Compartilhar"><i class="fas fa-share-alt"></i></a></li>
+							<li><a href="#" onclick="changeContent('SOBRE')" title="Experiências" data-section="SOBRE"><i class="fa-solid fa-info"></i></a></li>
+							<li><a href="#" onclick="changeContent('CONTATOS')" title="Contatos" data-section="CONTATOS"><i class="fa-solid fa-address-book"></i></a></li>
+							<li><a href="#" onclick="toggleOverlay()" title="Mais links"><i class="fa-solid fa-ellipsis"></i></a></li>
+							<li><a href="#" class="share-trigger" title="Compartilhar"><i class="fas fa-share-alt"></i></a></li>
                         </ul>
                     </aside>
                 </div>
@@ -3210,6 +3944,12 @@
                             <img src="./imgs/logo-vertical-laura-hathaway.png" alt="Logo">
                         </div>
 						<div class="language-selector-container">
+							<!-- Ícone Home (novo) -->
+							<div class="home-icon-wrapper">
+								<a href="./" onclick="changeContent('INICIO'); return false;" title="Página inicial">
+									<i class="fas fa-home"></i>
+								</a>
+							</div>
 							<div class="flags-wrapper">
 								<a href="javascript:void(0);" onclick="translateLanguage('en')" class="flag-link flag-en" title="English">
 									<img src="https://flagcdn.com/16x12/gb.png" alt="English">
@@ -3231,12 +3971,12 @@
                     <aside class="sidebar">
 						<div class="profile-area">
 							<div class="circular-image">
-								<img src="./imgs/laura-hathaway-vcf-foto-01.png" class="profile-pic" alt="Gemima Mansoor">
+								<img src="./imgs/icone-cartao-digital-puro-v01-02.png" class="profile-pic" alt="Gemima Mansoor">
 							</div>    
 							<div class="tooltip-mask-wrapper">
 								<div class="tooltip-appendix">
 									<div class="tooltip-content">
-										<div class="close-trigger" onclick="handleTooltipToggle(event)">
+										<div class="close-trigger" onclick="handleTooltipToggle(event)" title="Profile: Fechar perfil">
 											<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
 												<polyline points="9 18 15 12 9 6"></polyline>
 											</svg>
@@ -3252,23 +3992,23 @@
 						</div>
 						<div id="shareButtonsBackFace" class="share-buttons-container share-buttons">
 							<div class="qrcode-wrapper">
-								<img src="./imgs/gemima-mansoor-qrcode.png" alt="QRCode do site" class="qrcode-img">
+								<img src="./imgs/laura-hathaway-qr-code.png" alt="QRCode do site" class="qrcode-img">
 								<span class="qrcode-legend">QRCode do site</span>
 							</div>
 							<ul class="share-menu">
-								<li class="share-item"><a href="#" class="share-link whatsapp"><i class="fab fa-whatsapp"></i></a></li>
-								<li class="share-item"><a href="#" class="share-link telegram"><i class="fa-brands fa-telegram"></i></a></li>
-								<li class="share-item"><a href="#" class="share-link x-twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
-								<li class="share-item"><a href="#" class="share-link facebook"><i class="fab fa-facebook-f"></i></a></li>
-								<li class="share-item"><a href="#" class="share-link link copy-link"><i class="fas fa-link"></i><span class="copy-tooltip">Link Copiado!</span></a></li>
-								<li class="share-item"><a href="#" class="share-link email"><i class="fas fa-envelope"></i></a></li>
+								<li class="share-item"><a href="#" class="share-link whatsapp" title="Share Buttons: Whatsapp"><i class="fab fa-whatsapp"></i></a></li>
+								<li class="share-item"><a href="#" class="share-link telegram" title="Share Buttons: Telegram"><i class="fa-brands fa-telegram"></i></a></li>
+								<li class="share-item"><a href="#" class="share-link x-twitter" title="Share Buttons: X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a></li>
+								<li class="share-item"><a href="#" class="share-link facebook" title="Share Buttons: Facebook"><i class="fab fa-facebook-f"></i></a></li>
+								<li class="share-item"><a href="#" class="share-link link copy-link" title="Share Buttons: Link Copiado"><i class="fas fa-link"></i><span class="copy-tooltip">Link Copiado!</span></a></li>
+								<li class="share-item"><a href="#" class="share-link email" title="Share Buttons: E-mail"><i class="fas fa-envelope"></i></a></li>
 							</ul>
 						</div>
                         <ul class="nav-icons">
-                            <li><a href="#" onclick="changeContent('SOBRE')" title="Experiências"><i class="fa-solid fa-info"></i></a></li>
-                            <li><a href="#" onclick="changeContent('CONTATOS')" title="Contatos"><i class="fa-solid fa-address-book"></i></a></li>
-                            <li><a href="#" onclick="toggleOverlay()" title="Mais links"><i class="fa-solid fa-ellipsis"></i></a></li>
-                            <li><a href="#" class="share-trigger" title="Compartilhar"><i class="fas fa-share-alt"></i></a></li>
+                            <li><a href="#" onclick="changeContent('SOBRE')" title="Experiências" data-section="SOBRE"><i class="fa-solid fa-info"></i></a></li>
+							<li><a href="#" onclick="changeContent('CONTATOS')" title="Contatos" data-section="CONTATOS"><i class="fa-solid fa-address-book"></i></a></li>
+							<li><a href="#" onclick="toggleOverlay()" title="Mais links"><i class="fa-solid fa-ellipsis"></i></a></li>
+							<li><a href="#" class="share-trigger" title="Compartilhar"><i class="fas fa-share-alt"></i></a></li>
                         </ul>
                     </aside>
                 </div>
@@ -3277,18 +4017,19 @@
         </div>
     </div>
 
-    <nav id="overlay-menu">
-        <span class="close-btn" onclick="toggleOverlay()">&times;</span>
+	<nav id="overlay-menu">
+		<span class="close-btn" onclick="toggleOverlay()">&times;</span>
 		<ul class="overlay-list">
-			<li onclick="changeContent('INICIO')">Início</li>
-			<li onclick="changeContent('SOBRE')">Sobre Laura Hathaway</li>
-			<li onclick="changeContent('GALERIA')">Galeria</li>
-			<li onclick="changeContent('EXCLUSIVO')">Conteúdo Exclusivo</li>
-			<li onclick="changeContent('PARCERIAS')">Parcerias</li>
-			<li onclick="changeContent('CONTATOS')">Contato</li>
-			<li onclick="changeContent('FAQ')">FAQ</li>
+			<li onclick="changeContent('INICIO')" title="Menu: Página inicial">Início</li>
+			<li onclick="changeContent('SOBRE')" title="Menu: Sobre Laura Hathaway">Sobre Laura Hathaway</li>
+			<li onclick="changeContent('ATENDIMENTO')"title="Menu: Atendimento">Atendimento</li>
+			<li onclick="changeContent('GALERIA')" title="Menu: Galeria">Galeria</li>
+			<li onclick="changeContent('CONTEUDOS')" title="Menu: Conteúdos e novidades">Conteúdos</li>
+			<li onclick="changeContent('EXCLUSIVO')" title="Menu: Privacy e conteúdo exclusivo 18+">Área Exclusiva</li>
+			<li onclick="changeContent('FAQ')" title="Menu: Dúvidas frequentes">Dúvidas frequentes</li>
+			<li onclick="changeContent('CONTATOS')" title="Menu: Contatos">Contatos</li>
 		</ul>
-    </nav>
+	</nav>
 
 	<!-- The Modal -->
 	<div id="myModal" class="modal add-to">
@@ -3383,7 +4124,8 @@
 						});
 						$('#hs-form-iframe-0').contents().find('#hsForm_92f3901d-57e0-4510-a2d7-49ef22a29b28 input[type=submit]').css({
 							//'background': 'linear-gradient(135deg, #4C8F8F, #5FB3B3)',
-							'background': 'linear-gradient(135deg, #D4AF37, #9A2A2A)',
+							//'background': 'linear-gradient(135deg, #D4AF37, #9A2A2A)',
+							'background': 'linear-gradient(145deg, #E88A7B, #F6B5A7)',
 							'border-color': 'none',
 							'border-radius': '50px',
 							'width': 'fit-content',
@@ -3488,15 +4230,34 @@
     <script>
         const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
 
+		// Função que gera o HTML da seção VALORES (sem accordion)
+		function buildValoresHTML() {
+			let html = '<div class="valores-wrapper">';
+			catalogoItens.forEach(item => {
+				html += `<div class="valores-item">
+							<div class="valores-header">
+								<span class="valores-title">${item.titulo}</span>
+							</div>
+							<div class="valores-content">${item.conteudo}</div>
+						</div>`;
+			});
+			html += '</div>';
+			return html;
+		}
+
 		let socialMediaHTML = `
 			<article class="social-grid-wrapper">
 				<p>Conecte-se comigo agora:</p>
 				<article class="contact-grid-wrapper">
 					<div class="contact-container">
-						<a href="https://wa.me/5511910883252?text=Olá%2C%20gostaria%20de%20agendar%20uma%20sessão%20de%20terapia%20corporal" target="_blank" class="contact-item" title="WhatsApp - Contato">
+						<a href="https://wa.me/5521986209708?text=Olá%2C%20gostaria%20de%20agendar%20uma%20sessão%20de%20terapia%20corporal" target="_blank" class="contact-item" title="WhatsApp - Contato">
 							<div class="contact-btn"><i class="fa-brands fa-whatsapp"></i></div>
 							<span class="contact-label">WhatsApp</span>
 						</a>
+						<!-- a href="mailto:mauriciojun.ti@gmail.com?subject=%5B%20Mauricio%20Jun%20Ti%20%7C%20Cart%C3%A3o%20de%20Visita%20Digital%20Profissional%20%5D&body=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20cart%C3%B5es%20digitais." class="contact-item" title="E-mail - Contato">
+							<div class="contact-btn"><i class="fa-solid fa-envelope"></i></div>
+							<span class="contact-label">E-mail</span>
+						</a -->
 						<a href="https://drive.usercontent.google.com/u/0/uc?id=19Ry0yEZJWkOIg6QB5J37hvz-tSBVljkQ&export=download" class="contact-item" title="Salvar - Contato">
 							<div class="contact-btn"><i class="fa-solid fa-address-card"></i></div>
 							<span class="contact-label">Salvar</span>
@@ -3506,11 +4267,20 @@
 				<article class="redesSociais">
 					<p>Acesse minhas Redes Sociais</p>
 					<div class="social-container">
-						<a href="https://privacy.com.br/profile/GemimaVIP" target="_blank" class="social-btn" title="Privacy">
-							<svg class="privacy-logo" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="26.733" viewBox="0 0 24 26.733"><path d="m11.473 -0.008 0.118 -0.001q0.187 -0.001 0.374 -0.001l0.129 0C12.719 -0.009 13.325 0.008 13.941 0.119l0.119 0.02C14.711 0.249 15.335 0.424 15.96 0.634l0.091 0.03c1.635 0.554 3.064 1.522 4.32 2.69l0.078 0.073c0.156 0.147 0.3 0.3 0.439 0.462 0.073 0.085 0.15 0.167 0.227 0.25 1.893 2.103 2.891 4.998 2.894 7.804l0 0.085c-0.002 1.276 -0.211 2.522 -0.604 3.734l-0.034 0.107C22.841 17.499 21.903 19.008 20.713 20.238l-0.089 0.093C20.225 20.741 19.827 21.126 19.366 21.465l-0.122 0.097C17.56 22.906 15.434 23.681 13.307 23.921l-0.091 0.011c-1.013 0.111 -2.114 0.085 -3.117 -0.091l-0.137 -0.024c-1.113 -0.2 -2.205 -0.519 -3.214 -1.038 -0.089 -0.052 -0.089 -0.052 -0.174 -0.047 -0.047 0.061 -0.047 0.061 -0.092 0.143l-0.056 0.095 -0.06 0.104c-0.174 0.296 -0.352 0.588 -0.537 0.876 -0.174 0.272 -0.347 0.545 -0.517 0.819 -1.049 1.69 -1.049 1.69 -1.867 1.884l-0.099 0.024C2.56 26.84 1.758 26.759 1.069 26.337c-0.143 -0.109 -0.271 -0.227 -0.396 -0.356l-0.076 -0.074C0.095 25.386 -0.019 24.692 -0.015 23.997l0 -0.162c0 -0.146 0 -0.293 0 -0.439 0 -0.159 0 -0.317 0 -0.476 0 -0.31 0 -0.62 0 -0.93 0.001 -0.362 0 -0.724 0 -1.086q0 -0.97 0.001 -1.94 0.001 -0.938 0.001 -1.877a2029.228 2029.228 0 0 1 0 -2.268l0 -0.109q0 -0.377 0 -0.754 0 -0.461 0.001 -0.922 0.001 -0.235 0 -0.469c-0.004 -3.518 1.122 -6.661 3.62 -9.175l0.061 -0.061C3.937 3.06 4.215 2.809 4.515 2.574l0.081 -0.065C6.515 1.003 9.015 0.004 11.473 -0.008" fill="rgba(40, 12, 9, 0.8)"/></svg>
+						<a href="https://www.facebook.com/laurahathaway.vip" target="_blank" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+						<a href="https://www.instagram.com/laurahathaway.vip" target="_blank" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+						<a href="https://t.me/laurahathawayprevia" target="_blank" class="social-btn" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+						<a href="https://privacy.com.br/laurahathawayvip" target="_blank" class="social-btn" title="Privacy">
+							<svg class="privacy-logo" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="26.733" viewBox="0 0 24 26.733">
+								<defs>
+									<linearGradient id="privacyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+										<stop offset="0%" stop-color="#A9514D" />
+										<stop offset="100%" stop-color="rgba(40, 12, 9, 0.8)" />
+									</linearGradient>
+								</defs>
+								<path d="m11.473 -0.008 0.118 -0.001q0.187 -0.001 0.374 -0.001l0.129 0C12.719 -0.009 13.325 0.008 13.941 0.119l0.119 0.02C14.711 0.249 15.335 0.424 15.96 0.634l0.091 0.03c1.635 0.554 3.064 1.522 4.32 2.69l0.078 0.073c0.156 0.147 0.3 0.3 0.439 0.462 0.073 0.085 0.15 0.167 0.227 0.25 1.893 2.103 2.891 4.998 2.894 7.804l0 0.085c-0.002 1.276 -0.211 2.522 -0.604 3.734l-0.034 0.107C22.841 17.499 21.903 19.008 20.713 20.238l-0.089 0.093C20.225 20.741 19.827 21.126 19.366 21.465l-0.122 0.097C17.56 22.906 15.434 23.681 13.307 23.921l-0.091 0.011c-1.013 0.111 -2.114 0.085 -3.117 -0.091l-0.137 -0.024c-1.113 -0.2 -2.205 -0.519 -3.214 -1.038 -0.089 -0.052 -0.089 -0.052 -0.174 -0.047 -0.047 0.061 -0.047 0.061 -0.092 0.143l-0.056 0.095 -0.06 0.104c-0.174 0.296 -0.352 0.588 -0.537 0.876 -0.174 0.272 -0.347 0.545 -0.517 0.819 -1.049 1.69 -1.049 1.69 -1.867 1.884l-0.099 0.024C2.56 26.84 1.758 26.759 1.069 26.337c-0.143 -0.109 -0.271 -0.227 -0.396 -0.356l-0.076 -0.074C0.095 25.386 -0.019 24.692 -0.015 23.997l0 -0.162c0 -0.146 0 -0.293 0 -0.439 0 -0.159 0 -0.317 0 -0.476 0 -0.31 0 -0.62 0 -0.93 0.001 -0.362 0 -0.724 0 -1.086q0 -0.97 0.001 -1.94 0.001 -0.938 0.001 -1.877a2029.228 2029.228 0 0 1 0 -2.268l0 -0.109q0 -0.377 0 -0.754 0 -0.461 0.001 -0.922 0.001 -0.235 0 -0.469c-0.004 -3.518 1.122 -6.661 3.62 -9.175l0.061 -0.061C3.937 3.06 4.215 2.809 4.515 2.574l0.081 -0.065C6.515 1.003 9.015 0.004 11.473 -0.008" fill="url(#privacyGrad)" />
+							</svg>
 						</a>
-						<a href="https://www.instagram.com/gemimaterapeuta2" target="_blank" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-						<a href="https://t.me/gportalvip" target="_blank" class="social-btn" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
 					</div>
 				</article>
 				<div class="nfc-container">
@@ -3520,8 +4290,8 @@
 					<div class="nfcStatus"></div>
 				</div>
                 <label id="fullscreenbuttons" class="fullscreenline">
-                    <button onclick="openFullscreen();" class="firstbutt">Abrir tela cheia</button>
-                    <button onclick="closeFullscreen();" class="endbutt">Sair tela cheia</button>
+                    <button onclick="openFullscreen();" class="firstbutt" title="Abrir tela cheia">Abrir tela cheia</button>
+                    <button onclick="closeFullscreen();" class="endbutt" title="Sair tela cheia">Sair tela cheia</button>
                 </label>
 				<!--hr style="border-color: var(--top-line-border); margin: 1em 0;"-->
 				<!-- Mini bio + link -->
@@ -3544,487 +4314,606 @@
 			</div>
 		`;
 
+		function getOfflineMessage() {
+			// =============================================
+			// ÚNICA MODIFICAÇÃO PARA A PÁGINA OFFLINE
+			// =============================================
+			// Sempre exibe a mensagem, pois esta página é servida apenas quando offline
+			return `<p style="color: #D6BA84; font-size: .7em; margin-bottom: 0.5em;">🔴 Para utilizar todos os recursos, você precisa estar conectado à internet.</p>`;
+		}
+
 		const sectionsData = {
-			INICIO_BKP: {
-				title: "Laura Hathaway",
-				subtitle: "Terapia Corporal Integrativa",
-				image: "./imgs/gemima-m-mansoor-background.png",
+            ERRO_404: { 
+				title: "Página não encontrada",
+				subtitle: "Volte ao início para continuar",
+				image: "./imgs/laura-hathaway-background-01.png",
 				video: "",
 				content: `
-							<p><strong>Bem-vindo ao espaço de cuidado e consciência corporal.</strong></p>
-							<p>Algumas experiências não são feitas para acelerar o corpo, mas para desacelerar a mente.</p>
-							<p>Meu trabalho é conduzir processos de consciência corporal, presença, liberação e reconexão.</p>
-							<p class="line-image line-image-marginbottom0"><img src="./imgs/logo-flower-gemima-m-mansoor.png"/><span class="bottom-line"></span></p>
-							<p class="bottom-text">CORPO · MENTE · PRESENÇA · ESSÊNCIA</p>
+							<p>
+								<strong>Esta seção não está disponível.</strong>
+							</p>
+							<p>
+								Volte ao início e conheça o universo de Laura Hathaway.
+							</p>
+							<div class="mj-cta-links">
+								<a href="#"
+								class="mj-cta-card"
+								onclick="changeContent('INICIO'); return false;" 
+								title="404: Voltar ao início"
+								>
+									<strong>Voltar ao início</strong>
+									<span>
+										Conheça Laura e escolha por onde começar.
+									</span>
+									<span style="color:var(--call-to-action-link);">
+										Explorar →
+									</span>
+								</a>
+							</div>
+				` 
+			},
+
+			INICIO: {
+				title: "Laura Hathaway",
+				subtitle: "Massagista • Criadora de Conteúdo 18+",
+				image: "./imgs/laura-hathaway-background-12.png",
+				video: "",
+				content: `
+							<p style="text-align:center;"><strong>Bem-vindo ao espaço oficial de Laura Hathaway.</strong></p>
+							<p style="text-align:center;">
+								Um ponto de encontro para descobrir meu trabalho, conhecer meus conteúdos
+								e encontrar meus canais oficiais.
+							</p>
+							<div class="mj-highlight-box">
+								<div class="mj-highlight-item">
+									<i class="fas fa-spa"></i>
+									<p><strong>Atendimento</strong><br><span>Informações para quem deseja conhecer essa parte do meu trabalho.</span></p>
+								</div>
+								<div class="mj-highlight-item">
+									<i class="fas fa-camera"></i>
+									<p><strong>Conteúdos</strong><br><span>Fotos, vídeos, novidades e presença digital.</span></p>
+								</div>
+								<div class="mj-highlight-item">
+									<i class="fas fa-lock"></i>
+									<p><strong>Área exclusiva</strong><br><span>Conteúdos 18+ disponíveis no Privacy.</span></p>
+								</div>
+							</div>
+							<p class="line-image">
+								<i class="fa-solid fa-compass"></i><span class="bottom-line"></span>
+							</p>
+							<div class="mjh-ti-discovery-title"><span>ESCOLHA POR ONDE COMEÇAR</span></div>
+							<div class="mj-cta-links">
+								<a href="#" onclick="changeContent('SOBRE'); return false;"
+									class="mj-cta-card mjh-ti-discovery-card" title="Início: Sobre Laura">
+									<strong>Sobre Laura</strong>
+									<span>Conheça a pessoa por trás do nome, seu posicionamento e sua presença digital.</span>
+									<span class="mjh-ti-card-action">Conhecer →</span>
+								</a>
+								<a href="#" onclick="changeContent('ATENDIMENTO'); return false;"
+									class="mj-cta-card mjh-ti-discovery-card" title="Início: Atendimento">
+									<strong>Atendimento</strong>
+									<span>Saiba como começar uma conversa, esclarecer dúvidas e consultar disponibilidade.</span>
+									<span class="mjh-ti-card-action">Explorar →</span>
+								</a>
+								<a href="#" onclick="changeContent('GALERIA'); return false;"
+									class="mj-cta-card mjh-ti-discovery-card" title="Início: Galeria">
+									<strong>Galeria</strong>
+									<span>Veja um preview visual e conheça a estética de Laura.</span>
+									<span class="mjh-ti-card-action">Ver galeria →</span>
+								</a>
+								<a href="#" onclick="changeContent('CONTEUDOS'); return false;"
+									class="mj-cta-card mjh-ti-discovery-card" title="Início: Conteúdos">
+									<strong>Conteúdos</strong>
+									<span>Acompanhe novidades, publicações, bastidores e canais oficiais.</span>
+									<span class="mjh-ti-card-action">Acompanhar →</span>
+								</a>
+								<a href="#" onclick="changeContent('EXCLUSIVO'); return false;"
+									class="mj-cta-card mjh-ti-discovery-card mjh-ti-exclusive-card" title="Início: Área Exclusiva">
+									<strong>Privacy • Área Exclusiva</strong>
+									<span>Conheça os conteúdos 18+ e consulte os packs atualmente disponíveis.</span>
+									<span class="mjh-ti-card-action">Conhecer →</span>
+								</a>
+							</div>
+
+							<p class="line-image">
+								<i class="fa-solid fa-user-shield"></i><span class="bottom-line"></span>
+							</p>
+
+							<p style="text-align:center;">
+								🔞 <strong>Conteúdo adulto destinado exclusivamente a maiores de 18 anos.</strong>
+							</p>
 				`
 			},
 
 			SOBRE: {
-				title: "Gemima Mansoor",
-				subtitle: "Terapeuta Corporal Integrativa",
-				image: "./imgs/laura-hathaway-background-01.png",
+				title: "Sobre Laura Hathaway",
+				subtitle: "Sensualidade, autenticidade e liberdade criativa",
+				image: "./imgs/laura-hathaway-background-04.png",
 				video: "",
 				content: `
-							<p><img src="./imgs/gemima-m-mansoor-foto-15.jpeg" class="content-right-circular-image">Sou Gemima M Mansoor, terapeuta corporal com formação em Terapia Corporal, Renascimento (Rebirthing), Somatização do Trauma e especialização em Disfunções Sexuais Masculinas.</p>
-							<p>Meu trabalho é conduzir processos de presença, consciência corporal e expansão sensorial por meio de técnicas integrativas que unem toque, respiração e escuta do corpo.</p>
-							
-							<p>Cada encontro é único, criado para restaurar vitalidade, reduzir tensões, ampliar a percepção corporal e proporcionar uma experiência profunda de conexão consigo mesmo ou com quem você ama.</p>
-							
+							<p>
+								<img src="./imgs/laura-hathaway-foto-02.png"
+									class="content-right-circular-image" alt="Laura Hathaway">
+								Sou <strong>Laura Hathaway</strong>, <!-- acompanhante, -->massagista e criadora de conteúdo 18+.
+							</p>
+
+							<p>
+								Minha presença digital reúne diferentes formas de acompanhar meu trabalho:
+								atendimento, fotografia, vídeos, novidades e conteúdos exclusivos.
+							</p>
+
+							<p>
+								Este espaço foi pensado para que você possa conhecer melhor meu universo,
+								descobrir meus canais oficiais e escolher como deseja continuar me acompanhando.
+							</p>
+
 							<div class="feature-card">
 								<ul class="feature-list nopadding">
-									<li><i class="fas fa-check-circle"></i>Discrição absoluta</li>
-									<li><i class="fas fa-check-circle"></i>Atendimento personalizado</li>
-									<li><i class="fas fa-check-circle"></i>Ambiente seguro e acolhedor</li>
+									<li><i class="fas fa-check-circle"></i>Conteúdo autêntico</li>
+									<li><i class="fas fa-check-circle"></i>Presença digital</li>
+									<li><i class="fas fa-check-circle"></i>Fotos e vídeos</li>
+									<li><i class="fas fa-check-circle"></i>Comunicação próxima e respeitosa</li>
+									<li><i class="fas fa-check-circle"></i>Discrição e privacidade</li>
 								</ul>
 							</div>
-							<p class="line-image"><img src="./imgs/logo-flower-gemima-m-mansoor.png"/><span class="bottom-line"></span></p>
-							<h3 style="color: var(--newtitle-color); margin-top: 0.5em;">Minha formação reúne conhecimentos em:</h3>
+
+							<p class="line-image">
+								<i class="fa-solid fa-star"></i><span class="bottom-line"></span>
+							</p>
+
+							<div class="mj-cta-links">
+								<a href="#" onclick="changeContent('GALERIA'); return false;" class="mj-cta-card" title="Sobre: Galeria">
+									<strong>Conheça meu estilo</strong>
+									<span>Veja a galeria e tenha um primeiro contato visual com o universo de Laura.</span>
+									<span style="color:var(--call-to-action-link);">Ver galeria →</span>
+								</a>
+								<a href="#" onclick="changeContent('CONTEUDOS'); return false;" class="mj-cta-card" title="Sobre: Conteúdos">
+									<strong>Acompanhe minhas novidades</strong>
+									<span>Encontre os canais oficiais e continue acompanhando as publicações.</span>
+									<span style="color:var(--call-to-action-link);">Ver conteúdos →</span>
+								</a>
+							</div>
+				`
+			},
+
+			ATENDIMENTO: {
+				title: "Atendimento",
+				subtitle: "Informações para começar uma conversa",
+				image: "./imgs/laura-hathaway-background-15.png",
+				video: "",
+				content: `
+							<p>
+								Se você procura informações sobre o atendimento de <strong>Laura Hathaway</strong>,
+								esta é a seção para começar.
+							</p>
+							<p>
+								Antes de qualquer agendamento, entre em contato para esclarecer dúvidas,
+								verificar disponibilidade e alinhar previamente as informações necessárias.
+							</p>
+
 							<div class="feature-card">
+								<h3 style="color:var(--newtitle-color);">Como começar</h3>
 								<ul class="feature-list nopadding">
-									<li><i class="fas fa-check-circle"></i><span>Terapia Corporal</span></li>
-									<li><i class="fas fa-check-circle"></i><span>Renascimento <em>(Rebirthing)</em></span></li>
-									<li><i class="fas fa-check-circle"></i><span>Somatização do Trauma</span></li>
-									<li><i class="fas fa-check-circle"></i><span>Disfunções Sexuais Masculinas</span></li>
-									<li><i class="fas fa-check-circle"></i><span>Técnicas Integrativas de Presença Corporal</span></li>
+									<li><i class="fas fa-comments"></i>Tire suas dúvidas</li>
+									<li><i class="fas fa-calendar-check"></i>Consulte disponibilidade</li>
+									<li><i class="fas fa-circle-info"></i>Alinhe previamente os detalhes</li>
+									<li><i class="fas fa-shield-heart"></i>Priorize respeito, discrição e comunicação clara</li>
 								</ul>
 							</div>
-							<div class="mj-cta-links">
-								<a href="#exclusivo" class="mj-cta-card" onclick="changeContent('INICIO'); return false;" title="Sobre: Chamada para - Experiências">
-									<strong>Quer conhecer os detalhes de cada experiência terapêutica?</strong>
-									<span>Valores, duração, modalidades e tudo o que você precisa saber antes de agendar.</span>
-									<span style="color: var(--call-to-action-link); text-decoration: none;">👉 Acessar o catálogo completo</span>
-								</a>
-							</div>
-							<div style="background:rgba(0,0,0,0.5); padding:1em; border-radius:20px; text-align:center;">
-								<p>Deseja conhecer uma experiência personalizada?</p>
-								<a href="https://wa.me/5511910883252?text=Olá%2C%20gostaria%20de%20agendar%20uma%20sessão%20de%20terapia%20corporal" target="_blank" class="btn-form-contato btn-form-contato-02" style="display: inline-block; color: #000; text-decoration: none; font-weight: bold;" title="Sobre: Agendar Atendimento">Agendar Atendimento</a>
-							</div>
-				`
-			},
 
-			INICIO: {
-				title: "Experiências Terapêuticas",
-				subtitle: "Corpo, mente e presença",
-				image: "./imgs/laura-hathaway-background-01.png",
-				video: "",
-				content: `
-							<p>Toque nas experiências abaixo para ver <strong>detalhes</strong>, <strong>valores</strong> e <strong>duração</strong>.</p>
-							<p>Cada experiência foi desenvolvida para atender necessidades específicas de autoconhecimento, expansão sensorial, relaxamento profundo e desenvolvimento da consciência corporal.</p>
-							<p class="line-image"><img src="./imgs/logo-flower-gemima-m-mansoor.png"/><span class="bottom-line"></span></p>
-							<div class="catalogo-accordion-container"></div>
-							<p style="margin-top: 1em;">Para fazer download do catálogo, <a href="https://canva.link/b84pgyskz65k2n3" target="_blank" title="Download do Catálogo">clique aqui</a>.</p>
-							<div style="background:rgba(0,0,0,0.5); padding:1em; border-radius:20px; text-align:center;">
-								<p>Deseja conhecer uma experiência personalizada?</p>
-								<a href="https://wa.me/5511910883252?text=Olá%2C%20gostaria%20de%20agendar%20uma%20sessão%20de%20terapia%20corporal" target="_blank" class="btn-form-contato btn-form-contato-02" style="display: inline-block; color: #000; text-decoration: none; font-weight: bold;" title="Experiências: Agendar Atendimento">Agendar Atendimento</a>
-							</div>
-				`
-			},
-
-			BENEFICIOS: {
-				title: "Benefícios",
-				subtitle: "O que você pode desenvolver",
-				image: "./imgs/laura-hathaway-background-01.png",
-				video: "",
-				content: `
-							<p><img src="./imgs/gemima-perfil-01.jpeg" class="content-right-circular-image"><strong>Consciência Corporal</strong></p>
-							<p>Reconheça tensões, bloqueios e padrões acumulados ao longo do tempo.</p>
-							<p><strong>Presença</strong><br/>Aprenda a desacelerar e viver experiências com mais profundidade.</p>
-							<p><strong>Vitalidade</strong><br/>Amplie sua energia e sua percepção corporal.</p>
-							<p><strong>Relacionamentos</strong><br/>Fortaleça a conexão consigo mesmo e com quem você ama.</p>
-							<p><strong>Autoconhecimento</strong><br/>Descubra novas formas de sentir, perceber e compreender seu próprio corpo.</p>
-							<div class="mj-cta-links">
-								<a href="#exclusivo" class="mj-cta-card" onclick="changeContent('INICIO'); return false;" title="Benefícios: Chamada para - Experiências">
-									<strong>Quer conhecer os detalhes de cada experiência terapêutica?</strong>
-									<span>Valores, duração, modalidades e tudo o que você precisa saber antes de agendar.</span>
-									<span style="color: var(--call-to-action-link); text-decoration: none;">👉 Acessar o catálogo completo</span>
-								</a>
-							</div>
-							<div style="background:rgba(0,0,0,0.5); padding:1em; border-radius:20px; text-align:center;">
-								<p>Deseja conhecer uma experiência personalizada?</p>
-								<a href="https://wa.me/5511910883252?text=Olá%2C%20gostaria%20de%20agendar%20uma%20sessão%20de%20terapia%20corporal" target="_blank" class="btn-form-contato btn-form-contato-02" style="display: inline-block; color: #000; text-decoration: none; font-weight: bold;" title="Benefícios: Agendar Atendimento">Agendar Atendimento</a>
-							</div>
-				`
-			},
-			
-			EXCLUSIVO: {
-				title: "Conteúdo Exclusivo & Canais Oficiais",
-				subtitle: "Acompanhe Gemima Além das Sessões",
-				image: "./imgs/laura-hathaway-background-01.png",
-				video: "",
-				content: `
-							<p><img src="./imgs/gemima-m-mansoor-foto-11.jpg" class="content-right-circular-image">Cada experiência é apenas uma parte da jornada.</p>
-							
-							<p>Nos canais oficiais você encontra conteúdos, novidades, bastidores, reflexões, atualizações e formas de se conectar ainda mais com o universo da terapia corporal e do desenvolvimento pessoal.</p>
-
-							<p>Escolha o canal que mais combina com você e acompanhe de perto o trabalho da Gemima.</p>
+							<p class="line-image"><i class="fa-solid fa-message"></i><span class="bottom-line"></span></p>
 
 							<div class="mj-cta-links">
-								<a href="https://www.instagram.com/gemimaterapeuta2" target="_blank" class="mj-cta-card" title="Exclusivo: Chamada para - Instagram">
-									<strong>Instagram</strong>
-									<span style="font-weight: bold;">
-										Bastidores, reflexões e cotidiano profissional
-									</span>
-									<span>
-										Acompanhe publicações, stories, novidades, conteúdos inspiradores e momentos que fazem parte da rotina da Gemima.
-									</span>
-									<span style="color: var(--call-to-action-link); text-decoration: none;">Seguir no Instagram</span>
+								<a href="#" onclick="changeContent('FAQ'); return false;" class="mj-cta-card" title="Atendimento: FAQ">
+									<strong>Dúvidas frequentes</strong>
+									<span>Veja respostas rápidas antes de entrar em contato.</span>
+									<span style="color:var(--call-to-action-link);">Ver FAQ →</span>
 								</a>
-								<a href="https://t.me/gportalvip" target="_blank" class="mj-cta-card" title="Exclusivo: Chamada para - Telegram">
-									<strong>Telegram</strong>
-									<span style="font-weight: bold;">
-										Conteúdos, dicas e avisos em primeira mão
-									</span>
-									<span>
-										Receba atualizações, comunicados, materiais selecionados e acompanhe conteúdos compartilhados diretamente pela Gemima.
-									</span>
-									<span style="color: var(--call-to-action-link); text-decoration: none;">Entrar no Canal do Telegram</span>
+								<a href="#" onclick="changeContent('CONTATOS'); return false;" class="mj-cta-card" title="Atendimento: Contatos">
+									<strong>Falar com Laura</strong>
+									<span>Encontre os canais oficiais para contato.</span>
+									<span style="color:var(--call-to-action-link);">Entrar em contato →</span>
 								</a>
-								<a href="https://canva.link/b84pgyskz65k2n3" target="_blank" class="mj-cta-card" title="Exclusivo: Chamada para - Catálogo Completo">
-									<strong>Catálogo Completo</strong>
-									<span style="font-weight: bold;">
-										Conheça todas as experiências disponíveis
-									</span>
-									<span>
-										Acesse o catálogo completo para visualizar informações detalhadas sobre atendimentos, vivências e experiências oferecidas.
-									</span>
-									<span style="color: var(--call-to-action-link); text-decoration: none;">Visualizar Catálogo</span>
-								</a>
-								<a href="https://privacy.com.br/profile/GemimaVIP" target="_blank" class="mj-cta-card" title="Exclusivo: Chamada para - Privacy – Conteúdo VIP">
-									<strong>Privacy – Conteúdo VIP</strong>
-									<span style="font-weight: bold;">
-										Para quem deseja acompanhar conteúdos especiais
-									</span>
-									<span>
-										Uma área destinada a quem deseja uma conexão mais próxima e acesso a materiais exclusivos disponibilizados pela Gemima.
-									</span>
-									<span style="color: var(--call-to-action-link); text-decoration: none;">Acessar Área Exclusiva</span>
-								</a>
-								<a href="https://privacy.com.br/profile/gemimafree" target="_blank" class="mj-cta-card" title="Exclusivo: Chamada para - Privacy – Perfil Gratuito">
-									<strong>Privacy – Perfil Gratuito</strong>
-									<span style="font-weight: bold;">
-										Conheça mais do universo da Gemima
-									</span>
-									<span>
-										Explore materiais e conteúdos disponibilizados gratuitamente para quem deseja conhecer melhor seu trabalho.
-									</span>
-									<span style="color: var(--call-to-action-link); text-decoration: none;">Acessar Perfil Gratuito</span>
-								</a>
-							</div>
-
-							<p><strong>VEJA NAS MINHAS REDES</strong></p>
-							<!-- NOVO EMBED ESCALÁVEL DO INSTAGRAM -->
-							<div class="instagram-embed" data-instagram-url="https://www.instagram.com/p/DYpRnG-xaip/"></div>
-							<!-- Para adicionar mais posts, basta repetir a linha acima com outra URL -->
-						`
-			},
-
-			CONTATOS: {
-				title: "Contatos",
-				subtitle: "Escolha o canal mais prático para você",
-				image: "./imgs/laura-hathaway-background-01.png",
-				video: "",
-				content: `
-							<p><strong>Precisa de informações, agendamentos ou tem alguma dúvida?</strong> Fique à vontade para me contatar pelos canais abaixo.</p>
-							<p>Utilize o ícone do <strong>WhatsApp</strong> que aparece no final das páginas.</p>
-							<p class="line-image"><img src="./imgs/logo-flower-gemima-m-mansoor.png"/><span class="bottom-line"></span></p>
-							<p>Se preferir, envie uma mensagem diretamente por aqui (formulário abaixo) e entrarei em contato.</p>
-							<div class="forminsert"></div>
-							<br/>
-							<p>🔒 Seus dados estão seguros. Não compartilho informações com terceiros.</p>
-				`
-			},
-			FAQ: {
-				title: "Perguntas Frequentes",
-				subtitle: "Dúvidas comuns sobre o trabalho terapêutico",
-				image: "./imgs/laura-hathaway-background-01.png",
-				video: "",
-				content: `
-							<div class="faq-container"></div>
-							<div style="background:rgba(0,0,0,0.5); padding:1em; border-radius:20px; text-align:center; margin-top: 1em;">
-								<p>Deseja conhecer uma experiência personalizada?</p>
-								<a href="https://wa.me/5511910883252?text=Olá%2C%20gostaria%20de%20agendar%20uma%20sessão%20de%20terapia%20corporal" target="_blank" class="btn-form-contato btn-form-contato-02" style="display: inline-block; color: #000; text-decoration: none; font-weight: bold;">Agendar Atendimento</a>
 							</div>
 				`
 			},
 
-			SOBRE_BKP: {
-				title: "Gemima Mansoor",
-				subtitle: "Terapeuta Corporal Integrativa",
-				image: "./imgs/gemima-m-mansoor-foto-background.png",
-				video: "",
-				content: `
-							<p><img src="./imgs/gemima-m-mansoor-foto-01.jpg" class="content-right-circular-image">Sou Gemima M Mansoor, terapeuta corporal com formação em Terapia Corporal, Renascimento (Rebirthing), Somatização do Trauma e especialização em Disfunções Sexuais Masculinas.</p>
-							<p>Meu trabalho é conduzir processos de presença, consciência corporal e expansão sensorial por meio de técnicas integrativas que unem toque, respiração e escuta do corpo.</p>
-							
-							<p>Cada encontro é único, criado para restaurar vitalidade, reduzir tensões, ampliar a percepção corporal e proporcionar uma experiência profunda de conexão consigo mesmo ou com quem você ama.</p>
-							
-							<div class="feature-card">
-								<ul class="feature-list nopadding">
-									<li><i class="fas fa-check-circle"></i>Discrição absoluta</li>
-									<li><i class="fas fa-check-circle"></i>Atendimento personalizado</li>
-									<li><i class="fas fa-check-circle"></i>Ambiente seguro e acolhedor</li>
-								</ul>
-							</div>
-							<p class="line-image"><img src="./imgs/logo-flower-gemima-m-mansoor.png"/><span class="bottom-line"></span></p>
-							<h3 style="color: var(--newtitle-color); margin-top: 0.5em;">Minha formação reúne conhecimentos em:</h3>
-							<div class="feature-card">
-								<ul class="feature-list nopadding">
-									<li><i class="fas fa-check-circle"></i><span>Terapia Corporal</span></li>
-									<li><i class="fas fa-check-circle"></i><span>Renascimento <em>(Rebirthing)</em></span></li>
-									<li><i class="fas fa-check-circle"></i><span>Somatização do Trauma</span></li>
-									<li><i class="fas fa-check-circle"></i><span>Disfunções Sexuais Masculinas</span></li>
-									<li><i class="fas fa-check-circle"></i><span>Técnicas Integrativas de Presença Corporal</span></li>
-								</ul>
-							</div>
-							<div class="mj-cta-links">
-								<a href="#exclusivo" class="mj-cta-card" onclick="changeContent('EXPERIENCIAS'); return false;" title="Sobre: Chamada para - Experiências">
-									<strong>Quer conhecer os detalhes de cada experiência terapêutica?</strong>
-									<span>Valores, duração, modalidades e tudo o que você precisa saber antes de agendar.</span>
-									<span style="color: var(--call-to-action-link); text-decoration: none;">👉 Acessar o catálogo completo</span>
-								</a>
-							</div>
-							<div style="background:rgba(0,0,0,0.5); padding:1em; border-radius:20px; text-align:center;">
-								<p>Deseja conhecer uma experiência personalizada?</p>
-								<a href="https://wa.me/5511910883252?text=Olá%2C%20gostaria%20de%20agendar%20uma%20sessão%20de%20terapia%20corporal" target="_blank" class="btn-form-contato btn-form-contato-02" style="display: inline-block; color: #000; text-decoration: none; font-weight: bold;" title="Sobre: Agendar Atendimento">Agendar Atendimento</a>
-							</div>
-				`
-			},
 			GALERIA: {
 				title: "Galeria",
-				subtitle: "Ambiente e acolhimento",
-				image: "./imgs/gemima-m-mansoor-foto-background.png",
+				subtitle: "Um vislumbre do universo de Laura Hathaway",
+				image: "./imgs/laura-hathaway-foto-11.png",
 				video: "",
 				content: `
-						<p>Toque em qualquer foto ou vídeo para ver em tela cheia.</p>
-						<h3 style="color:var(--newtitle-color); margin-top:1em;">Galeria de vídeos</h3>
-						<div class="gallery-container" data-gallery="galeria_gemima"></div>
-						<h3 style="color:var(--newtitle-color); margin-top:1em;">Galeria de fotos</h3>
-						<div class="mj-carousel-container" id="carousel-quem-sou">
-							<div class="mj-carousel-viewport">
-								<div class="mj-carousel-track">
-									<div class="mj-carousel-item">
-										<div class="mj-image-wrapper">
-											<img src="./imgs/gemima-m-mansoor-foto-01.jpg" alt="Laura Hathaway" class="mj-carousel-img">
-											<div class="mj-carousel-caption">Laura Hathaway</div>
+							<p>
+								Uma seleção de imagens para conhecer melhor a estética, a presença e o estilo
+								de <strong>Laura Hathaway</strong>.
+							</p>
+							<p><strong>Toque nas imagens para ampliar.</strong></p>
+							<h3 style="color:var(--newtitle-color); margin-top:1em;">Galeria de fotos</h3>
+							<div class="mj-carousel-container" id="carousel-laura-hathaway">
+								<div class="mj-carousel-viewport">
+									<div class="mj-carousel-track">
+										<div class="mj-carousel-item">
+											<div class="mj-image-wrapper">
+												<img src="./imgs/laura-hathaway-background-01.png" alt="Galeria: Laura Hathaway 01" title="Galeria: Laura Hathaway 01" class="mj-carousel-img">
+												<div class="mj-carousel-caption">Laura Hathaway</div>
+											</div>
 										</div>
-									</div>
-									<div class="mj-carousel-item">
-										<div class="mj-image-wrapper">
-											<img src="./imgs/gemima-m-mansoor-foto-02.jpeg" alt="Laura Hathaway" class="mj-carousel-img">
-											<div class="mj-carousel-caption">Laura Hathaway</div>
+										<div class="mj-carousel-item">
+											<div class="mj-image-wrapper">
+												<img src="./imgs/laura-hathaway-foto-10.png" alt="Galeria: Laura Hathaway 02" title="Galeria: Laura Hathaway 02" class="mj-carousel-img">
+												<div class="mj-carousel-caption">Laura Hathaway</div>
+											</div>
 										</div>
-									</div>
-									<div class="mj-carousel-item">
-										<div class="mj-image-wrapper">
-											<img src="./imgs/gemima-m-mansoor-foto-03.jpg" alt="Laura Hathaway" class="mj-carousel-img">
-											<div class="mj-carousel-caption">Laura Hathaway</div>
+										<div class="mj-carousel-item">
+											<div class="mj-image-wrapper">
+												<img src="./imgs/laura-hathaway-foto-01.png" alt="Galeria: Laura Hathaway 03" title="Galeria: Laura Hathaway 03" class="mj-carousel-img">
+												<div class="mj-carousel-caption">Laura Hathaway</div>
+											</div>
 										</div>
-									</div>
-									<div class="mj-carousel-item">
-										<div class="mj-image-wrapper">
-											<img src="./imgs/gemima-m-mansoor-foto-04.jpeg" alt="Laura Hathaway" class="mj-carousel-img">
-											<div class="mj-carousel-caption">Laura Hathaway</div>
+										<div class="mj-carousel-item">
+											<div class="mj-image-wrapper">
+												<img src="./imgs/laura-hathaway-foto-04.png" alt="Galeria: Laura Hathaway 04" title="Galeria: Laura Hathaway 04" class="mj-carousel-img">
+												<div class="mj-carousel-caption">Laura Hathaway</div>
+											</div>
 										</div>
-									</div>
-									<div class="mj-carousel-item">
-										<div class="mj-image-wrapper">
-											<img src="./imgs/gemima-m-mansoor-foto-05.jpg" alt="Laura Hathaway" class="mj-carousel-img">
-											<div class="mj-carousel-caption">Laura Hathaway</div>
+										<div class="mj-carousel-item">
+											<div class="mj-image-wrapper">
+												<img src="./imgs/laura-hathaway-na-praia-03.png" alt="Galeria: Laura Hathaway 05" title="Galeria: Laura Hathaway 05" class="mj-carousel-img">
+												<div class="mj-carousel-caption">Laura Hathaway</div>
+											</div>
 										</div>
-									</div>
-									<div class="mj-carousel-item">
-										<div class="mj-image-wrapper">
-											<img src="./imgs/gemima-m-mansoor-foto-11.jpg" alt="Laura Hathaway" class="mj-carousel-img">
-											<div class="mj-carousel-caption">Laura Hathaway</div>
-										</div>
-									</div>
-									<div class="mj-carousel-item">
-										<div class="mj-image-wrapper">
-											<img src="./imgs/gemima-m-mansoor-foto-13.jpeg" alt="Laura Hathaway" class="mj-carousel-img">
-											<div class="mj-carousel-caption">Laura Hathaway</div>
-										</div>
-									</div>
-									<div class="mj-carousel-item">
-										<div class="mj-image-wrapper">
-											<img src="./imgs/gemima-m-mansoor-foto-12.jpg" alt="Laura Hathaway" class="mj-carousel-img">
-											<div class="mj-carousel-caption">Laura Hathaway</div>
+										<div class="mj-carousel-item">
+											<div class="mj-image-wrapper">
+												<img src="./imgs/laura-hathaway-vcf-foto-01.png" alt="Galeria: Laura Hathaway 06" title="Galeria: Laura Hathaway 06" class="mj-carousel-img">
+												<div class="mj-carousel-caption">Laura Hathaway</div>
+											</div>
 										</div>
 									</div>
 								</div>
+								<button class="mj-carousel-nav mj-prev" type="button" aria-label="Imagem anterior" title="Galeria: Imagem anterior">&#10094;</button>
+								<button class="mj-carousel-nav mj-next" type="button" aria-label="Próxima imagem" title="Galeria: Próxima imagem">&#10095;</button>
+								<div class="mj-carousel-dots"></div>
 							</div>
-
-							<button class="mj-carousel-nav mj-prev" aria-label="Anterior">&#10094;</button>
-							<button class="mj-carousel-nav mj-next" aria-label="Próximo">&#10095;</button>
-
-							<div class="mj-carousel-dots"></div>
-						</div>
-				`
-			},
-			REDES_SOCIAIS: {
-				title: "Minhas Redes Sociais",
-				subtitle: "Me acompanhe em tempo real.",
-				image: "./imgs/gemima-m-mansoor-foto-01.jpg",
-				video: "",
-				content: `
-							<p>🌐 <strong>Escolha sua plataforma favorita e me siga:</strong></p>
+							<!--
+							VÍDEOS:
+							quando os vídeos reais estiverem cadastrados em galleryDefinitions:
+							<div class="gallery-container" data-gallery="laura_videos"></div>
+							Não inventar arquivos .mp4.
+							-->
 							<div class="mj-cta-links">
-								<a href="https://www.instagram.com/gemimaterapeuta2/" class="mj-cta-card" target="_blank" title="Minhas redes sociais: Instagram">
-									<strong>Instagram</strong>
-									<span>Fotos, stories e bastidores.</span>
-									<span style="color: var(--call-to-action-link); text-decoration: none;">Clique aqui!</span>
+								<a href="#" onclick="changeContent('CONTEUDOS'); return false;" class="mj-cta-card" title="Galeria: Conteúdos">
+									<strong>Gostou do que viu?</strong>
+									<span>Continue acompanhando Laura nos canais oficiais.</span>
+									<span style="color:var(--call-to-action-link);">Ver conteúdos →</span>
 								</a>
-								<a href="https://x.com/gemimavip" class="mj-cta-card" target="_blank" title="Minhas redes sociais: X (Twitter)">
-									<strong>X (Twitter)</strong>
-									<span>Opiniões e interação rápida.</span>
-									<span style="color: var(--call-to-action-link); text-decoration: none;">Clique aqui!</span>
-								</a>
-								<a href="https://www.facebook.com/sawadeeyoga" class="mj-cta-card" target="_blank" title="Minhas redes sociais: Facebook">
-									<strong>Facebook</strong>
-									<span>Conteúdos extras e comunidade.</span>
-									<span style="color: var(--call-to-action-link); text-decoration: none;">Clique aqui!</span>
-								</a>
-								<a href="https://privacy.com.br/profile/gemimafree" class="mj-cta-card" target="_blank" title="Minhas redes sociais: Perfil gratuito - Privacy">
-									<strong>🔒 Perfil gratuito no Privacy</strong>
-									<span>Amostras e novidades.</span>
-									<span style="color: var(--call-to-action-link); text-decoration: none;">Clique aqui!</span>
+								<a href="#" onclick="changeContent('EXCLUSIVO'); return false;"
+									class="mj-cta-card mjh-ti-exclusive-card" title="Galeria: Exclusivo">
+									<strong>Quer conhecer mais?</strong>
+									<span>Veja a área exclusiva e os packs atualmente disponíveis no Privacy.</span>
+									<span style="color:var(--call-to-action-link);">Conhecer →</span>
 								</a>
 							</div>
-
-							<p><strong>VEJA NAS MINHAS REDES</strong></p>
-							<div class="facebook-embed" 
-								data-facebook-url="https://www.facebook.com/mauricio.jun.ti/posts/pfbid028pSYQC4NGNe2RX5e5KD5DdCa4mAJoVyxUCSesyTu58CLJ1oncMUF32ehTbhkAVzkl">
-							</div>
-
-							<p>🎯 Lembre‑se: no final de cada página você encontra ícones para <strong>WhatsApp, Telegram, e‑mail e outras redes</strong> – use‑os à vontade!</p>
 				`
 			},
-			PARCERIAS: {
-				title: "Parcerias & Collabs",
-				subtitle: "Vamos criar algo incrível juntos?",
-				image: "./imgs/gemima-m-mansoor-foto-08.jpeg",
+
+			CONTEUDOS: {
+				title: "Conteúdos",
+				subtitle: "Novidades, publicações e canais oficiais",
+				image: "./imgs/laura-hathaway-foto-08.png",
 				video: "",
 				content: `
-							<p>🌟 <strong>Gemima Mansoor</strong> está disponível para:</p>
-							<ul>
-								<li>Campanhas em stories, posts fixos e reels (Instagram, X, Facebook)</li>
-								<li>Participação em eventos, podcasts e entrevistas</li>
-								<li>Criação de conteúdo exclusivo para sua marca (fotos, vídeos, textos)</li>
-								<li>Embaixadora de produtos de moda, beleza, bem‑estar, lifestyle e entretenimento</li>
-							</ul>
 							<p>
-								📩 <strong>Envie sua proposta comercial para:</strong><br>
-								<a href="mailto:gemimamedeiros@gmail.com" class="txtbreak" style="color: var(--call-to-action-link);" title="Parcerias: gemimamedeiros@gmail.com">gemimamedeiros@gmail.com</a>
+								Este é o ponto de encontro para acompanhar a presença digital de
+								<strong>Laura Hathaway</strong>.
 							</p>
-							<p>💼 Ou preencha o formulário abaixo – respondo em até 48h úteis.</p>
+							<p>
+								Aqui você pode encontrar novidades, publicações, bastidores, fotos,
+								vídeos e caminhos para continuar acompanhando Laura em outras plataformas.
+							</p>
+							<p class="line-image">
+								<i class="fa-solid fa-face-grin-stars"></i>
+								<span class="bottom-line"></span>
+							</p>
+							<h3 style="color:var(--newtitle-color);">
+								ACOMPANHE AS NOVIDADES
+							</h3>
+							<p class="exclusive-feed-kicker">
+								<strong>Instagram</strong>
+							</p>
+							<div class="x-feed-container"
+								data-feed-id="laura_hathaway_instagram"></div>
+							<p class="line-image">
+								<i class="fa-solid fa-comments"></i>
+								<span class="bottom-line"></span>
+							</p>
+							<p class="exclusive-feed-kicker">
+								<strong>Threads</strong>
+							</p>
+							<div class="x-feed-container"
+								data-feed-id="laura_hathaway_threads"></div>
+							<p class="line-image"><i class="fa-solid fa-share-nodes"></i><span class="bottom-line"></span></p>
+							<h3 style="color:var(--newtitle-color);">CANAIS OFICIAIS</h3>
+							<div class="mj-cta-links">
+								<a href="https://www.instagram.com/laurahathaway.vip/" target="_blank"
+									rel="noopener noreferrer" class="mj-cta-card" title="Conteúdos: Instagram">
+									<strong>Instagram</strong>
+									<span>Fotos, stories, reels e novidades.</span>
+									<span style="color:var(--call-to-action-link);">Seguir →</span>
+								</a>
+								<a href="https://t.me/laurahathawayprevia" target="_blank"
+									rel="noopener noreferrer" class="mj-cta-card" title="Conteúdos: Telegram">
+									<strong>Telegram</strong>
+									<span>Novidades e atualizações.</span>
+									<span style="color:var(--call-to-action-link);">Entrar →</span>
+								</a>
+								<a href="https://www.facebook.com/laurahathaway.vip" target="_blank"
+									rel="noopener noreferrer" class="mj-cta-card" title="Conteúdos: Facebook">
+									<strong>Facebook</strong>
+									<span>Mais um canal para acompanhar Laura.</span>
+									<span style="color:var(--call-to-action-link);">Acompanhar →</span>
+								</a>
+							</div>
+							<p class="line-image"><i class="fa-solid fa-play"></i><span class="bottom-line"></span></p>
+							<h3 style="color:var(--newtitle-color);">PREVIEW</h3>
+							<div class="instagram-embed"
+								data-instagram-url="https://www.instagram.com/reel/DajdUwUyhJf/"></div>
+
+							<div class="mj-cta-links">
+								<a href="#" onclick="changeContent('EXCLUSIVO'); return false;"
+									class="mj-cta-card mjh-ti-exclusive-card" title="Conteúdos: Área Exclusiva">
+									<strong>Privacy • Área Exclusiva</strong>
+									<span>Consulte os conteúdos e packs atualmente publicados.</span>
+									<span style="color:var(--call-to-action-link);">Conhecer →</span>
+								</a>
+							</div>
+				`
+			},
+
+			EXCLUSIVO: {
+				title: "Privacy • Área Exclusiva",
+				subtitle: "Conteúdos exclusivos para maiores de 18 anos",
+				image: "./imgs/laura-hathaway-foto-05.png",
+				video: "",
+				content: `
+							<p><strong>Quer conhecer a área exclusiva de Laura Hathaway?</strong></p>
+							<p>
+								O Privacy é o espaço destinado aos conteúdos 18+, permitindo consultar
+								diretamente as publicações, condições e ofertas disponíveis.
+							</p>
+							<div class="mj-highlight-box">
+								<div class="mj-highlight-item">
+									<i class="fas fa-camera"></i>
+									<p><strong>Fotos</strong><br><span>Conteúdos fotográficos da área exclusiva.</span></p>
+								</div>
+								<div class="mj-highlight-item">
+									<i class="fas fa-video"></i>
+									<p><strong>Vídeos</strong><br><span>Conteúdos em vídeo publicados na plataforma.</span></p>
+								</div>
+								<div class="mj-highlight-item">
+									<i class="fas fa-box-open"></i>
+									<p><strong>Packs</strong><br><span>Consulte packs e ofertas vigentes diretamente no perfil oficial.</span></p>
+								</div>
+							</div>
+							<!-- ================================================== -->
+							<!-- TELEGRAM — PRÉVIAS -->
+							<!-- ================================================== -->
+							<p class="line-image">
+								<i class="fa-brands fa-telegram"></i>
+								<span class="bottom-line"></span>
+							</p>
+							<h3 style="color:var(--newtitle-color);">
+								Telegram Prévias
+							</h3>
+							<p>
+								Um pequeno aperitivo do que a Laura Hathaway compartilha
+								com sua comunidade no Telegram.
+							</p>
+							<div
+								class="x-feed-container"
+								data-feed-id="laura_hathaway_telegram_previas"
+							></div>
+							<!-- ================================================== -->
+							<!-- TELEGRAM — VIP -->
+							<!-- ================================================== -->
+							<p class="line-image">
+								<i class="fa-solid fa-star"></i>
+								<span class="bottom-line"></span>
+							</p>
+							<h3 style="color:var(--newtitle-color);">
+								Telegram VIP
+							</h3>
+							<p>
+								Confira uma prévia do conteúdo e descubra
+								o que espera por você no canal VIP.
+							</p>
+							<div
+								class="x-feed-container"
+								data-feed-id="laura_hathaway_telegram_vip"
+							></div>
+							<!-- ================================================== -->
+							<!-- PRIVACY GRATUITO -->
+							<!-- ================================================== -->
+							<p class="line-image">
+								<i class="fa-solid fa-gift"></i>
+								<span class="bottom-line"></span>
+							</p>
+							<h3 style="color:var(--newtitle-color);">
+								Privacy Gratuito
+							</h3>
+							<p>
+								Conheça um pouco do conteúdo disponível gratuitamente
+								e descubra por que vale a pena acompanhar a Laura Hathaway.
+							</p>
+							<div
+								class="x-feed-container"
+								data-feed-id="laura_hathaway_privacy_gratuito"
+							></div>
+							<!-- ================================================== -->
+							<!-- PRIVACY -->
+							<!-- ================================================== -->
+							<p class="line-image">
+								<i class="fa-solid fa-lock"></i>
+								<span class="bottom-line"></span>
+							</p>
+							<h3 style="color:var(--newtitle-color);">
+								Privacy
+							</h3>
+							<p>
+								Confira uma pequena prévia e, se quiser continuar,
+								acesse o perfil oficial da Laura Hathaway no Privacy.
+							</p>
+							<div
+								class="x-feed-container"
+								data-feed-id="laura-hathaway_privacy"
+							></div>
+							<p class="line-image"><i class="fa-solid fa-lock"></i><span class="bottom-line"></span></p>
+							<div class="mj-cta-links">
+								<a href="https://privacy.com.br/profile/LauraHathaway"
+									target="_blank" rel="noopener noreferrer"
+									class="mj-cta-card mjh-ti-exclusive-card" title="Exclusivo: Privacy">
+									<strong>🔐 Laura Hathaway no Privacy</strong>
+									<span>Acesse o perfil oficial e veja conteúdos, packs e ofertas atualmente disponíveis.</span>
+									<span style="color:var(--call-to-action-link);">Acessar Privacy →</span>
+								</a>
+							</div>
+							<div class="content-box-2">
+								<p>🔞 <strong>Área destinada exclusivamente a maiores de 18 anos.</strong></p>
+								<p>Valores, formatos e condições podem mudar. Consulte sempre o perfil oficial.</p>
+							</div>
+				`
+			},
+
+			CONTATOS: {
+				title: "Contato",
+				subtitle: "Fale com Laura de forma rápida e discreta",
+				image: "./imgs/laura-hathaway-foto-07.png",
+				video: "",
+				content: `
+							<p><strong>Quer falar com Laura?</strong> Escolha o canal mais conveniente.</p>
+							<p>Para atendimento, dúvidas, disponibilidade ou informações sobre conteúdos, utilize os canais oficiais.</p>
+							<div class="mj-cta-links">
+								<a href="https://www.instagram.com/laurahathaway.vip/" target="_blank"
+									rel="noopener noreferrer" class="mj-cta-card" title="Contatos: Instagram">
+									<strong>Instagram</strong><span>Acompanhe novidades e entre em contato.</span>
+									<span style="color:var(--call-to-action-link);">Abrir Instagram →</span>
+								</a>
+								<a href="https://t.me/laurahathawayprevia" target="_blank"
+									rel="noopener noreferrer" class="mj-cta-card" title="Contatos: Telegram">
+									<strong>Telegram</strong><span>Canal oficial para acompanhar atualizações.</span>
+									<span style="color:var(--call-to-action-link);">Abrir Telegram →</span>
+								</a>
+								<!-- a href="mailto:laurahathaway.vip@gmail.com" class="mj-cta-card" title="Contatos: E-mail">
+									<strong>E-mail</strong><span>Para mensagens e propostas mais detalhadas.</span>
+									<span style="color:var(--call-to-action-link);">Enviar e-mail →</span>
+								</a -->
+							</div>
+							<p class="line-image"><i class="fa-solid fa-shield-heart"></i><span class="bottom-line"></span></p>
+							<p style="text-align:center;">🔒 <strong>Privacidade e discrição.</strong></p>
 							<div class="forminsert"></div>
 				`
 			},
-			APOIE: {
-				title: "Apoie Meu Trabalho",
-				subtitle: "Faça parte do seleto clube VIP e ajude a criar mais conteúdo.",
-				image: "./imgs/gemima-m-mansoor-foto-11.jpg",
+			CONTATOS_BKP: {
+				title: "Contatos",
+				subtitle: "Fale comigo de forma rápida e discreta",
+				image: "./imgs/laura-hathaway-foto-07.png",
 				video: "",
 				content: `
-							<p style="text-align: center; font-size: 1.2em;">💎 <strong>Plano VIP  💎<br/>R$ 29,90/mês</strong></p>
-							<ul class="checked-list">
-								<li>Mais de 500 fotos exclusivas</li>
-								<li>50+ vídeos completos (bastidores, ensaios)</li>
-								<li>Novos conteúdos toda semana</li>
-								<li>Chat privado com resposta garantida</li>
-								<li>Envio de mídia sob demanda (1 por semana)</li>
-							</ul>
-							<div style="background: rgba(0,0,0,0.4); border-radius: 16px; padding: 0.8em; margin: 1em 0; text-align: center;">
-								<span style="color: var(--gold-bright);">⭐ Mais de 340 assinantes ativos ⭐</span><br>
-								<span style="font-size: 0.85em;">“Melhor conteúdo que já assinei. Gemima é incrível!” – Mariana S.</span>
+							<p><strong>Escolha o canal que preferir.</strong> Respondo com a maior brevidade possível.</p>
+							<p>Utilize os ícones de contato localizados no final desta página e de todas as demais páginas.</p>
+							<!-- ul>
+								<li><i class="fab fa-whatsapp" style="color:var(--gold-primary);"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/5511999999999" target="_blank" style="color:var(--call-to-action-link);">(11) 99999-9999</a></li>
+								<li><i class="fas fa-envelope" style="color:var(--gold-primary);"></i> <strong>E‑mail:</strong> <a href="mailto:laura.hathaway@email.com" style="color:var(--call-to-action-link);">laura.hathaway@email.com</a></li>
+								<li><i class="fab fa-telegram" style="color:var(--gold-primary);"></i> <strong>Telegram:</strong> <a href="https://t.me/laurahathawayprevia" target="_blank" style="color:var(--call-to-action-link);">@LauraHathaway</a></li>
+							</ul-->
+							<p>Ou preencha o formulário abaixo.</p>
+							<div class="forminsert"></div>
+							<p style="margin-top:1em;">🔒 Seus dados são sigilosos e não serão compartilhados com terceiros.</p>
+				`
+			},
+
+			FAQ: {
+				title: "Dúvidas Frequentes",
+				subtitle: "Respostas rápidas antes de entrar em contato",
+				image: "./imgs/laura-hathaway-background-08.png",
+				video: "",
+				content: `
+							<div class="faq-container"></div>
+							<p class="line-image"><i class="fa-solid fa-heart"></i><span class="bottom-line"></span></p>
+							<div class="content-box-2">
+								<p><strong>Ainda ficou com alguma dúvida?</strong></p>
+								<p>Fale diretamente com Laura pelos canais oficiais.</p>
+								<a href="#" onclick="changeContent('CONTATOS'); return false;"
+									class="btn-form-contato"
+									style="display:inline-block;text-decoration:none;font-weight:bold;" title="FAQ: Contatos">
+									Falar com Laura
+								</a>
 							</div>
-							<p style="text-align: center;">
-								<a href="https://privacy.com.br/checkout/gemimavip" target="_blank" class="btn-form-contato" style="color: #000; text-decoration: none; font-weight: bold;" title="Apoie: Assinar agora - Privacy">👉 ASSINAR AGORA 👈</a>
-							</p>
-							<p>Ou comece pelo <a href="https://privacy.com.br/profile/gemimafree" target="_blank" title="Apoie: Perfil gratuito - Privacy">perfil gratuito</a>.</p>
 				`
 			}
 		};
 
 		// Catálogo em accordion
 		const catalogoItens = [
-			{ titulo: "Massagem Tântrica", preview: "Experiência sensorial que desperta energia vital, com respiração consciente e massagem Lingam/Yoni.", conteudo: `
-				<p>Deixe-se conduzir por uma experiência intensa, onde cada toque desperta novas sensações...</p>
-				<p>A massagem tântrica é um convite irresistível ao prazer, ao abandono e à entrega total.</p>
-				<p><strong>Como é a sessão?</strong></p>
-				<ul>
-					<li>Iniciamos com uma conversa para entender a sua busca e limites;</li>
-					<li>Fazemos uma respiração consciente, importante para o relaxamento e conexão;</li>
-					<li>Seguimos com um toque sensorial que transcende o corpo e desperta sua energia sexual;</li>
-					<li>Massagem genital (Lingam ou Yoni), uma técnica manual que ativa todas as regiões erógenas da área íntima, proporcionando prazer intenso e orgasmos profundamente transformadores.</li>
-				</ul>
-				<ul>
-					<li><strong>Duração total:</strong> 1h</li>
-					<li><strong>Investimento:</strong> R$ 500,00</li>
-				</ul>
-				<ul>
-					<li><strong>Pacote com 5 sessões:</strong> R$ 2.000,00</li>
-					<li><strong>Somente Lingam (30 minutos):</strong> R$ 300,00</li>
-				</ul>
-				<p><i>Permita-se... sem pressa, sem julgamentos. Apenas você, seu corpo e o prazer de se entregar.</i></p>
-				<p><strong>Importante:</strong> A massagem é uma experiência sensorial e não envolve qualquer tipo de sexo.</p>
-			` },
-			{ titulo: "Massagem Nuru", preview: "A massagista usa todo o corpo deslizando suavemente sobre o cliente.", conteudo: `
-				<p>Deixe-se envolver por uma experiência intensa e provocante. A massagista usa todo o corpo — seios, abdômen, coxas, braços — deslizando suavemente sobre o cliente. O contato pele com pele desperta arrepios, sensações elétricas e uma conexão visceral. O ritmo alterna entre o lento e o intenso, o leve e o profundo, conduzindo a energia sexual por todo o corpo.</p>
-				<p>A experiência se conclui com a massagem Lingam, uma técnica sagrada do Tantra que trabalha o órgão masculino como um canal de energia vital.</p>
-				<ul>
-					<li><strong>Duração:</strong> 1h</li>
-					<li><strong>Valor:</strong> R$ 1.000,00</li>
-				</ul>
-				<p><i>Pronto(a) para se entregar a essa experiência única?</i></p>
-				<p><strong>Importante:</strong> A massagem é uma experiência sensorial e não envolve qualquer tipo de sexo.</p>
-			` },
-			{ titulo: "Vivência Tântrica Casal", preview: "Reconexão e intimidade para casais, com orientação da terapeuta.", conteudo: `
-				<p>A vivência tântrica para casais é uma experiência criada para aprofundar a conexão, restaurar a intimidade e abrir novos caminhos de presença entre vocês. Em um ambiente seguro e guiado com sensibilidade, o casal aprende a respirar junto, tocar com consciência e acessar um estado de entrega que fortalece o vínculo e renova a energia do relacionamento.</p>
-				<p>Durante a vivência, cada parceiro experimenta o papel de receber e doar, sempre com orientação cuidadosa da terapeuta. A sessão amplia a percepção do corpo, desperta sensorialidade e cria uma comunicação mais profunda — sem pressa, sem performance e sem expectativas externas. É um espaço para reconectar, curar distâncias e resgatar o prazer de estar junto.</p>
-				<p>A experiência tem <strong>duração de até 3 horas</strong>, permitindo que o processo aconteça no tempo do casal, de forma natural e acolhedora.</p>
-				<ul>
-					<li><strong>Valor:</strong> R$ 2.500,00</li>
-				</ul>
-			` },
-			{ titulo: "Vivência Mútua", preview: "Ritual de dar e receber – aprendizado prático com a terapeuta.", conteudo: `
-				<p>A vivência mútua é um ritual exclusivo, criado para quem busca uma experiência profunda de presença, sensorialidade e expansão. A sessão segue a técnica de dar e receber, na qual a terapeuta conduz cada etapa com precisão, elegância e orientação contínua.</p>
-				<p>A vivência começa com uma conversa personalizada, para identificar suas intenções e necessidades. Em seguida, você recebe a massagem para sentir o ritmo, a energia e a profundidade do ritual. Depois, guiado pela terapeuta, você replica a experiência nela, aprendendo a conduzir o toque com consciência e respeito.</p>
-				<p>O processo integra respiração, toque, abertura sensorial, ativação da energia vital e, quando indicado, técnicas específicas como Lingam ou Yoni. Tudo acontece de maneira fluida, acolhedora e estruturada, dentro de um campo seguro e sofisticado. A <strong>duração pode chegar a até 3 horas</strong>, respeitando seu tempo de entrega e evolução.</p>
-				<ul>
-					<li><strong>Vivência Tântrica:</strong> R$ 2.000,00</li>
-					<li><strong>Vivência Nuru:</strong> R$ 3.000,00</li>
-				</ul>
-				<p><strong>Importante:</strong> A massagem é uma experiência sensorial e não envolve qualquer tipo de sexo.</p>
-			` },
-			{ titulo: "Curso VIP", preview: "Imersão individual para aprender fundamentos do Tantra.", conteudo: `
-				<p>O Curso VIP de Massagem Tântrica é uma imersão exclusiva, desenhada para quem busca conhecimento refinado, orientação personalizada e uma experiência de aprendizado que une técnica, presença e sensorialidade. Você recebe um acompanhamento individual, feito sob medida, onde cada detalhe é guiado com precisão e elegância.</p>
-				<p>Nesta estrutura premium, você aprende os fundamentos essenciais do Tantra — respiração, toque consciente, condução da energia e leitura sensorial — sempre com aplicações práticas, seguras e adaptadas ao seu nível de percepção. É um espaço para desenvolver habilidade, expandir a consciência corporal e compreender a essência do Tantra com profundidade e clareza.</p>
-				<p>A experiência é conduzida de forma contínua e atenciosa, garantindo que você finalize o curso não apenas informado, mas transformado, com domínio das técnicas básicas e confiança para aplicá-las.</p>
-				<p><strong>Curso livre - não capacita como terapeuta.</strong></p>
-				<ul>
-					<li><strong>Duração:</strong> 2 horas de acompanhamento individual e personalizado.</li>
-					<li><strong>Investimento:</strong> R$ 1.500,00 + taxa de modelo (se não trouxer)</li>
-				</ul>
-			` },
-			{ titulo: "Terapia Corporal", preview: "Atendimento premium para restaurar vitalidade e tratar disfunções sexuais.", conteudo: `
-				<p>A Terapia Corporal Integrada é um atendimento premium para homens que desejam restaurar a vitalidade do corpo, reorganizar padrões emocionais e recuperar a naturalidade da resposta sexual. A sessão combina técnicas da terapia tântrica, protocolos de renascimento (rebirthing) e abordagens específicas para traumas e disfunções sexuais masculinas, oferecendo um cuidado profundo, seguro e altamente qualificado.</p>
-				<p>Ao longo de 1 hora, você é conduzido a um estado de presença e desbloqueio corporal, trabalhando respiração, sensibilidade, energia vital e reconhecimento das tensões que interferem na sua performance, no seu prazer e na sua autoconfiança. O processo atua diretamente em questões como ansiedade sexual, dificuldade de ereção, ejaculação precoce, queda de libido, desconexão emocional e traumas que se manifestam no corpo.</p>
-				<p>É um atendimento discreto, técnico e personalizado, onde cada etapa é orientada com precisão, respeito e sigilo absoluto — criando um ambiente seguro para que o corpo possa recuperar seu fluxo natural e sua potência.</p>
-				<ul>
-					<li><strong>Duração:</strong> 1h</li>
-					<li><strong>Valor:</strong> R$ 2.000,00 (pacote 5 sessões)</li>
-				</ul>
-			` }
-		];
-
+			{ 
+				titulo: "Tântrica Sensitive", 
+				preview: "Uma abordagem sensorial focada em presença, percepção corporal e conexão.", 
+				valor: "", 
+				conteudo: `
+							<p>A Tântrica Sensitive é apresentada como uma experiência de atenção ao corpo, presença e percepção sensorial. O formato e os limites devem ser conversados previamente.</p><p>Antes do atendimento, alinhe expectativas, duração, disponibilidade e todas as condições diretamente com Laura Hathaway.</p>
+				` 
+			},
+			{ 
+				titulo: "Nuru", 
+				preview: "Uma experiência corporal de contato e deslizamento, realizada em ambiente preparado.", 
+				valor: "", 
+				conteudo: `
+							<p>A técnica Nuru utiliza um gel específico e movimentos corporais de deslizamento. A experiência, os limites e as condições devem ser definidos previamente.</p><p>O objetivo desta descrição é informar de forma clara, sem substituir a conversa individual antes do atendimento.</p>
+				` 
+			},
+			{ 
+				titulo: "Atendimento & Alinhamento", 
+				preview: "O primeiro passo é conversar, esclarecer dúvidas e alinhar expectativas.", 
+				valor: "", 
+				conteudo: `
+							<p>Explique o que você procura, tire suas dúvidas e confirme disponibilidade. Um bom alinhamento antes do encontro torna a experiência mais confortável para todos.</p>
+				` 
+			}
+        ];
 		const faqItens = [
-			{ pergunta: "É um atendimento terapêutico?", resposta: "Sim. O foco está no desenvolvimento da consciência corporal, bem-estar e expansão sensorial." },
-			{ pergunta: "As sessões são sigilosas?", resposta: "Sim, absoluto sigilo e discrição são princípios do meu atendimento." },
-			{ pergunta: "Precisa de experiência prévia?", resposta: "Não, as sessões são adaptadas ao seu nível de familiaridade." },
-			{ pergunta: "Como funciona a primeira sessão?", resposta: "Iniciamos com uma conversa para compreender seus objetivos e necessidades." },
-			{ pergunta: "O que é a Terapia Corporal Integrativa?", resposta: "Técnicas Integrativas de Presença Corporal são práticas que ajudam a pessoa a voltar para o próprio corpo, percebendo sensações, emoções e sinais que muitas vezes passam despercebidos na correria do dia a dia. Elas integram respiração, movimento, consciência corporal e recursos terapêuticos para ampliar a capacidade de sentir, reconhecer limites e habitar o corpo com mais presença." },
-			{ pergunta: "Atende homens e mulheres?", resposta: "Sim, atendo homens, mulheres e casais, sempre respeitando limites e individualidade." },
-			{ pergunta: "Existe atendimento para casais?", resposta: "Sim. Há vivências especialmente desenvolvidas para casais." }
+			{ pergunta: "Quem é Laura Hathaway?",
+				resposta: "Laura Hathaway é apresentada neste cartão como acompanhante, massagista e criadora de conteúdo 18+." },
+
+			{ pergunta: "O que encontro neste cartão digital?",
+				resposta: "Informações sobre Laura, atendimento, galeria, conteúdos, canais oficiais, área exclusiva no Privacy, dúvidas frequentes e contato." },
+
+			{ pergunta: "Onde vejo fotos da Laura?",
+				resposta: "Na seção Galeria há um preview de fotos. Para conteúdos adicionais, consulte a área exclusiva no Privacy." },
+
+			{ pergunta: "Onde encontro os conteúdos exclusivos?",
+				resposta: "A seção Privacy • Área Exclusiva direciona para o perfil oficial de Laura no Privacy." },
+
+			{ pergunta: "Onde encontro os packs?",
+				resposta: "Os packs devem ser consultados diretamente no perfil oficial da Laura no Privacy, pois ofertas, valores e condições podem ser atualizados." },
+
+			{ pergunta: "Como acompanho as novidades?",
+				resposta: "Na seção Conteúdos você encontra os canais oficiais apresentados neste cartão." },
+
+			{ pergunta: "O conteúdo adulto é para maiores de 18 anos?",
+				resposta: "Sim. As áreas e conteúdos adultos são destinados exclusivamente a maiores de 18 anos." },
+
+			{ pergunta: "Como faço para entrar em contato?",
+				resposta: "Acesse a seção Contato e escolha um dos canais oficiais disponíveis." }
+			/*
+			{ pergunta: "O que é o conteúdo exclusivo da Laura Hathaway?", resposta: "É um acervo de fotos, vídeos e interações criados especialmente para assinantes. Todo o material é produzido com alto padrão estético, respeitando a privacidade e a individualidade de cada um." },
+			{ pergunta: "Como faço para assinar?", resposta: "Basta acessar o link da área VIP (disponível na seção 'Conteúdo Exclusivo') e escolher o plano que melhor se adapta a você. O processo é rápido, seguro e discreto." },
+			{ pergunta: "Posso cancelar a qualquer momento?", resposta: "Sim. Você pode cancelar sua assinatura diretamente na plataforma sem burocracia e sem multa." },
+			{ pergunta: "O conteúdo é apenas para maiores de idade?", resposta: "Sim. Todo o material é destinado a adultos. Ao assinar, você confirma ter idade legal para acessar o conteúdo." },
+			{ pergunta: "A Laura interage com os assinantes?", resposta: "Sim, valorizo muito a interação. Tenho um canal de mensagens privadas onde respondo pessoalmente, além de enquetes e pedidos especiais." },
+			{ pergunta: "Os conteúdos são atualizados com que frequência?", resposta: "Semanalmente, com pelo menos 5 novas fotos e 1 vídeo exclusivo. Além disso, há conteúdos extras esporádicos." },
+			{ pergunta: "É possível solicitar conteúdo personalizado?", resposta: "Sim, em alguns planos há a opção de solicitar conteúdo sob demanda. Consulte os termos na seção de assinatura." },
+			{ pergunta: "O conteúdo é divulgado em outras plataformas?", resposta: "Não. Todo o material é exclusivo para assinantes. Não compartilho em redes públicas." }
+			*/
 		];
 
 		function buildAccordion(containerElement) {
@@ -4033,36 +4922,44 @@
 			catalogoItens.forEach((item, idx) => {
 				html += `<div class="accordion-item" data-acc-idx="${idx}">
 							<div class="accordion-header" data-idx="${idx}">
-								<span>${item.titulo}</span>
-								<i class="fas fa-chevron-down"></i>
+								<div class="accordion-title-area">
+									<span class="accordion-title">${item.titulo}</span>
+								</div>
+								<div class="accordion-right-area">
+									<div class="accordion-value-area">
+										${item.valor ? `<span class="accordion-badge">${item.valor}</span>` : ''}
+									</div>
+									<div class="accordion-icon-area">
+										<i class="fas fa-chevron-down"></i>
+									</div>
+								</div>
 							</div>
-							<div class="accordion-preview">${item.preview}<p style="color: var(--call-to-action-link);">Clique no tópico para saber mais.</p></div>
+							<div class="accordion-preview">
+								${item.preview}
+								<div class="accordion-cta">
+									<span>Clique no tópico para saber mais.</span>
+								</div>
+							</div>
 							<div class="accordion-full">${item.conteudo}</div>
 						</div>`;
 			});
 			html += '</div>';
 			containerElement.innerHTML = html;
 
-			// Fecha todos os itens (remove classe open)
-			function closeAll() {
-				containerElement.querySelectorAll('.accordion-item').forEach(item => {
-					item.classList.remove('open');
-				});
-			}
-
-			// Abre apenas o item clicado
+			// Lógica de toggle (fecha todos, abre o clicado)
 			containerElement.querySelectorAll('.accordion-header').forEach(header => {
 				header.addEventListener('click', function(e) {
 					const parentItem = this.closest('.accordion-item');
 					const isOpen = parentItem.classList.contains('open');
-					
-					if (isOpen) {
-						// Fecha este item
-						parentItem.classList.remove('open');
-					} else {
-						// Fecha todos e abre apenas o atual
-						//closeAll();
+					/*
+					containerElement.querySelectorAll('.accordion-item').forEach(item => {
+						item.classList.remove('open');
+					});
+					*/
+					if (!isOpen) {
 						parentItem.classList.add('open');
+					} else {
+						parentItem.classList.remove('open');
 					}
 				});
 			});
@@ -4145,45 +5042,49 @@
 			//});
 		}
 
-        let isFlipped = false;
-        const card = document.getElementById('card');
+		// ============================================================
+		// VARIÁVEIS DE ESTADO
+		// ============================================================
+		let isFlipped = false;
+		let isNavigating = false;
+		const card = document.getElementById('card');
 
-        // FUNÇÃO CENTRAL DE TROCA DE CONTEÚDO E SINCRONIZAÇÃO DE CLASSES
-        function changeContent(key) {
-            if(!sectionsData[key]) return;
+		// ============================================================
+		// FUNÇÃO CENTRAL DE TROCA DE CONTEÚDO — VERSÃO DEFINITIVA
+		// ============================================================
+		function changeContent(key, options = {}) {
+			const {
+				fromPopState = false,
+				skipHistory = false,
+				skipFlip = false
+			} = options;
 
-            // Determina qual face atualizar (a que está escondida para girar)
-            const targetSide = isFlipped ? 'front' : 'back';
+			if (isNavigating && !fromPopState) return;
+			isNavigating = true;
+
+			if (!sectionsData[key]) {
+				key = 'ERRO_404';
+			}
+
+			const targetSide = isFlipped ? 'front' : 'back';
 			const targetTextWrapper = document.getElementById(`content-${targetSide}`);
-			//console.log(key);
-			let socialMediaAuxHTML = socialMediaHTML;
-			/*
-			let socialMediaAuxHTML = ``;
-			if (key != 'INICIO') {
-				socialMediaAuxHTML = socialMediaHTML;
-				//console.log('aqui!');
-				if (document.getElementById(`content-${targetSide}`).classList.contains('marginTop26dvh')) {
-					document.getElementById(`content-${targetSide}`).classList.remove('marginTop26dvh');
-				}
+
+			let contentHTML = sectionsData[key].content;
+			if (key === 'VALORES') {
+				contentHTML = buildValoresHTML();
 			}
-			*/
-			/*
-			if (key === 'INICIO') {
-				document.getElementById(`content-${targetSide}`).classList.add('marginTop26dvh');
-			}
-			*/
-			document.getElementById(`content-${targetSide}`).innerHTML = `
-				<p style="color: #D6BA84; font-size: .7em;">Para utilizar todos os recursos, você precisa estar conectado à internet.</p>
+
+			targetTextWrapper.innerHTML = `
+				${getOfflineMessage()}
 				<h2>${sectionsData[key].title}</h2>
 				<article>
 					<h3>${sectionsData[key].subtitle}</h3>
-					<p>${sectionsData[key].content}</p>
-					${socialMediaAuxHTML}
+					${contentHTML}
+					${socialMediaHTML}
 					${footerHTML}
 				</article>
 			`;
 
-			// Após injetar, localiza os containers específicos dentro desta face
 			if (key === 'INICIO') {
 				const accordionContainer = targetTextWrapper.querySelector('.catalogo-accordion-container');
 				if (accordionContainer) buildAccordion(accordionContainer);
@@ -4192,51 +5093,195 @@
 				const faqContainer = targetTextWrapper.querySelector('.faq-container');
 				if (faqContainer) buildFAQ(faqContainer);
 			}
-			
-			// Após injetar o HTML, processa os embeds do Instagram que estiverem dentro dessa seção
-			const newContentDiv = document.getElementById(`content-${targetSide}`);
-			if (newContentDiv && window.processInstagramEmbeds) {
-				window.processInstagramEmbeds(newContentDiv);
+			if (key === 'MASSAGENS') {
+				const accordionContainer =
+					targetTextWrapper.querySelector('.catalogo-accordion-container');
+				if (accordionContainer) {
+					buildAccordion(accordionContainer);
+				}
 			}
-			// Dentro de changeContent, após a injeção do HTML:
-			if (window.processFacebookEmbeds) {
-				window.processFacebookEmbeds(document.getElementById(`content-${targetSide}`));
+			if (window.processInstagramEmbeds) window.processInstagramEmbeds(targetTextWrapper);
+			if (window.processFacebookEmbeds) window.processFacebookEmbeds(targetTextWrapper);
+
+			showcopyleftyear();
+
+			document.getElementById(`bg-${targetSide}`).style.backgroundImage = `url('${sectionsData[key].image}')`;
+			updateBackgroundContent(key, `bg-${targetSide}`);
+
+			setTimeout(() => initCarousels(), 100);
+
+			document.querySelectorAll('.nav-icons a').forEach(el => el.classList.remove('nav-active'));
+			document.querySelectorAll(`.nav-icons a[data-section="${key}"]`).forEach(el => el.classList.add('nav-active'));
+
+			if (!fromPopState && !skipHistory) {
+				const state = { section: key };
+				const url = new URL(window.location);
+				url.searchParams.set('section', key);
+				history.pushState(state, '', url.toString());
+				console.log(`[NAVEGAÇÃO] pushState: ${key} | URL: ${url.toString()}`);
 			}
-            showcopyleftyear();
-            document.getElementById(`bg-${targetSide}`).style.backgroundImage = `url('${sectionsData[key].image}')`;
-			//console.log(key);
-			updateBackgroundContent(key,`bg-${targetSide}`);
 
-			// --- CORREÇÃO AQUI: Inicializa o carrossel após o HTML ser injetado ---
-			setTimeout(() => {
-				initCarousels();
-			}, 100); // Pequeno delay para garantir que o DOM renderizou
-            
-            // 1. SINCRONIZAÇÃO: Remove classe ativa de TODOS os nav-icons (front e back)
-            document.querySelectorAll('.nav-icons a').forEach(el => el.classList.remove('nav-active'));
-
-            // 2. SINCRONIZAÇÃO: Adiciona classe ativa apenas nos botões que correspondem à chave atual
-            // Buscamos links que tenham no atributo 'onclick' a chamada para a chave específica (ex: 'SOBRE')
-           // const matchingLinks = document.querySelectorAll(`.nav-icons a[onclick*="'${key}'"]`);
-            //matchingLinks.forEach(link => link.classList.add('nav-active'));
-
-            // Executa o giro do cartão
-            isFlipped = !isFlipped;
-            card.classList.toggle('is-flipped', isFlipped);
-            
-            // Fecha o overlay caso esteja aberto
-            document.getElementById('overlay-menu').classList.remove('active');
-
-			// Registra no Analytics
-			/*
-			const overlayMenu = document.getElementById('overlay-menu').classList.contains('active');
-			console.log('overlayMenu = ' + overlayMenu);
-			if (overlayMenu) {
-				sendToAnalytics02(key,'Menus acessados','Card Page - Offline');
+			if (!skipFlip) {
+				isFlipped = !isFlipped;
+				card.classList.toggle('is-flipped', isFlipped);
 			}
-			*/
-        }
 
+			document.getElementById('overlay-menu').classList.remove('active');
+			setTimeout(() => { isNavigating = false; }, 600);
+		}
+
+		// ============================================================
+		// POPSTATE — VERSÃO DEFINITIVA
+		// ============================================================
+		window.addEventListener('popstate', function(event) {
+			console.log('[POPSTATE] event.state:', event.state);
+
+			let section;
+			if (event.state && event.state.section) {
+				section = event.state.section;
+			} else {
+				const urlParams = new URLSearchParams(window.location.search);
+				const urlSection = urlParams.get('section');
+				if (urlSection) {
+					section = sectionsData[urlSection] ? urlSection : 'ERRO_404';
+				} else {
+					section = 'INICIO';
+				}
+			}
+
+			if (!sectionsData[section]) {
+				section = 'ERRO_404';
+			}
+
+			const visibleSide = isFlipped ? 'back' : 'front';
+			const targetTextWrapper = document.getElementById(`content-${visibleSide}`);
+
+			let contentHTML = sectionsData[section].content;
+			if (section === 'VALORES') {
+				contentHTML = buildValoresHTML();
+			}
+
+			targetTextWrapper.innerHTML = `
+				${getOfflineMessage()}
+				<h2>${sectionsData[section].title}</h2>
+				<article>
+					<h3>${sectionsData[section].subtitle}</h3>
+					${contentHTML}
+					${socialMediaHTML}
+					${footerHTML}
+				</article>
+			`;
+
+			if (section === 'INICIO') {
+				const accordionContainer = targetTextWrapper.querySelector('.catalogo-accordion-container');
+				if (accordionContainer) buildAccordion(accordionContainer);
+			}
+			if (section === 'FAQ') {
+				const faqContainer = targetTextWrapper.querySelector('.faq-container');
+				if (faqContainer) buildFAQ(faqContainer);
+			}
+			if (section === 'MASSAGENS') {
+				const accordionContainer =
+					targetTextWrapper.querySelector('.catalogo-accordion-container');
+				if (accordionContainer) {
+					buildAccordion(accordionContainer);
+				}
+			}
+			if (window.processInstagramEmbeds) window.processInstagramEmbeds(targetTextWrapper);
+			if (window.processFacebookEmbeds) window.processFacebookEmbeds(targetTextWrapper);
+
+			showcopyleftyear();
+
+			document.getElementById(`bg-${visibleSide}`).style.backgroundImage = `url('${sectionsData[section].image}')`;
+			updateBackgroundContent(section, `bg-${visibleSide}`);
+
+			setTimeout(() => initCarousels(), 100);
+
+			document.querySelectorAll('.nav-icons a').forEach(el => el.classList.remove('nav-active'));
+			document.querySelectorAll(`.nav-icons a[data-section="${section}"]`).forEach(el => el.classList.add('nav-active'));
+
+			document.getElementById('overlay-menu').classList.remove('active');
+			console.log(`[POPSTATE] Seção restaurada: ${section} | Face visível: ${visibleSide}`);
+		});
+
+		// ============================================================
+		// EVENTOS ONLINE/OFFLINE
+		// ============================================================
+		window.addEventListener('online', () => {
+			const currentSection = new URLSearchParams(window.location.search).get('section') || 'INICIO';
+			if (sectionsData[currentSection]) {
+				changeContent(currentSection, { skipHistory: true, skipFlip: true });
+			}
+		});
+
+		window.addEventListener('offline', () => {
+			const currentSection = new URLSearchParams(window.location.search).get('section') || 'INICIO';
+			if (sectionsData[currentSection]) {
+				changeContent(currentSection, { skipHistory: true, skipFlip: true });
+			}
+		});
+
+		// ============================================================
+		// INICIALIZAÇÃO — VERSÃO DEFINITIVA (ÚNICO window.onload)
+		// ============================================================
+		window.onload = function() {
+			preloadImages();
+
+			const params = new URLSearchParams(window.location.search);
+			const sectionParam = params.get('section');
+			let initialSection = 'INICIO';
+			if (sectionParam) {
+				initialSection = sectionsData[sectionParam] ? sectionParam : 'ERRO_404';
+			}
+
+			const frontContent = document.getElementById('content-front');
+			frontContent.innerHTML = `
+				${getOfflineMessage()}
+				<h2>${sectionsData[initialSection].title}</h2>
+				<article>
+					<h3>${sectionsData[initialSection].subtitle}</h3>
+					${sectionsData[initialSection].content}
+					${socialMediaHTML}
+					${footerHTML}
+				</article>
+			`;
+
+			if (initialSection === 'INICIO') {
+				const accordionContainer = frontContent.querySelector('.catalogo-accordion-container');
+				if (accordionContainer) buildAccordion(accordionContainer);
+			}
+			if (initialSection === 'FAQ') {
+				const faqContainer = frontContent.querySelector('.faq-container');
+				if (faqContainer) buildFAQ(faqContainer);
+			}
+			if (initialSection === 'MASSAGENS') {
+				const accordionContainer =
+					frontContent.querySelector('.catalogo-accordion-container');
+				if (accordionContainer) {
+					buildAccordion(accordionContainer);
+				}
+			}
+			if (window.processInstagramEmbeds) window.processInstagramEmbeds(frontContent);
+			if (window.processFacebookEmbeds) window.processFacebookEmbeds(frontContent);
+
+			document.getElementById('bg-front').style.backgroundImage = `url('${sectionsData[initialSection].image}')`;
+			updateBackgroundContent(initialSection, 'bg-front');
+
+			document.querySelectorAll(`.nav-icons a[data-section="${initialSection}"]`).forEach(el => el.classList.add('nav-active'));
+
+			initCarousels();
+			showcopyleftyear();
+
+			const initialUrl = new URL(window.location);
+			initialUrl.searchParams.set('section', initialSection);
+			history.pushState({ section: initialSection }, '', initialUrl.toString());
+
+			console.log(`[INICIAL] Seção: ${initialSection} | Histórico length: ${history.length}`);
+		};
+
+		// ============================================================
+		// INICIALIZAÇÃO — VERSÃO DEFINITIVA (ÚNICO window.onload)
+		// ============================================================
         // Função de controle do Overlay (não gera classe ativa no ícone de reticências)
         function toggleOverlay() { 
             document.getElementById('overlay-menu').classList.toggle('active'); 
@@ -4251,40 +5296,7 @@
             // 1. SINCRONIZAÇÃO DOS NAV-ICONS (FRENTE E VERSO)
             const navIconsFront = document.querySelectorAll('.face-front .nav-icons a');
             const navIconsBack = document.querySelectorAll('.face-back .nav-icons a');
-
-            function updateNavActive(index) {
-                // Remove classe ativa de todos os itens em ambas as faces
-                navIconsFront.forEach(el => el.classList.remove('nav-active'));
-                navIconsBack.forEach(el => el.classList.remove('nav-active'));
-
-                // Adiciona classe ativa no item correspondente em ambas as faces
-                if (index !== -1) {
-                    navIconsFront[index].classList.add('nav-active');
-                    navIconsBack[index].classList.add('nav-active');
-                }
-            }
-
-            // Adiciona evento de clique para os itens da frente
-            navIconsFront.forEach((btn, index) => {
-                btn.addEventListener('click', () => updateNavActive(index));
-            });
-			navOverlayMenu.forEach(menuList => {
-                menuList.addEventListener('click', (menuItem) => {
-					const liTexto = menuItem.target.textContent;
-					console.log(liTexto);
-					if (liTexto === 'Sobre Gemima M Mansoor') {
-						updateNavActive(0);
-					}
-					if (liTexto === 'Contatos') {
-						updateNavActive(1);
-					}
-				});
-            });
-
-            // Adiciona evento de clique para os itens do verso
-            navIconsBack.forEach((btn, index) => {
-                btn.addEventListener('click', () => updateNavActive(index));
-            });
+			const navOverlayMenu = document.querySelectorAll('.overlay-list li');
 
             // 2. LÓGICA DE COMPARTILHAMENTO
             const shareTriggers = document.querySelectorAll('.share-trigger');
@@ -4303,7 +5315,7 @@
 							//console.log(shareAuxCount);
 							if (shareAuxCount == 1) {
 								// Registra no Analytics
-								sendToAnalytics02('Compartilhar','Menus acessados','Card Page - Offline');
+								sendToAnalytics02('Compartilhar','Menus acessados','Card Page');
 							}
 						} else {
 							shareAuxCount = 0;
@@ -4335,9 +5347,32 @@
                         });
                     }
 					// Registra no Analytics
-					sendToAnalytics02(platform,'Menu Compartilhar','Card Page - Offline');
+					sendToAnalytics02(platform,'Menu Compartilhar','Card Page');
                 });
             });
+
+			// Remove onclick inline e adiciona listeners centralizados para os ícones de navegação
+			// Adiciona listeners para os ícones de navegação (centralizado)
+			document.querySelectorAll('.nav-icons a').forEach(link => {
+				const onclickAttr = link.getAttribute('onclick');
+				if (onclickAttr) {
+					link.removeAttribute('onclick');
+					// Verifica se é changeContent
+					const match = onclickAttr.match(/changeContent\s*\(\s*['"]([^'"]+)['"]\s*\)/);
+					if (match) {
+						const key = match[1];
+						link.addEventListener('click', (e) => {
+							e.preventDefault();
+							changeContent(key);
+						});
+					} else if (onclickAttr.includes('toggleOverlay')) {
+						link.addEventListener('click', (e) => {
+							e.preventDefault();
+							toggleOverlay();
+						});
+					}
+				}
+			});
         });
 
         function showcopyleftyear() {
@@ -4347,50 +5382,6 @@
                 showyearContent.innerHTML = n;
             });
         }
-
-        window.onload = () => {
-			preloadImages();
-			const targetTextWrapper = document.getElementById('content-front');
-			// Inicializa a primeira face com os dados de INICIO
-			let socialMediaAuxHTML = socialMediaHTML;
-			//document.getElementById(`content-front`).classList.add('marginTop26dvh');
-            document.getElementById('content-front').innerHTML = `
-				<p style="color: #D6BA84; font-size: .7em;">Para utilizar todos os recursos, você precisa estar conectado à internet.</p>
-				<h2>${sectionsData.INICIO.title}</h2>
-				<article>
-					<h3>${sectionsData.INICIO.subtitle}</h3>
-					<p>${sectionsData.INICIO.content}</p>
-					${socialMediaAuxHTML}
-					${footerHTML} 
-				</article>
-            `;
-
-			const accordionContainer = targetTextWrapper.querySelector('.catalogo-accordion-container');
-			if (accordionContainer) buildAccordion(accordionContainer);
-			
-			// Após injetar o HTML, processa os embeds do Instagram que estiverem dentro dessa seção
-			const newContentDivInicio = document.getElementById('content-front');
-			if (newContentDivInicio && window.processInstagramEmbeds) {
-				window.processInstagramEmbeds(newContentDivInicio);
-			}
-			// Dentro de changeContent, após a injeção do HTML:
-			if (window.processFacebookEmbeds) {
-				window.processFacebookEmbeds(document.getElementById('content-front'));
-			}
-            showcopyleftyear();
-            document.getElementById('bg-front').style.backgroundImage = `url('${sectionsData.INICIO.image}')`;
-			//updateBackgroundContent('${sectionsData.INICIO.video');
-			updateBackgroundContent('INICIO','bg-front');
-
-			// Inicializa o carrossel no carregamento
-			initCarousels();
-
-			// Marca o ícone de início como ativo (se houver correspondência)
-            const initialLinks = document.querySelectorAll(`.nav-icons a[onclick*="'INICIO'"]`);
-            initialLinks.forEach(link => link.classList.add('nav-active'));
-
-            showcopyleftyear();
-        };
     </script>
 	<script type="text/javascript">
 		function sendToAnalytics02(userChoice,eventName,eventCategory) {
@@ -4410,33 +5401,33 @@
 			*/
 			if (e.target.tagName.toLowerCase()==='a') {
 				if (e.target.title) {
-					sendToAnalytics02(e.target.title,'Ícones acessados','Card Page - Offline');
+					sendToAnalytics02(e.target.title,'Ícones acessados','Card Page');
 					console.log('Title = ' + e.target.title + ' | Tag Name = ' + e.target.tagName);
 				}
 			}
 			if (e.target.tagName.toLowerCase()==='li') {
 				if (e.target.parentElement.tagName.toLowerCase()==='ul' && e.target.parentElement.classList.contains('overlay-list')) {
 					if (e.target.textContent) {
-						sendToAnalytics02(e.target.textContent,'Menu Completo','Card Page - Offline');
+						sendToAnalytics02(e.target.textContent,'Menu Completo','Card Page');
 						console.log('Title = ' + e.target.textContent + ' | Tag Name = ' + e.target.tagName);
 					}
 				}
 			}
 			if (e.target.parentElement.tagName.toLowerCase()==='a') {
 				if (e.target.parentElement.title) {
-					sendToAnalytics02(e.target.parentElement.title,'Ícones acessados','Card Page - Offline');
+					sendToAnalytics02(e.target.parentElement.title,'Ícones acessados','Card Page');
 					console.log('Title = ' + e.target.parentElement.title + ' | Tag Name = ' + e.target.parentElement.tagName);
 				}
 			}
 			if (e.target.parentElement.tagName.toLowerCase()==='div') {
 				if (e.target.parentElement.classList.contains('logo-link')) {
-					sendToAnalytics02('Logotipo','Logotipo','Card Page - Offline');
+					sendToAnalytics02('Logotipo','Logotipo','Card Page');
 					console.log('Title = Logotipo | Tag Name = ' + e.target.parentElement.tagName);
 				}
 			}
 			if (e.target.parentElement.parentElement.tagName.toLowerCase()==='a') {
 				if (e.target.parentElement.parentElement.title) {
-					sendToAnalytics02(e.target.parentElement.parentElement.title,'Ícones acessados','Card Page - Offline');
+					sendToAnalytics02(e.target.parentElement.parentElement.title,'Ícones acessados','Card Page');
 					console.log('Title = ' + e.target.parentElement.parentElement.title + ' | Tag Name = ' + e.target.parentElement.parentElement.tagName);
 				}
 			}
@@ -4500,40 +5491,31 @@
         }
 
         const imageUrlsWithPromises = [
-			'./imgs/logo-horizontal-negativo-angel-influencer-models.png',
-			'./imgs/logo-horizontal-gemima-m-mansoor.png',
-			'./imgs/logo-vertical-laura-hathaway.png',
-			'./imgs/mauricio-jun-ti-v02.png',
-			'./imgs/gemima-mansoor-qrcode.png',
-			'./imgs/gemima-m-mansoor-foto-01.jpg',
-			'./imgs/gemima-m-mansoor-foto-02.jpeg',
-			'./imgs/gemima-m-mansoor-foto-03.jpg',
-			'./imgs/gemima-m-mansoor-foto-04.jpeg',
-			'./imgs/gemima-m-mansoor-foto-05.jpg',
-			'./imgs/gemima-m-mansoor-foto-06.jpeg',
-			'./imgs/gemima-m-mansoor-foto-07.jpg',
-			'./imgs/gemima-m-mansoor-foto-08.jpeg',
-			'./imgs/gemima-m-mansoor-foto-09.jpeg',
-			'./imgs/gemima-m-mansoor-foto-11.jpg',
-            './imgs/gemima-m-mansoor-foto-12.jpg',
-			'./imgs/gemima-m-mansoor-foto-13.jpeg',
-			'./imgs/gemima-m-mansoor-foto-14.jpeg',
-            './imgs/gemima-perfil-01.jpeg',
-			'./imgs/gemima-perfil-02.jpeg',
-			'./imgs/laura-hathaway-vcf-foto-01.png',
-			'./imgs/gemima-video-01.mp4',
-			'./imgs/gemima-video-01-thumb.png',
-			'./imgs/gemima-video-02.mp4',
-			'./imgs/gemima-video-02-thumb.gif',
-			'./imgs/gemima-video-03.mp4',
-			'./imgs/gemima-video-03-thumb.png',
-			'./imgs/gemima-video-04.mp4',
-			'./imgs/gemima-video-04-thumb.png',
 			'./imgs/icone-cartao-digital-puro-v01-02.png',
-			'./imgs/gemima-m-mansoor-background.png',
-			'./imgs/gemima-m-mansoor-foto-background.png',
-			'./imgs/gemima-m-mansoor-foto-15.jpeg',
 			'./imgs/laura-hathaway-background-01.png',
+			'./imgs/laura-hathaway-background-04.png',
+			'./imgs/laura-hathaway-background-07.png',
+			'./imgs/laura-hathaway-background-08.png',
+			'./imgs/laura-hathaway-background-12.png',
+			'./imgs/laura-hathaway-background-15.png',
+			'./imgs/laura-hathaway-foto-01.png',
+			'./imgs/laura-hathaway-foto-02.png',
+			'./imgs/laura-hathaway-foto-04.png',
+			'./imgs/laura-hathaway-foto-05.png',
+			'./imgs/laura-hathaway-foto-07.png',
+			'./imgs/laura-hathaway-foto-08.png',
+			'./imgs/laura-hathaway-foto-10.png',
+			'./imgs/laura-hathaway-foto-11.png',
+			'./imgs/laura-hathaway-na-praia-03.png',
+			'./imgs/laura-hathaway-na-praia-05.png',
+			'./imgs/laura-hathaway-perfil-mask-02.png',
+			'./imgs/laura-hathaway-qr-code.png',
+			'./imgs/laura-hathaway-vcf-foto-01.png',
+			'./imgs/laura-hathaway-video-thumb-01.png',
+			'./imgs/laura-hathaway-video-thumb-02.png',
+			'./imgs/logo-vertical-laura-hathaway.png',
+			'./imgs/mauricio-jun-ti-v02.png'
+
         ];
 
         // Use Promise.all to wait for all images to load
@@ -4606,7 +5588,7 @@
 					e.stopPropagation();
 					handleTooltipToggle();
 					// Registra no Analytics
-					sendToAnalytics02('Foto do perfil','Menus acessados','Card Page - Offline');
+					sendToAnalytics02('Foto do perfil','Menus acessados','Card Page');
 				});
 			});
 
@@ -4801,7 +5783,7 @@
 			viewer.style.display = "flex";
 			viewerImg.src = src;
 			captionText.innerHTML = alt || "Sem legenda"; // Usa o atributo ALT como legenda
-			sendToAnalytics02(viewerImg.src,'Carrossel','Card Page - Offline');
+			sendToAnalytics02(viewerImg.src,'Carrossel','Card Page');
 		}
 
 		// Fechar ao clicar no X
@@ -4827,7 +5809,7 @@
 		async function buttonNFCclicked() {
 			//console.log("NFC: Botão clicado!");
 			// Registra no Analytics
-			sendToAnalytics02('NFC','NFC - Clicado','Card Page - Offline');
+			sendToAnalytics02('NFC','NFC - Clicado','Card Page');
 
 			const nfcStatuses = document.querySelectorAll('.nfcStatus');
 			const updateStatus = (text) => {
@@ -4840,7 +5822,7 @@
 				//alert("Este navegador ou dispositivo não suporta a escrita de NFC via Web API.");
 				updateStatus("NFC não suportado aqui.");
 				// Registra no Analytics
-				sendToAnalytics02('NFC não suportado aqui','NFC - Clicado','Card Page - Offline');
+				sendToAnalytics02('NFC não suportado aqui','NFC - Clicado','Card Page');
 				return;
 			}
 
@@ -4861,7 +5843,7 @@
 				updateStatus("Sucesso! Tag gravada.");
 				//alert("Cartão físico programado com sucesso!");
 				// Registra no Analytics
-				sendToAnalytics02('Sucesso! Tag gravada','NFC - Clicado','Card Page - Offline');
+				sendToAnalytics02('Sucesso! Tag gravada','NFC - Clicado','Card Page');
 				
 				setTimeout(() => updateStatus(""), 5000);
 			} catch (error) {
@@ -4869,11 +5851,11 @@
 				if (error.name === "NotAllowedError") {
 					updateStatus("Permissão negada pelo usuário.");
 					// Registra no Analytics
-					sendToAnalytics02('Permissão negada pelo usuário','NFC - Clicado','Card Page - Offline');
+					sendToAnalytics02('Permissão negada pelo usuário','NFC - Clicado','Card Page');
 				} else {
 					updateStatus("Erro ao gravar. Tente novamente.");
 					// Registra no Analytics
-					sendToAnalytics02('Erro ao gravar','NFC - Clicado','Card Page - Offline');
+					sendToAnalytics02('Erro ao gravar','NFC - Clicado','Card Page');
 				}
 			}
 		}
@@ -5129,7 +6111,7 @@
 			// --- FUNÇÕES ORIGINAIS (não alterar) ---
 			function openOverlay() {
 				if (overlay) overlay.classList.add('active');
-				sendToAnalytics02('Formulário','Botão','Card Page - Offline');
+				sendToAnalytics02('Formulário','Botão','Card Page');
 				window.addEventListener('message', function(event) {
 					if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
 						const idDoFormCarregado = event.data.id;
@@ -5419,28 +6401,28 @@
 			// ============================================================
 			const galleryDefinitions = {
 				// Galeria da seção COMO_FUNCIONA
-				laura_gallery: [
-					/*{ type: 'image', src: './imgs/gemima-video-02-thumb.gif', alt: 'Laura Hathaway' },*/
-					{ type: 'video', src: './imgs/gemima-video-02.mp4', poster: './imgs/gemima-video-02-thumb.gif', alt: 'Laura Hathaway' },
-					/*{ type: 'image', src: './imgs/gemima-video-01-thumb.png', alt: 'Laura Hathaway' },
-					{ type: 'video', src: './imgs/gemima-video-01.mp4', poster: './imgs/gemima-video-01-thumb.png', alt: 'Laura Hathaway' },
-					/*{ type: 'image', src: './imgs/gemima-video-03-thumb.png', alt: 'Laura Hathaway' },*/
-					{ type: 'video', src: './imgs/gemima-video-03.mp4', poster: './imgs/gemima-video-03-thumb.png', alt: 'Laura Hathaway' },
-					/*{ type: 'image', src: './imgs/gemima-video-04-thumb.png', alt: 'Laura Hathaway' },*/
-					{ type: 'video', src: './imgs/gemima-video-04.mp4', poster: './imgs/gemima-video-04-thumb.png', alt: 'Laura Hathaway' },
-					/*{ type: 'image', src: './imgs/gemima-video-05-thumb.png', alt: 'Laura Hathaway' },*/
-					{ type: 'video', src: './imgs/gemima-video-05.mp4', poster: './imgs/gemima-video-05-thumb.png', alt: 'Laura Hathaway' }
+				galeria_laura_hathaway: [
+					/*{ type: 'image', src: './imgs/laura-hathaway-video-02-thumb.gif', alt: 'Laura Hathaway' },*/
+					{ type: 'video', src: './imgs/laura-hathaway-video-02.mp4', poster: './imgs/laura-hathaway-video-02-thumb.gif', alt: 'Laura Hathaway' },
+					/*{ type: 'image', src: './imgs/laura-hathaway-video-01-thumb.png', alt: 'Laura Hathaway' },
+					{ type: 'video', src: './imgs/laura-hathaway-video-01.mp4', poster: './imgs/laura-hathaway-video-01-thumb.png', alt: 'Laura Hathaway' },
+					/*{ type: 'image', src: './imgs/laura-hathaway-video-03-thumb.png', alt: 'Laura Hathaway' },*/
+					{ type: 'video', src: './imgs/laura-hathaway-video-03.mp4', poster: './imgs/laura-hathaway-video-03-thumb.png', alt: 'Laura Hathaway' },
+					/*{ type: 'image', src: './imgs/laura-hathaway-video-04-thumb.png', alt: 'Laura Hathaway' },*/
+					{ type: 'video', src: './imgs/laura-hathaway-video-04.mp4', poster: './imgs/laura-hathaway-video-04-thumb.png', alt: 'Laura Hathaway' },
+					/*{ type: 'image', src: './imgs/laura-hathaway-video-05-thumb.png', alt: 'Laura Hathaway' },*/
+					{ type: 'video', src: './imgs/laura-hathaway-video-05.mp4', poster: './imgs/laura-hathaway-video-05-thumb.png', alt: 'Laura Hathaway' }
 				],
 				// Galeria da seção VANTAGENS
 				vantagens: [
-					{ type: 'image', src: './imgs/gemima-m-mansoor-foto-05.jpg', alt: 'Vantagem 1' },
-					{ type: 'image', src: './imgs/gemima-m-mansoor-foto-12.jpg', alt: 'Vantagem 2' },
-					{ type: 'video', src: './imgs/gemima-video-02.mp4', poster: './imgs/gemima-perfil-02.jpeg', alt: 'Vídeo diferencial' }
+					{ type: 'image', src: './imgs/laura-hathaway-foto-05.jpg', alt: 'Vantagem 1' },
+					{ type: 'image', src: './imgs/laura-hathaway-foto-12.jpg', alt: 'Vantagem 2' },
+					{ type: 'video', src: './imgs/laura-hathaway-video-02.mp4', poster: './imgs/laura-hathaway-perfil-02.jpeg', alt: 'Vídeo diferencial' }
 				],
 				// Exemplo extra (descomente quando quiser)
 				// SOBRE: [
-				//     { type: 'image', src: './imgs/gemima-perfil-01.jpeg', alt: 'Quem sou' },
-				//     { type: 'video', src: './imgs/gemima-video-01.mp4', poster: './imgs/gemima-m-mansoor-foto-01.jpg', alt: 'Vídeo pessoal' }
+				//     { type: 'image', src: './imgs/laura-hathaway-perfil-01.jpeg', alt: 'Quem sou' },
+				//     { type: 'video', src: './imgs/laura-hathaway-video-01.mp4', poster: './imgs/laura-hathaway-foto-01.jpg', alt: 'Vídeo pessoal' }
 				// ]
 			};
 		
@@ -5513,7 +6495,7 @@
 					img.src = src;
 					img.alt = 'Ampliação';
 					contentDiv.appendChild(img);
-					sendToAnalytics02(img.src,'Galeria','Card Page - Offline');
+					sendToAnalytics02(img.src,'Galeria','Card Page');
 				} else if (type === 'video') {
 					const video = document.createElement('video');
 					video.controls = true;
@@ -5526,7 +6508,7 @@
 					source.type = 'video/mp4';
 					video.appendChild(source);
 					contentDiv.appendChild(video);
-					sendToAnalytics02(source.src,'Galeria','Card Page - Offline');
+					sendToAnalytics02(source.src,'Galeria','Card Page');
 				}
 				overlay.classList.add('active');
 			}
@@ -5707,7 +6689,7 @@
 			left: 0;
 			width: 100%;
 			background: rgba(0, 0, 0, 0.92);
-			backdrop-filter: blur(10px);
+			/*backdrop-filter: blur(10px);*/
 			border-top: 2px solid var(--gold-primary, #D4AF37);
 			padding: 1em;
 			display: none;
@@ -5957,5 +6939,572 @@
 		})();
 	</script>
 	<!-- ======== FIM DO BLOCO ======== -->
+	<script>
+		// ============================================================
+		// FEED X-TWITTER – Sistema escalável com overlay
+		// ============================================================
+		(function () {
+			"use strict";
+
+			// ----- 1. DADOS DOS FEEDS (cada seção com seu ID) -----
+			const feedData = {
+				// Feed CONTEUDOS
+                laura_hathaway_instagram: [
+                  { 
+                    id: 1, 
+                    avatar: "./imgs/laura-hathaway-perfil-mask-02.png", 
+                    displayName: "Laura Hathaway", 
+                    username: "@laurahathaway.vip", 
+                    timestamp: "Novidade", 
+                    text: "✨ Bastidores, novidades e momentos selecionados do universo de Laura Hathaway.", 
+                    media: { 
+                      type: "image", 
+                      src: "./imgs/laura-hathaway-na-praia-03.png", 
+                      poster: "", 
+                      alt: "Laura Hathaway — conteúdo e bastidores" 
+                    }, 
+                    cta: { 
+                      label: "Instagram da Laura Hathaway", 
+                      url: "https://www.instagram.com/laurahathaway.vip" 
+                    } 
+                  }
+                ],
+                laura_hathaway_threads: [
+                  { 
+                    id: 1, 
+                    avatar: "./imgs/laura-hathaway-perfil-mask-02.png", 
+                    displayName: "Laura Hathaway", 
+                    username: "@laurahathaway.vip", 
+                    timestamp: "Atualização", 
+                    text: "💫 Pensamentos, novidades e conversas sobre presença, conexão e criação de conteúdo.", 
+                    media: { 
+                      type: "image", 
+                      src: "./imgs/laura-hathaway-na-praia-05.png", 
+                      poster: "", 
+                      alt: "Laura Hathaway — Threads" 
+                    }, 
+                    cta: { 
+                      label: "Threads da Laura Hathaway", 
+                      url: "https://www.threads.com/@laurahathaway.vip" 
+                    } 
+                  }
+                ],
+                laura_hathaway_conteudos: [
+                  { 
+                    id: 1, 
+                    avatar: "./imgs/laura-hathaway-perfil-mask-02.png", 
+                    displayName: "Laura Hathaway", 
+                    username: "@laurahathawayvip", 
+                    timestamp: "Bastidores", 
+                    text: "🎥 Acompanhe bastidores, produções e novidades do universo digital de Laura Hathaway.", 
+                    media: { 
+                      type: "video", 
+                      src: "./imgs/laura-hathaway-video-01.mp4", 
+                      poster: "", 
+                      alt: "Laura Hathaway — bastidores" 
+                    }, 
+                    cta: { 
+                      label: "Ver conteúdos da Laura Hathaway", 
+                      url: "https://laurahathaway-vip.blogspot.com" 
+                    } 
+                  }
+                ],
+				laura_hathaway_telegram_previas: [
+					{
+						id: 1,
+						avatar: "./imgs/laura-hathaway-perfil-mask-02.png",
+						displayName: "Laura Hathaway Massagem",
+						username: "@laurahathawayprevia",
+						timestamp: "Prévia",
+						text: "📲 Prévias, novidades e momentos selecionados do universo da Laura Hathaway. Acompanhe o canal e fique por dentro das próximas novidades.",
+						media: {
+							type: "image",
+							src: "./imgs/laura-hathaway-background-07.png",
+							poster: "",
+							alt: "Laura Hathaway — Prévias da Laura Hathaway Massagem"
+						},
+						cta: {
+							label: "Acessar Telegram Prévia",
+							url: "https://t.me/laurahathawayprevia"
+						}
+					}
+				],
+				laura_hathaway_telegram_vip: [
+					{
+						id: 1,
+						avatar: "./imgs/laura-hathaway-perfil-mask-02.png",
+						displayName: "Laura Hathaway Massagem VIP",
+						username: "@laurahathawayvipbot",
+						timestamp: "VIP ⭐",
+						text: "⭐ Um espaço mais reservado para quem deseja acompanhar a Laura Hathaway ainda mais de perto e descobrir conteúdos especiais.",
+						media: {
+							type: "image",
+							src: "./imgs/laura-hathaway-foto-04.png",
+							poster: "",
+							alt: "Laura Hathaway — Laura Hathaway Massagem VIP"
+						},
+						cta: {
+							label: "Conhecer o Telegram VIP",
+							url: "https://t.me/laurahathawayvipbot"
+						}
+					}
+				],
+				laura_hathaway_privacy_gratuito: [
+					{
+						id: 1,
+						avatar: "./imgs/laura-hathaway-perfil-mask-02.png",
+						displayName: "Laura Hathaway",
+						username: "@laurahathawayvip",
+						timestamp: "Gratuito 🎁",
+						text: "🎁 Quer conhecer um pouco mais antes de mergulhar no universo exclusivo da Laura Hathaway? Acompanhe o perfil gratuito e descubra os conteúdos disponíveis.",
+						media: {
+							type: "video",
+							src: "./imgs/laura-hathaway-video-02.mp4",
+							poster: "./imgs/laura-hathaway-video-thumb-02.png",
+							alt: "Laura Hathaway — Privacy Gratuito"
+						},
+						cta: {
+							label: "Acessar Privacy Gratuito",
+							url: "https://privacy.com.br/laurahathawayvip"
+						}
+					}
+				],
+				laura-hathaway_privacy: [
+					{
+						id: 1,
+						avatar: "./imgs/laura-hathaway-perfil-mask-02.png",
+						displayName: "Laura Hathaway VIP",
+						username: "@laurahathawayvip",
+						timestamp: "Exclusivo 🔐",
+						text: "🔐 Curioso para conhecer um lado ainda mais especial da Laura Hathaway? Descubra conteúdos exclusivos, novidades e momentos reservados para sua comunidade.",
+						media: {
+							type: "video",
+							src: "./imgs/laura-hathaway-video-01.mp4",
+							poster: "./imgs/laura-hathaway-video-thumb-01.png",
+							alt: "Laura Hathaway — Conteúdo Exclusivo no Privacy"
+						},
+						cta: {
+							label: "Conhecer o Privacy da Laura Hathaway",
+							url: "https://privacy.com.br/laurahathawayvip"
+						}
+					}
+				]
+				// Adicione outros feeds com outras chaves conforme necessário
+			};
+
+			// ----- 2. OVERLAY DE MÍDIA (imagem e vídeo) -----
+			function createMediaOverlay() {
+				if (document.getElementById("media-overlay-global")) return;
+
+				const overlay = document.createElement("div");
+				overlay.id = "media-overlay-global";
+				overlay.className = "media-overlay";
+				overlay.innerHTML = `
+			<div class="media-overlay-close">&times;</div>
+			<div class="media-overlay-content"></div>
+			`;
+				document.body.appendChild(overlay);
+
+				// Fechar ao clicar no X
+				overlay
+					.querySelector(".media-overlay-close")
+					.addEventListener("click", closeMediaOverlay);
+				// Fechar ao clicar fora do conteúdo
+				overlay.addEventListener("click", function (e) {
+					if (e.target === overlay) closeMediaOverlay();
+				});
+				// Fechar com ESC
+				document.addEventListener("keydown", function (e) {
+					if (e.key === "Escape") closeMediaOverlay();
+				});
+			}
+
+			function openMediaOverlay(src, type, poster = "", alt = "") {
+				const overlay = document.getElementById("media-overlay-global");
+				if (!overlay) return;
+				const content = overlay.querySelector(".media-overlay-content");
+				content.innerHTML = "";
+
+				if (type === "image") {
+					const img = document.createElement("img");
+					img.src = src;
+					img.alt = alt || "Visualização";
+					img.style.maxWidth = "90vw";
+					img.style.maxHeight = "85vh";
+					img.style.objectFit = "contain";
+					content.appendChild(img);
+				} else if (type === "video") {
+					const video = document.createElement("video");
+					video.controls = true;
+					video.autoplay = true;
+					video.loop = false;
+					video.playsInline = true;
+					if (poster) video.poster = poster;
+					const source = document.createElement("source");
+					source.src = src;
+					source.type = "video/mp4";
+					video.appendChild(source);
+					video.style.maxWidth = "90vw";
+					video.style.maxHeight = "85vh";
+					content.appendChild(video);
+				}
+				overlay.classList.add("active");
+				document.body.style.overflow = "hidden";
+			}
+
+			function closeMediaOverlay() {
+				const overlay = document.getElementById("media-overlay-global");
+				if (overlay) {
+					overlay.classList.remove("active");
+					overlay.querySelector(".media-overlay-content").innerHTML = "";
+				}
+				document.body.style.overflow = "";
+			}
+
+			// ----- 3. FUNÇÃO QUE GERA O HTML DE UM POST (com fallback e eventos) -----
+			function createPostHTML(post) {
+				let mediaHTML = "";
+				if (post.media) {
+					if (post.media.type === "image") {
+						mediaHTML = `<img src="${post.media.src}" alt="${post.media.alt || ""}" loading="lazy" onerror="this.style.display='none'">`;
+					} else if (post.media.type === "video") {
+						mediaHTML = `<video poster="${post.media.poster || ""}" preload="metadata" muted>
+							<source src="${post.media.src}" type="video/mp4">
+							</video>`;
+					}
+				}
+
+				return `
+					<div class="x-post" data-id="${post.id}">
+						<div class="x-post-header">
+							<img class="x-avatar" src="${post.avatar}" alt="${post.displayName}" onerror="this.src='./imgs/default-avatar.png'">
+							<div class="x-user-info">
+								<span class="x-display-name">${post.displayName}</span>
+								<span class="x-username">${post.username}</span>
+							</div>
+							<span class="x-timestamp">${post.timestamp}</span>
+						</div>
+						<div class="x-post-text">${post.text}</div>
+						${post.media ? `<div class="x-post-media" data-type="${post.media.type}" data-src="${post.media.src}" data-poster="${post.media.poster || ""}">${mediaHTML}</div>` : ""}
+						${post.cta ? `<a href="${post.cta.url}" target="_blank" class="x-cta-link" title="${post.cta.label}">${post.cta.label}</a>` : ""}
+						<div class="x-post-actions">
+							<a href="https://wa.me/5511988530611?text=Olá%2C%20vi%20sua%20publicação%20e%20gostaria%20de%20mais%20informações" 
+								target="_blank" 
+								class="x-action-btn" 
+								title="Falar comigo no WhatsApp">
+								<i class="fab fa-whatsapp"></i> 
+								<span>WhatsApp</span>
+							</a>
+							<a href="https://www.instagram.com/lsaraiva_oliveira" 
+								target="_blank" 
+								class="x-action-btn" 
+								title="Ver perfil no Instagram">
+								<i class="fab fa-instagram"></i> 
+								<span>Instagram</span>
+							</a>
+							<button class="x-action-btn" 
+									onclick="baixarVCard()" 
+									title="Salvar meu contato">
+								<i class="fas fa-address-card"></i> 
+								<span>Salvar</span>
+							</button>
+							<button class="x-action-btn" 
+									onclick="compartilharPagina()" 
+									title="Compartilhar este cartão">
+								<i class="fas fa-share-alt"></i> 
+								<span>Compartilhar</span>
+							</button>
+						</div>
+					</div>
+				`;
+			}
+
+			// ----- 4. RENDERIZA UM FEED DENTRO DE UM CONTAINER -----
+			function renderFeed(container, feedId) {
+				if (!container || !feedId) return false;
+				// Evita duplicação
+				if (container.hasAttribute("data-rendered")) return true;
+
+				const posts = feedData[feedId];
+				if (!posts || posts.length === 0) {
+					container.innerHTML =
+						'<p style="color:#8899aa; text-align:center; padding:1em;">Nenhuma publicação disponível.</p>';
+					container.setAttribute("data-rendered", "true");
+					return false;
+				}
+
+				const html = posts.map((post) => createPostHTML(post)).join("");
+				container.innerHTML = html;
+				container.setAttribute("data-rendered", "true");
+
+				// Adiciona eventos de clique nas mídias
+				container.querySelectorAll(".x-post-media").forEach((mediaEl) => {
+					mediaEl.addEventListener("click", function (e) {
+						e.stopPropagation();
+						const type = this.getAttribute("data-type");
+						const src = this.getAttribute("data-src");
+						const poster = this.getAttribute("data-poster") || "";
+						const alt = this.querySelector("img")?.alt || "";
+						if (type && src) {
+							openMediaOverlay(src, type, poster, alt);
+						}
+					});
+				});
+
+				console.log(`✅ Feed "${feedId}" renderizado.`);
+				return true;
+			}
+
+			// ----- 5. PROCESSA TODOS OS .x-feed-container DENTRO DE UMA FACE -----
+			function processFeedsInFace(faceElement) {
+				if (!faceElement) return;
+				const containers = faceElement.querySelectorAll(
+					".x-feed-container:not([data-rendered])",
+				);
+				containers.forEach((container) => {
+					const feedId = container.getAttribute("data-feed-id");
+					if (feedId) {
+						renderFeed(container, feedId);
+					} else {
+						console.warn("Container sem data-feed-id:", container);
+					}
+				});
+			}
+
+			// ----- 6. HOOK NO changeContent ORIGINAL (renderiza após troca de conteúdo) -----
+			const originalChangeContent = window.changeContent;
+			if (typeof originalChangeContent === "function") {
+				window.changeContent = function (key, options) {
+					originalChangeContent(key, options);
+					// Após a troca, processa os feeds na face que ficou visível (ou ambas?)
+					// A lógica: a face que acabou de ser atualizada é a que estava escondida (targetSide)
+					// Mas como o flip pode ser desativado, vamos verificar qual face está visível.
+					setTimeout(function () {
+						const isFlipped = document
+							.getElementById("card")
+							.classList.contains("is-flipped");
+						// Processa a face visível
+						const visibleFace = isFlipped
+							? document.querySelector(".face-back")
+							: document.querySelector(".face-front");
+						if (visibleFace) {
+							processFeedsInFace(visibleFace);
+						}
+						// Opcionalmente, processa também a face oculta para manter sincronizado
+						const hiddenFace = isFlipped
+							? document.querySelector(".face-front")
+							: document.querySelector(".face-back");
+						if (hiddenFace) {
+							processFeedsInFace(hiddenFace);
+						}
+					}, 400);
+				};
+			}
+
+			// ----- 7. OBSERVADOR DE MUTAÇÃO (fallback para mudanças dinâmicas) -----
+			const observer = new MutationObserver(function () {
+				// Verifica se há novos containers não renderizados em qualquer face
+				document
+					.querySelectorAll(
+						".face-front .x-feed-container:not([data-rendered]), .face-back .x-feed-container:not([data-rendered])",
+					)
+					.forEach((container) => {
+						const feedId = container.getAttribute("data-feed-id");
+						if (feedId) {
+							renderFeed(container, feedId);
+						}
+					});
+			});
+			observer.observe(document.body, { childList: true, subtree: true });
+
+			// ----- 8. INICIALIZAÇÃO NO CARREGAMENTO -----
+			function init() {
+				createMediaOverlay();
+				// Processa feeds na face inicial (front)
+				const frontFace = document.querySelector(".face-front");
+				if (frontFace) processFeedsInFace(frontFace);
+				// Se houver algo na face back (caso a página inicie virada, mas é raro)
+				const backFace = document.querySelector(".face-back");
+				if (backFace) processFeedsInFace(backFace);
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", init);
+			} else {
+				init();
+			}
+
+			// Expõe funções globalmente (para uso manual)
+			window.renderXFeed = renderFeed;
+			window.processFeedsInFace = processFeedsInFace;
+			window.openMediaOverlay = openMediaOverlay;
+			window.closeMediaOverlay = closeMediaOverlay;
+		})();
+
+		// ===== FUNÇÕES PARA A BARRA DE AÇÕES =====
+		function baixarVCard() {
+			// Se você tiver um arquivo .vcf hospedado
+			window.open("./imgs/laura-hathaway-contato.vcf", "_blank");
+			// Ou, se preferir, abrir o link de salvar que já existe:
+			// window.open('https://drive.usercontent.google.com/u/0/uc?id=SEU_ID&export=download', '_blank');
+			sendToAnalytics02("Salvar Contato", "Ação Feed", "Card Page");
+		}
+
+		function compartilharPagina() {
+			const url = window.location.href;
+			if (navigator.share) {
+				navigator
+					.share({
+						title: "Cartão Digital - Laura Hathaway",
+						text: "Conheça o trabalho da Laura Hathaway, Terapeuta e Esteticista.",
+						url: url,
+					})
+					.then(() => {
+						sendToAnalytics02(
+							"Compartilhar Nativo",
+							"Ação Feed",
+							"Card Page",
+						);
+					})
+					.catch(() => {});
+			} else {
+				navigator.clipboard.writeText(url).then(() => {
+					alert("🔗 Link copiado! Compartilhe com seus amigos.");
+					sendToAnalytics02("Copiar Link", "Ação Feed", "Card Page");
+				});
+			}
+		}
+	</script>
+	<script>
+		// ============================================================
+		// TWITTER EMBED MANAGER – DINÂMICO, ESCALÁVEL E COM FALLBACK
+		// ============================================================
+		(function() {
+			'use strict';
+
+			let twitterScriptLoaded = false;
+			let twitterScriptLoading = false;
+			let pendingCallbacks = [];
+
+			// Carrega o script do Twitter apenas uma vez
+			function loadTwitterScript(callback) {
+				if (twitterScriptLoaded) {
+					if (callback) callback(true);
+					return;
+				}
+				if (twitterScriptLoading) {
+					pendingCallbacks.push(callback);
+					return;
+				}
+				twitterScriptLoading = true;
+				const script = document.createElement('script');
+				script.src = "https://platform.x.com/widgets.js";
+				script.async = true;
+				script.charset = "utf-8";
+				script.onload = function() {
+					twitterScriptLoaded = true;
+					if (callback) callback(true);
+					pendingCallbacks.forEach(cb => cb(true));
+					pendingCallbacks = [];
+				};
+				script.onerror = function() {
+					console.warn("Twitter widgets.js falhou ao carregar.");
+					twitterScriptLoading = false;
+					if (callback) callback(false);
+					pendingCallbacks.forEach(cb => cb(false));
+					pendingCallbacks = [];
+				};
+				document.head.appendChild(script);
+			}
+
+			// Processa os tweets não processados dentro de um container
+			function processTwitterEmbeds(container) {
+				if (!container) container = document;
+				const tweets = container.querySelectorAll('.twitter-tweet:not(.processed)');
+				if (tweets.length === 0) return;
+
+				// Marca como processado para evitar repetição
+				tweets.forEach(tweet => tweet.classList.add('processed'));
+
+				if (window.twttr && window.twttr.widgets) {
+					window.twttr.widgets.load(container);
+					console.log(`✅ ${tweets.length} tweet(s) processado(s).`);
+				} else {
+					loadTwitterScript(function(success) {
+						if (success && window.twttr && window.twttr.widgets) {
+							window.twttr.widgets.load(container);
+							console.log(`✅ ${tweets.length} tweet(s) processado(s) após carregar o script.`);
+						} else {
+							console.warn("⚠️ Não foi possível carregar os tweets.");
+							// Fallback: exibe um link
+							tweets.forEach(tweet => {
+								const link = tweet.querySelector('a[href*="x.com"]');
+								if (link) {
+									tweet.innerHTML = `
+										<div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 1rem; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
+											<p style="color: #8899aa;">📱 Não foi possível carregar o tweet interativo.</p>
+											<a href="${link.href}" target="_blank" rel="noopener noreferrer" style="color: #D4AF37; text-decoration: underline;">
+												🔗 Ver publicação original no X
+											</a>
+										</div>
+									`;
+								}
+							});
+						}
+					});
+				}
+			}
+
+			// --- HOOK NO changeContent ORIGINAL ---
+			const originalChangeContent = window.changeContent;
+			if (typeof originalChangeContent === 'function') {
+				window.changeContent = function(key, options) {
+					originalChangeContent(key, options);
+					// Processa tweets na face atualizada (targetSide) após um pequeno delay
+					setTimeout(function() {
+						const isFlipped = document.getElementById('card').classList.contains('is-flipped');
+						const targetSide = isFlipped ? 'back' : 'front';
+						const targetFace = document.querySelector(`.face-${targetSide}`);
+						if (targetFace) {
+							processTwitterEmbeds(targetFace);
+						}
+						// Opcional: processa também a face oculta para manter sincronizado
+						const hiddenSide = isFlipped ? 'front' : 'back';
+						const hiddenFace = document.querySelector(`.face-${hiddenSide}`);
+						if (hiddenFace) {
+							processTwitterEmbeds(hiddenFace);
+						}
+					}, 500);
+				};
+			}
+
+			// --- OBSERVADOR DE MUTAÇÃO (fallback) ---
+			const observer = new MutationObserver(function() {
+				document.querySelectorAll('.face-front .twitter-tweet:not(.processed), .face-back .twitter-tweet:not(.processed)')
+					.forEach(tweet => {
+						const face = tweet.closest('.face-front, .face-back');
+						if (face) processTwitterEmbeds(face);
+					});
+			});
+			observer.observe(document.body, { childList: true, subtree: true });
+
+			// --- INICIALIZAÇÃO NO CARREGAMENTO ---
+			function init() {
+				const frontFace = document.querySelector('.face-front');
+				const backFace = document.querySelector('.face-back');
+				if (frontFace) processTwitterEmbeds(frontFace);
+				if (backFace) processTwitterEmbeds(backFace);
+			}
+
+			if (document.readyState === 'loading') {
+				document.addEventListener('DOMContentLoaded', init);
+			} else {
+				init();
+			}
+
+			// Expõe a função globalmente para uso manual
+			window.processTwitterEmbeds = processTwitterEmbeds;
+		})();
+	</script>
 </body>
 </html>

@@ -5221,20 +5221,6 @@
 		// INICIALIZAÇÃO — VERSÃO DEFINITIVA (ÚNICO window.onload)
 		// ============================================================
 		window.onload = function() {
-			// =============================================
-			// ÚNICA MODIFICAÇÃO PARA A PÁGINA 404
-			// =============================================
-			// Se esta página for carregada como 404.html,
-			// exibe imediatamente a seção ERRO_404.
-			if (window.location.pathname.endsWith('/404.html')) {
-				// Força a exibição da seção de erro
-				if (sectionsData.ERRO_404) {
-					changeContent('ERRO_404', true, true);
-					// Inicializa o carrossel após o conteúdo ser injetado
-					setTimeout(() => initCarousels(), 100);
-					return; // interrompe o carregamento normal
-				}
-			}
 			preloadImages();
 
 			const params = new URLSearchParams(window.location.search);
