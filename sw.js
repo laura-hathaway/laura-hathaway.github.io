@@ -1,4 +1,4 @@
-var CACHE_NAME = 'dcard-laura-hathaway-v01-04';
+var CACHE_NAME = 'dcard-laura-hathaway-v01-05';
 var urlsToCache = [
 	'./',
 	'./index.html',
