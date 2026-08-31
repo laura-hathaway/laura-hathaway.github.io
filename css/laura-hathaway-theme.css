@@ -1,411 +1,2566 @@
-/* ================================================================
-   TEMA SAUMON ROSÉ & CHAMPANHE
-   ÍCONES e BORDAS em VINHO CLARO
-   Elegância quente com toque sofisticado de vinho
-   ================================================================ */
+/*
+======================================================================
+LAURA HATHAWAY — THEME CSS
+Identidade visual: CHAMPAGNE • SALMÃO • ROSA • CACAU
+----------------------------------------------------------------------
+Este arquivo é deliberadamente COLOR-ONLY.
 
-/* 1. VARIÁVEIS GLOBAIS – PALETA SALMÃO COM VINHO NOS ÍCONES/BORDAS */
-:root {
-	/* Cores Salmão/Champanhe (mantidas para textos, títulos, links, fundos) */
-	--salmon-base: #EAA68C;        /* Títulos, links, elementos internos */
-	--salmon-glow: #FFDBC5;        /* (não mais usado para ícones, mas mantido para outros usos) */
-	--salmon-soft: #F5C8B0;        /* Subtítulos, hovers de texto */
-	--salmon-deep: #C28169;        /* Degradês e sombras internas */
+REGRA DE INTEGRAÇÃO:
+- Não altera width, max-width, height, padding, margin, gap;
+- Não altera font-size, font-weight, line-height;
+- Não altera display, position, grid/flex, z-index ou estrutura;
+- Não altera a lógica JavaScript;
+- Mantém as dimensões e comportamentos estruturais já definidos no
+  index.html.
+- Atua somente em cores, transparências, gradientes, bordas, sombras,
+  brilhos e estados visuais.
+
+A paleta foi construída a partir da referência visual fornecida:
+champagne claro + salmão sofisticado + rosa queimado + cacau.
+======================================================================
+*/
+
+/* ==================================================================
+   01. PALETA GLOBAL
+   ================================================================== */
+
+   :root {
+    /* Champagne */
+    --champagne-ivory: #FFF7F1;
+    --champagne-light: #FBE9DD;
+    --champagne: #F3D4C2;
+    --champagne-deep: #D9B39E;
+    --champagne-gold: #D7AE8D;
   
-	--velvet-warm: #2B1A18;        /* Fundo aveludado */
-	--velvet-ebony: #150D0C;       /* Fundo escuro para caixas */
-	--cream-warm: #FFF8F2;         /* Texto claro */
-	--pure-white: #FFFFFF;         /* Branco puro para hovers de ícones */
+    /* Salmão */
+    --salmon-light: #F6B5A7;
+    --salmon-base: #E88A7B;
+    --salmon-base-2: #EAA68C;
+    --salmon-deep: #C9675E;
+    --salmon-dark: #A94D48;
   
-	/* NOVAS CORES DE VINHO – aplicadas aos ícones e bordas */
-	--wine-border: #A85C60;        /* Vinho claro – ícones e bordas principais */
-	--wine-deep: #773A3E;          /* Vinho profundo – bordas secundárias e degradês */
-	--wine-soft: #C97A7E;          /* Vinho suave – hovers de bordas */
+    /* Rosa */
+    --rose-light: #F4C7C0;
+    --rose-base: #D97A73;
+    --rose-deep: #B85C57;
+    --rose-dark: #8E403E;
   
-	/* MAPEAMENTO PARA AS VARIÁVEIS EXISTENTES DO SISTEMA */
-	--profile-border-1: var(--wine-border);       /* BORDA VINHO */
-	--profile-border-2: var(--cream-warm);
-	--link-color: var(--salmon-base);             /* Links continuam Salmão */
-	--link-bgcolor: rgba(21, 13, 12, 0.85);
-	--icon-color: var(--wine-border);             /* ÍCONES EM VINHO */
-	--share-icons-bgcolor: rgba(21, 13, 12, 0.95);
-	--title-color: var(--cream-warm);
-	--newtitle-color: var(--salmon-base);         /* Títulos continuam Salmão */
-	--primary-color: var(--velvet-ebony);
-	--secondary-color: var(--wine-border);
-	--text-color: var(--cream-warm);
-	--menu-link-active-color: var(--wine-soft);   /* Ativo em vinho suave */
-	--degrade-color: rgba(43, 26, 24, 0.95);
-	--contacts-icons-color: var(--wine-border);   /* ÍCONES CONTATOS EM VINHO */
-	--contacts-border-color: var(--wine-border);  /* BORDA CONTATOS EM VINHO */
-	--contacts-text-color: var(--cream-warm);
-	--social-icons-color: var(--wine-border);     /* ÍCONES REDES EM VINHO */
-	--social-border-color: var(--wine-border);    /* BORDA REDES EM VINHO */
-	--social-text-color: var(--cream-warm);
-	--fullscreentextcolor: var(--cream-warm);
-	--fullscreentextbordertopleft: var(--wine-border);   /* BORDA VINHO */
-	--fullscreentextborderbottomright: var(--cream-warm);
-	--addtobtntextcolor: var(--velvet-ebony);
-	--addtobtnbordertopleft: var(--wine-border);         /* BORDA VINHO */
-	--addtobtnborderbottomright: var(--cream-warm);
-	--mainfootertext: #b5a09a;
-	--mainfootertopborder: #4a3130;
-	--mainfooterlink: var(--salmon-base);          /* Links rodapé Salmão */
-	--content-circular-image-border: var(--wine-border); /* BORDA VINHO */
-	--call-to-action-link: var(--salmon-base);
-	--top-line-border: rgba(168, 92, 96, 0.3);    /* BORDA VINHO (transparente) */
+    /* Cacau / vinho quente */
+    --cocoa-ink: #4A241D;
+    --cocoa-deep: #321713;
+    --cocoa-dark: #24100D;
+    --cocoa-soft: #6B3B32;
+  
+    /* Textos claros */
+    --cream-warm: #FFF8F3;
+    --cream-soft: #F9EDE5;
+    --pure-white: #FFFFFF;
+  
+    /* Sombras / transparências */
+    --glass-dark: rgba(50, 23, 19, 0.78);
+    --glass-darker: rgba(36, 16, 13, 0.90);
+    --glass-champagne: rgba(251, 233, 221, 0.12);
+    --glass-salmon: rgba(232, 138, 123, 0.16);
+    --glass-rose: rgba(217, 122, 115, 0.18);
+  
+    /* ================================================================
+       Mapeamento exigido pelo sistema existente no index.html
+       ================================================================ */
+  
+    --profile-border-1: var(--salmon-base);
+    --profile-border-2: var(--champagne-light);
+  
+    --link-color: var(--salmon-base);
+    --link-bgcolor: rgba(50, 23, 19, 0.72);
+  
+    --icon-color: var(--salmon-base);
+    --share-icons-bgcolor: rgba(36, 16, 13, 0.94);
+  
+    --title-color: var(--cream-warm);
+    --newtitle-color: var(--salmon-light);
+  
+    --primary-color: var(--cocoa-dark);
+    --secondary-color: var(--salmon-base);
+    --text-color: var(--cream-warm);
+  
+    --menu-link-active-color: var(--salmon-light);
+    --degrade-color: rgba(74, 36, 29, 0.94);
+  
+    /* Contatos e redes: MESMO padrão visual */
+    --contacts-icons-color: var(--salmon-light);
+    --contacts-border-color: var(--rose-base);
+    --contacts-text-color: var(--cream-soft);
+  
+    --social-icons-color: var(--salmon-light);
+    --social-border-color: var(--rose-base);
+    --social-text-color: var(--cream-soft);
+  
+    /* Fullscreen / Add-to */
+    --fullscreentextcolor: var(--cream-warm);
+    --fullscreentextbordertopleft: var(--salmon-base);
+    --fullscreentextborderbottomright: var(--champagne-light);
+  
+    --addtobtntextcolor: var(--cream-warm);
+    --addtobtnbordertopleft: var(--salmon-base);
+    --addtobtnborderbottomright: var(--champagne-light);
+  
+    /* Footer / conteúdo */
+    --mainfootertext: #D9C0B5;
+    --mainfootertopborder: rgba(232, 138, 123, 0.28);
+    --mainfooterlink: var(--salmon-light);
+  
+    --content-circular-image-border: var(--salmon-base);
+    --call-to-action-link: var(--salmon-light);
+  
+    --top-line-border: rgba(246, 181, 167, 0.34);
   }
   
-  /* 2. TÍTULOS E SUBTÍTULOS – Elegância Salmão (mantido) */
-  .text-wrapper h2 {
-	color: var(--salmon-base) !important;
-	border-left: 4px solid var(--wine-deep) !important; /* BORDA VINHO PROFUNDO */
-	text-shadow: 0 2px 12px rgba(234, 166, 140, 0.25) !important;
+  
+  /* ==================================================================
+     02. BASE — FUNDO, TIPOGRAFIA E LINKS
+     ================================================================== */
+  
+  html,
+  body {
+    background-color: var(--cocoa-dark) !important;
   }
   
-  .text-wrapper h3 {
-	color: var(--salmon-soft) !important;
-	font-weight: 400 !important;
-	letter-spacing: 0.08em !important;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--title-color) !important;
+    text-shadow: 2px 3px 8px rgba(36, 16, 13, 0.72) !important;
   }
   
-  .text-wrapper p,
-  .text-wrapper li {
-	color: var(--cream-warm) !important;
-	text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6) !important;
-  }
-  
-  /* 3. LINKS E AÇÕES – Salmão (mantido) */
   a.calltoaction,
   .mainfooter a,
   .text-wrapper p a {
-	color: var(--salmon-base) !important;
-	transition: all 0.3s ease !important;
+    color: var(--salmon-light) !important;
+    text-decoration-color: rgba(246, 181, 167, 0.72) !important;
   }
   
   a.calltoaction:hover,
   .mainfooter a:hover,
   .text-wrapper p a:hover {
-	color: var(--salmon-soft) !important;
-	text-shadow: 0 0 15px rgba(245, 200, 176, 0.4) !important;
+    color: var(--champagne-ivory) !important;
+    text-shadow: 0 0 14px rgba(246, 181, 167, 0.45) !important;
   }
   
-  /* ================================================================
-	 [FIX DOS ÍCONES] – AGORA EM VINHO CLARO
-	 ================================================================ */
   
-  /* Remove qualquer degradê antigo e aplica a cor vinho */
-  .contact-btn i, .contact-container .contact-btn i {
-    background-image: none !important;
-	background-image: unset !important;
-}
-  .contact-btn i,
-  .social-btn i,
-  .share-menu .share-item a i,
-  .nav-icons a i {
-	background-image: none !important;
-	background: none !important;
-	/*-webkit-text-fill-color: var(--wine-border) !important;*/
-	/*color: var(--wine-border) !important;*/
-	color: rgba(40, 12, 9, 0.8) !important;
-	text-shadow: 0 0 12px rgba(168, 92, 96, 0.3) !important;
-	transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1) !important;
+  /* ==================================================================
+     03. SIDEBAR + NAVEGAÇÃO LATERAL
+     ------------------------------------------------------------------
+     .nav-icons:
+     champagne/salmão/rosa, com hover e ativo.
+     ================================================================== */
+  
+  .sidebar {
+    background-image:
+      linear-gradient(
+        to right,
+        rgba(232, 138, 123, 0),
+        rgba(74, 36, 29, 0.4)
+      ) !important;
   }
-  .nav-icons li a {
-    border: 2px solid #D97A60;
-    background-color: rgba(40, 12, 9, 0.8);
+  
+  .nav-icons a {
+    border-color: var(--rose-base) !important;
+    background-color: rgba(50, 23, 19, 0.68) !important;
+    box-shadow:
+      0 4px 16px rgba(36, 16, 13, 0.32),
+      inset 0 0 0 1px rgba(251, 233, 221, 0.08) !important;
   }
+  
   .nav-icons a i {
-	/*background: linear-gradient(145deg, var(--salmon-base), rgba(242, 79, 19, 1)) !important;*/
-	/*background: linear-gradient(145deg, var(--salmon-base), #D97A60) !important;*/
-	background: linear-gradient(145deg, var(--salmon-base), #F5C8B0) !important;
-	-webkit-background-clip: text !important;
+    background-image:
+      linear-gradient(
+        145deg,
+        var(--champagne-light),
+        var(--salmon-base),
+        var(--rose-deep)
+      ) !important;
+    -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
+    color: var(--salmon-light) !important;
+    text-shadow: 0 0 12px rgba(232, 138, 123, 0.22) !important;
   }
   
-  /* HOVER DOS ÍCONES – Vinho suave com brilho */
-  .contact-item:hover .contact-btn i,
-  .social-btn:hover i,
-  .share-menu .share-item a:hover i,
+  .nav-icons a:hover {
+    border-color: var(--champagne-gold) !important;
+    background-color: rgba(74, 36, 29, 0.88) !important;
+    box-shadow:
+      0 0 20px rgba(232, 138, 123, 0.30),
+      inset 0 0 14px rgba(251, 233, 221, 0.08) !important;
+  }
+  
   .nav-icons a:hover i {
-	color: var(--wine-soft) !important;
-	-webkit-text-fill-color: var(--wine-soft) !important;
-	text-shadow: 0 0 25px rgba(168, 92, 96, 0.6) !important;
-	transform: scale(1.1) !important;
+    background-image:
+      linear-gradient(
+        145deg,
+        var(--champagne-ivory),
+        var(--salmon-light)
+      ) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    text-shadow: 0 0 22px rgba(246, 181, 167, 0.62) !important;
   }
   
-  /* ESTADO ATIVO (NAVEGAÇÃO) – Destaque em vinho claro */
+  .nav-icons a.nav-active {
+    border-color: var(--champagne-light) !important;
+    background:
+      linear-gradient(
+        145deg,
+        rgba(232, 138, 123, 0.24),
+        rgba(74, 36, 29, 0.82)
+      ) !important;
+    box-shadow:
+      0 0 22px rgba(232, 138, 123, 0.34),
+      inset 0 0 14px rgba(251, 233, 221, 0.08) !important;
+  }
+  
   .nav-icons a.nav-active i {
-	color: var(--wine-border) !important;
-	/*-webkit-text-fill-color: var(--wine-border) !important;*/
-	text-shadow: 0 0 30px rgba(168, 92, 96, 0.8) !important;
+    background-image:
+      linear-gradient(
+        145deg,
+        var(--champagne-ivory),
+        var(--salmon-base)
+      ) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: var(--salmon-light) !important;
+    text-shadow: 0 0 24px rgba(246, 181, 167, 0.58) !important;
   }
   
-  /* ================================================================
-	 BOTÕES (CÍRCULOS) – BORDAS AGORA EM VINHO
-	 ================================================================ */
-  
-  .contact-btn,
-  .social-btn,
-  .share-menu .share-item a {
-	background-color: rgba(21, 13, 12, 0.8) !important;
-	border: 2px solid var(--wine-border) !important; /* BORDA VINHO */
-	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3) !important;
-	transition: all 0.3s ease !important;
+  .contact-label {
+    color: var(--cream-soft) !important;
+    text-shadow: 0 1px 5px rgba(36, 16, 13, 0.65) !important;
   }
   
-  .contact-item:hover .contact-btn,
-  .social-btn:hover,
-  .share-menu .share-item a:hover {
-	background: rgba(43, 26, 24, 0.95) !important;
-	border-color: var(--wine-soft) !important; /* BORDA VINHO SUAVE no hover */
-	box-shadow: 0 4px 25px rgba(168, 92, 96, 0.3) !important;
-	transform: translateY(-3px) !important;
-  }
   
-  /* Pseudo-elemento da borda degradê – agora em VINHO */
-  .contact-btn::before,
-  .social-btn::before,
-  .share-menu .share-item a::before {
-	/*background: linear-gradient(145deg, var(--salmon-base), var(--salmon-deep)) !important;*/
-	background: linear-gradient(145deg, var(--salmon-base), #F5C8B0) !important;
-	/*background: linear-gradient(145deg, var(--wine-border), var(--wine-deep)) !important;*/
-  }
+  /* ==================================================================
+     04. FOTO DE PERFIL — BORDAS DINÂMICAS
+     ------------------------------------------------------------------
+     Mantém animação e dimensões existentes.
+     Apenas muda a paleta das duas órbitas.
+     ================================================================== */
   
-  /* 5. CAIXAS DE TEXTO – BORDA VINHO SUAVE */
-  .text-wrapper {
-	/*background: linear-gradient(145deg, rgba(21, 13, 12, 0.92), rgba(43, 26, 24, 0.8)) !important;*/
-	/*background: linear-gradient(145deg, rgba(26, 17, 19, 0.75), rgba(58, 35, 38, 0.85)) !important;*/
-	background: linear-gradient(135deg, rgba(48, 14, 13, 0.7), rgba(0, 0, 0, 0.7));
-	backdrop-filter: blur(14px) !important;
-	-webkit-backdrop-filter: blur(14px) !important;
-	border: 1px solid rgba(168, 92, 96, 0.4) !important; /* BORDA VINHO */
-	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 0 40px rgba(168, 92, 96, 0.03) !important;
-  }
-  
-  .text-wrapper::before {
-	background: linear-gradient(135deg, rgba(168, 92, 96, 0.08), rgba(119, 58, 62, 0.02)) !important;
-  }
-  
-  /* 6. COMPARTILHAMENTO – BORDA VINHO */
-  .share-buttons.show {
-	border: 1px solid rgba(168, 92, 96, 0.5) !important; /* BORDA VINHO */
-	background: rgba(21, 13, 12, 0.94) !important;
-	backdrop-filter: blur(18px) !important;
-	-webkit-backdrop-filter: blur(18px) !important;
-	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(168, 92, 96, 0.05) !important;
-  }
-  
-  /* 7. BOTÕES FULLSCREEN / ADD-TO – Fundo Salmão com Borda Vinho */
-  .fullscreenline button,
-  .add-to-btn {
-    border: 1px solid var(--salmon-base) !important;
-    color: var(--salmon-base) !important;
-    background: rgba(21, 13, 12, 0.7) !important;
-	/*
-	background: linear-gradient(145deg, var(--salmon-base), var(--salmon-deep)) !important;
-	color: var(--velvet-ebony) !important;
-	border: 1px solid var(--wine-border) !important;
-	*/
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
-  }
-  
-  .fullscreenline button:hover,
-  .add-to-btn:hover {
-	background: linear-gradient(145deg, var(--salmon-soft), var(--salmon-base)) !important;
-	color: var(--velvet-ebony) !important;
-	border-color: var(--wine-soft) !important; /* BORDA VINHO SUAVE */
-	box-shadow: 0 6px 25px rgba(168, 92, 96, 0.4) !important;
-	transform: scale(1.02);
-  }
-  
-  /* 8. TOOLTIP – BORDA VINHO */
-  .tooltip-mask-wrapper {
-    border-radius: 100px 100px;
-  }
-  .tooltip-appendix {
-	/*background: linear-gradient(135deg, rgba(21, 13, 12, 0.95), rgba(43, 26, 24, 0.9)) !important;*/
-	background: linear-gradient(135deg, rgba(40, 12, 9, 0.9), rgba(43, 26, 24, 0.9)) !important;
-	border: 1px solid var(--wine-border) !important; /* BORDA VINHO */
-	backdrop-filter: blur(8px) !important;
-  }
-  
-  .tooltip-text .name {
-	color: var(--salmon-base) !important; /* Salmão mantido */
-  }
-  .tooltip-text .role,
-  .tooltip-text .company {
-	color: var(--cream-warm) !important;
-  }
-  .close-trigger {
-	color: var(--salmon-base) !important;
-  }
-  
-  /* 9. QRCODE – BORDA VINHO */
-  .qrcode-img {
-	border: 3px solid var(--wine-border) !important; /* BORDA VINHO */
-	box-shadow: 0 4px 16px rgba(168, 92, 96, 0.2) !important;
-  }
-  .qrcode-legend {
-	color: var(--salmon-base) !important; /* Salmão mantido */
-  }
-  
-  /* 10. MODAL – BORDA VINHO */
-  .modal-content {
-	background: linear-gradient(145deg, rgba(21, 13, 12, 0.98), rgba(43, 26, 24, 0.95)) !important;
-	border-top: 3px solid var(--wine-border) !important; /* BORDA VINHO */
-  }
-  .modal-header h2 {
-	color: var(--salmon-base) !important;
-  }
-  .close {
-	color: var(--salmon-base) !important;
-  }
-  .close:hover {
-	color: var(--salmon-soft) !important;
-  }
-  
-  /* 11. BORDA DA FOTO DE PERFIL – VINHO + SALMÃO (bordas em vinho) */
   .circular-image::before {
-	border-bottom: 3px solid #4A0404 !important;
-	border-right: 2px solid #4A0404 !important;
-	border-left: 1px solid var(--salmon-soft) !important;
-	border-top: 2px solid var(--salmon-soft) !important;
-	filter: drop-shadow(0 0 10px rgba(168, 92, 96, 0.3)) !important;
+    border-bottom-color: var(--rose-deep) !important;
+    border-right-color: var(--rose-deep) !important;
+    border-left-color: var(--salmon-light) !important;
+    border-top-color: var(--salmon-light) !important;
+    filter:
+      drop-shadow(0 0 8px rgba(232, 138, 123, 0.40))
+      !important;
   }
   
   .circular-image::after {
-	border-top: 3px solid var(--salmon-glow) !important;
-    border-right: 2px solid var(--salmon-glow) !important;
-    border-left: 1px solid #4A0404 !important;
-    border-bottom: 2px solid #4A0404 !important;
-	/*
-	border-top: 3px solid var(--wine-deep) !important;
-	border-right: 2px solid var(--wine-deep) !important;
-	border-left: 1px solid var(--wine-border) !important;
-	border-bottom: 2px solid var(--wine-border) !important;
-	*/
-	filter: drop-shadow(0 0 15px rgba(119, 58, 62, 0.2)) !important;
+    border-top-color: var(--champagne-light) !important;
+    border-right-color: var(--champagne-light) !important;
+    border-left-color: var(--rose-base) !important;
+    border-bottom-color: var(--rose-base) !important;
+    filter:
+      drop-shadow(0 0 12px rgba(251, 233, 221, 0.34))
+      !important;
   }
   
-  /* 12. BOTÃO NFC – BORDA VINHO */
-/*
-  .nfc-button {
-	border: 1px solid var(--wine-border) !important;
-	color: var(--wine-border) !important;
-	background: rgba(21, 13, 12, 0.7) !important;
-  }
-*/
-  .nfc-button {
-    border: 1px solid var(--salmon-base) !important;
-    color: var(--salmon-base) !important;
-    background: rgba(21, 13, 12, 0.7) !important;
-}
   
-  .nfc-button:hover {
-	background: var(--velvet-warm) !important;
-	border-color: var(--wine-soft) !important;
-	color: var(--wine-soft) !important;
-	box-shadow: 0 0 25px rgba(168, 92, 96, 0.3) !important;
+  /* ==================================================================
+     05. TOOLTIP / CAIXA DE INFORMAÇÕES DO PERFIL
+     ================================================================== */
+  
+  .tooltip-appendix {
+    background:
+      linear-gradient(
+        135deg,
+        rgba(74, 36, 29, 0.92),
+        rgba(50, 23, 19, 0.90)
+      ) !important;
+    border-color: rgba(232, 138, 123, 0.72) !important;
+    box-shadow:
+      -4px 4px 24px rgba(36, 16, 13, 0.34),
+      inset 0 0 24px rgba(251, 233, 221, 0.035) !important;
   }
   
-  /* 13. DESTAQUES E CARDS – BORDAS EM VINHO */
+  .tooltip-text .name {
+    color: var(--salmon-light) !important;
+    text-shadow: 0 0 12px rgba(232, 138, 123, 0.20) !important;
+  }
+  
+  .tooltip-text .role,
+  .tooltip-text .company {
+    color: var(--cream-soft) !important;
+  }
+  
+  .close-trigger {
+    color: var(--champagne-light) !important;
+  }
+  
+  .close-trigger:hover {
+    color: var(--salmon-light) !important;
+  }
+  
+  
+  /* ==================================================================
+     06. BOTÕES DE CONTATO + REDES SOCIAIS
+     ------------------------------------------------------------------
+     MESMO PADRÃO DE CORES.
+     SEM MUDANÇA VISUAL DE COR / BORDA / FUNDO NO HOVER OU ACTIVE.
+     ================================================================== */
+  
+  .contact-btn,
+  .social-btn {
+    background:
+      linear-gradient(
+        145deg,
+        rgba(251, 233, 221, 0.12),
+        rgba(232, 138, 123, 0.08)
+      ) !important;
+    border-color: var(--rose-base) !important;
+    box-shadow:
+      0 4px 15px rgba(36, 16, 13, 0.28),
+      inset 0 0 0 1px rgba(251, 233, 221, 0.06) !important;
+  }
+  
+  .contact-btn i,
+  .social-btn i {
+    color: var(--salmon-light) !important;
+    background-image:
+      linear-gradient(
+        145deg,
+        var(--champagne-light),
+        var(--salmon-base)
+      ) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    text-shadow: 0 0 10px rgba(232, 138, 123, 0.20) !important;
+  }
+  
+  /* Neutraliza somente a alteração cromática de hover/active */
+  .contact-item:hover .contact-btn,
+  .contact-btn:hover,
+  .contact-btn:focus,
+  .contact-btn:active,
+  .social-btn:hover,
+  .social-btn:focus,
+  .social-btn:active {
+    background:
+      linear-gradient(
+        145deg,
+        rgba(251, 233, 221, 0.12),
+        rgba(232, 138, 123, 0.08)
+      ) !important;
+    border-color: var(--rose-base) !important;
+    box-shadow:
+      0 4px 15px rgba(36, 16, 13, 0.28),
+      inset 0 0 0 1px rgba(251, 233, 221, 0.06) !important;
+  }
+  
+  .contact-item:hover .contact-btn i,
+  .contact-btn:hover i,
+  .contact-btn:focus i,
+  .contact-btn:active i,
+  .social-btn:hover i,
+  .social-btn:focus i,
+  .social-btn:active i {
+    color: var(--salmon-light) !important;
+    background-image:
+      linear-gradient(
+        145deg,
+        var(--salmon-deep),
+        var(--salmon-base)
+      ) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    text-shadow: 0 0 10px rgba(232, 138, 123, 0.20) !important;
+  }
+  
+  
+  /* ==================================================================
+     07. HOME ICON WRAPPER + SCROLL INDICATOR
+     ------------------------------------------------------------------
+     Mesmo padrão cromático de contato/rede.
+     Sem hover/active cromático.
+     ================================================================== */
+  
+  /*.home-icon-wrapper,*/
+  .scroll-indicator {
+    background:
+      linear-gradient(
+        145deg,
+        rgba(251, 233, 221, 0.16),
+        rgba(232, 138, 123, 0.12)
+      ) !important;
+    border-color: var(--rose-base) !important;
+    box-shadow:
+      0 4px 15px rgba(36, 16, 13, 0.28),
+      inset 0 0 0 1px rgba(251, 233, 221, 0.06) !important;
+  }
+  
+  .home-icon-wrapper i,
+  .scroll-indicator i {
+    color: var(--salmon-light) !important;
+    text-shadow: 0 0 10px rgba(232, 138, 123, 0.20) !important;
+  }
+  
+  /*
+  .home-icon-wrapper:hover,
+  .home-icon-wrapper:focus,
+  .home-icon-wrapper:active,
+  */
+  .scroll-indicator:hover,
+  .scroll-indicator:focus,
+  .scroll-indicator:active {
+    background:
+      linear-gradient(
+        145deg,
+        rgba(251, 233, 221, 0.16),
+        rgba(232, 138, 123, 0.12)
+      ) !important;
+    border-color: var(--rose-base) !important;
+    box-shadow:
+      0 4px 15px rgba(36, 16, 13, 0.28),
+      inset 0 0 0 1px rgba(251, 233, 221, 0.06) !important;
+  }
+  
+  .home-icon-wrapper:hover i,
+  .home-icon-wrapper:focus i,
+  .home-icon-wrapper:active i,
+  .scroll-indicator:hover i,
+  .scroll-indicator:focus i,
+  .scroll-indicator:active i {
+    color: var(--salmon-light) !important;
+    text-shadow: 0 0 10px rgba(232, 138, 123, 0.20) !important;
+  }
+  
+  
+  /* ==================================================================
+     08. SHARE — QR CODE + ÍCONES
+     ================================================================== */
+  
+  .share-buttons.show,
+  #shareButtons,
+  #shareButtonsBackFace {
+    background:
+      linear-gradient(
+        135deg,
+        rgba(50, 23, 19, 0.95),
+        rgba(36, 16, 13, 0.94)
+      ) !important;
+    border-color: rgba(232, 138, 123, 0.48) !important;
+    box-shadow:
+      0 12px 40px rgba(36, 16, 13, 0.52),
+      0 0 24px rgba(232, 138, 123, 0.08) !important;
+  }
+  
+  .share-item a,
+  .share-menu .share-item a {
+    background:
+      linear-gradient(
+        145deg,
+        rgba(251, 233, 221, 0.10),
+        rgba(232, 138, 123, 0.08)
+      ) !important;
+    border-color: var(--rose-base) !important;
+    color: var(--salmon-light) !important;
+    box-shadow: 0 3px 12px rgba(36, 16, 13, 0.25) !important;
+  }
+
+  .share-item a::before,
+  .share-menu .share-item a::before {
+    /*
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 253, 250, 0.86),
+            rgba(247, 196, 181, 0.68),
+            rgba(220, 139, 126, 0.44)
+        ) !important;
+    */
+    background: linear-gradient(145deg, var(--salmon-base-2), #F5C8B0) !important;
+    border-color:
+        rgba(255, 255, 255, 0.84) !important;
+
+    box-shadow:
+        inset 0 1px 3px rgba(255, 255, 255, 0.62),
+        inset 0 -3px 8px rgba(116, 53, 48, 0.08) !important;
+  }
+  
+  .share-item a i,
+  .share-menu .share-item a i {
+    /*
+    color: var(--salmon-light) !important;
+    text-shadow: 0 0 10px rgba(232, 138, 123, 0.18) !important;
+    */
+    /*
+    background-image:
+        var(--lh-gradient-metal-2) !important;
+    */
+    background: linear-gradient(145deg, #D97A73, rgba(40, 12, 9, 0.8)) !important;
+
+    color:
+        var(--lh-rose-deep) !important;
+
+    -webkit-background-clip:
+        text !important;
+
+    background-clip:
+        text !important;
+
+    -webkit-text-fill-color:
+        transparent !important;
+
+    text-shadow:
+        none !important;
+  }
+  
+  .share-item a:hover,
+  .share-menu .share-item a:hover {
+    background:
+      linear-gradient(
+        145deg,
+        rgba(251, 233, 221, 0.10),
+        rgba(232, 138, 123, 0.08)
+      ) !important;
+    border-color: var(--rose-base) !important;
+  }
+  
+  .share-item a:hover i,
+  .share-menu .share-item a:hover i {
+    color: var(--salmon-light) !important;
+    background-image:
+      linear-gradient(
+        145deg,
+        var(--salmon-deep),
+        var(--salmon-base)
+      ) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    text-shadow: 0 0 10px rgba(232, 138, 123, 0.20) !important;
+  }
+  
+  .qrcode-img {
+    border-color: var(--champagne-light) !important;
+    box-shadow:
+      0 4px 18px rgba(36, 16, 13, 0.36),
+      0 0 10px rgba(232, 138, 123, 0.12) !important;
+  }
+  
+  .qrcode-legend {
+    color: var(--salmon-light) !important;
+  }
+  
+  .copy-tooltip {
+    background-color: var(--cocoa-deep) !important;
+    color: var(--champagne-ivory) !important;
+  }
+  
+  
+  /* ==================================================================
+     09. ÁREA PRINCIPAL DE CONTEÚDO — TEXT WRAPPER
+     ================================================================== */
+  
+  .text-wrapper {
+    background:
+      linear-gradient(
+        135deg,
+        rgba(50, 23, 19, 0.82),
+        rgba(36, 16, 13, 0.74)
+      ) !important;
+    border-color: rgba(232, 138, 123, 0.42) !important;
+    box-shadow:
+      0 8px 32px rgba(36, 16, 13, 0.58),
+      inset 0 0 40px rgba(232, 138, 123, 0.035) !important;
+  }
+  
+  .text-wrapper::before {
+    background:
+      linear-gradient(
+        135deg,
+        rgba(232, 138, 123, 0.09),
+        rgba(251, 233, 221, 0.025)
+      ) !important;
+  }
+  
+  .text-wrapper h2 {
+    color: var(--salmon-light) !important;
+    border-left-color: var(--rose-deep) !important;
+    text-shadow:
+      0 2px 12px rgba(232, 138, 123, 0.25) !important;
+  }
+  
+  .text-wrapper h3 {
+    color: var(--champagne-light) !important;
+    text-shadow: 0 1px 8px rgba(36, 16, 13, 0.56) !important;
+  }
+  
+  .text-wrapper p,
+  .text-wrapper li {
+    color: var(--cream-warm) !important;
+    text-shadow: 0 1px 6px rgba(36, 16, 13, 0.62) !important;
+  }
+  
+  .text-wrapper strong {
+    color: var(--champagne-light) !important;
+  }
+  
+  .text-wrapper p a,
+  .text-wrapper li a {
+    color: var(--salmon-light) !important;
+  }
+  
+  
+  /* ==================================================================
+     10. DESTAQUES — .mj-highlight-item
+     ================================================================== */
+  
   .mj-highlight-item {
-	background: linear-gradient(135deg, rgba(21, 13, 12, 0.7), rgba(168, 92, 96, 0.08)) !important;
-	border-left: 4px solid var(--wine-deep) !important; /* BORDA VINHO PROFUNDO */
-    gap: 0.8em;
-    padding: 0.8em 1em;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(154, 42, 42, 0.15));
-    border-left: 4px solid var(--ruby-passion);
+    background:
+      linear-gradient(
+        135deg,
+        rgba(251, 233, 221, 0.09),
+        rgba(232, 138, 123, 0.08)
+      ) !important;
+    border-left-color: var(--salmon-base) !important;
+    border-top-color: rgba(246, 181, 167, 0.20) !important;
+    border-right-color: rgba(246, 181, 167, 0.20) !important;
+    border-bottom-color: rgba(246, 181, 167, 0.20) !important;
+    box-shadow:
+      inset 0 0 18px rgba(251, 233, 221, 0.025) !important;
+  }
+  
+  .mj-highlight-item i {
+    color: var(--salmon-light) !important;
+    text-shadow: 0 0 10px rgba(232, 138, 123, 0.25) !important;
+  }
+  
+  .mj-highlight-item p {
+    color: var(--cream-warm) !important;
+  }
+  
+  .mj-highlight-item p strong {
+    color: var(--champagne-light) !important;
+  }
+  
+  .mj-highlight-item p span,
+  .mj-highlight-item span {
+    color: var(--rose-light) !important;
   }
   
   .mj-highlight-item:hover {
-	border-left-color: var(--wine-soft) !important; /* BORDA VINHO SUAVE */
-	background: rgba(21, 13, 12, 0.9) !important;
-  }
-  .mj-highlight-item i {
-	color: var(--wine-border) !important; /* Ícone em vinho */
-  }
-  .mj-highlight-item p strong {
-	color: var(--salmon-soft) !important;
-  }
-  .mj-highlight-item span {
-    font-size: 1em;
+    background:
+      linear-gradient(
+        135deg,
+        rgba(232, 138, 123, 0.15),
+        rgba(251, 233, 221, 0.06)
+      ) !important;
+    border-left-color: var(--champagne-gold) !important;
+    box-shadow:
+      0 6px 18px rgba(36, 16, 13, 0.28),
+      0 0 16px rgba(232, 138, 123, 0.08) !important;
   }
   
+  
+  /* ==================================================================
+     11. CTA CARDS — .mj-cta-card
+     ================================================================== */
+  
   .mj-cta-card {
-	/*background: linear-gradient(145deg, rgba(21, 13, 12, 0.8), rgba(43, 26, 24, 0.4)) !important;*/
-	/*background: linear-gradient(145deg, rgba(38, 4, 1, 0.8), rgba(242, 79, 79, 0.4)) !important;*/
-	/*background: linear-gradient(145deg, rgba(64, 30, 26, 0.8), rgba(230, 107, 94, 0.4)) !important;*/
-	background: linear-gradient(145deg, rgba(230, 107, 94, 0.55), rgba(64, 30, 26, 0.55)) !important;
-	border: 1px solid rgba(168, 92, 96, 0.25) !important; /* BORDA VINHO */
+    background:
+      linear-gradient(
+        145deg,
+        rgba(251, 233, 221, 0.12),
+        rgba(232, 138, 123, 0.10)
+      ) !important;
+    border-color: rgba(232, 138, 123, 0.34) !important;
+    box-shadow:
+      0 5px 18px rgba(36, 16, 13, 0.20),
+      inset 0 0 18px rgba(251, 233, 221, 0.025) !important;
+  }
+  
+  .mj-cta-card strong {
+    color: var(--champagne-light) !important;
+    text-shadow: 0 1px 7px rgba(36, 16, 13, 0.48) !important;
+  }
+  
+  .mj-cta-card span {
+    color: var(--cream-soft) !important;
+  }
+  
+  .mj-cta-card span:last-child {
+    color: var(--salmon-light) !important;
   }
   
   .mj-cta-card:hover {
-	border-color: var(--wine-border) !important; /* BORDA VINHO */
-	background: linear-gradient(145deg, rgba(21, 13, 12, 0.9), rgba(168, 92, 96, 0.08)) !important;
-	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(168, 92, 96, 0.05) !important;
-  }
-  .mj-cta-card strong {
-	color: var(--salmon-soft) !important;
-  }
-  .mj-cta-card span:last-child {
-	color: var(--salmon-base) !important;
-  }
-  
-  /* 14. INDICADOR DE SCROLL – Fundo Salmão com Borda Vinho */
-  .scroll-indicator {
-	/*background: linear-gradient(145deg, var(--salmon-base), var(--salmon-deep)) !important;*/
-	background: linear-gradient(145deg, var(--salmon-base), #F5C8B0) !important;
-	box-shadow: 0 0 15px rgba(168, 92, 96, 0.3) !important;
-	border: 1px solid var(--wine-border) !important; /* BORDA VINHO */
-  }
-  .scroll-indicator i {
-	color: var(--velvet-ebony) !important;
-  }
-  .scroll-indicator:hover {
-	transform: translateX(-50%) scale(1.1) !important;
-	box-shadow: 0 0 30px rgba(201, 122, 126, 0.5) !important;
+    background:
+      linear-gradient(
+        145deg,
+        rgba(232, 138, 123, 0.18),
+        rgba(251, 233, 221, 0.08)
+      ) !important;
+    border-color: var(--salmon-base) !important;
+    box-shadow:
+      0 10px 28px rgba(36, 16, 13, 0.34),
+      0 0 20px rgba(232, 138, 123, 0.12) !important;
   }
   
-  /* 15. BOTÃO DE FORMULÁRIO – Fundo Salmão com Borda Vinho */
-  .btn-form-contato {
-	/*background: linear-gradient(145deg, var(--salmon-base), var(--salmon-deep)) !important;*/
-	background: linear-gradient(145deg, var(--salmon-base), #F5C8B0) !important;
-	color: var(--velvet-ebony) !important;
-	border: 1px solid var(--wine-border) !important; /* BORDA VINHO */
-	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
-	letter-spacing: 0.03em !important;
+  
+  /* ==================================================================
+     12. CONTENT-BOX — quando presente no HTML/JS
+     ================================================================== */
+   .content-box-2 {
+      background:rgba(0,0,0,0.5);
+      padding:1em;
+      border-radius:20px;
+      text-align:center;
+      margin-bottom: 1em;
+  }
+  .content-box {
+    background:
+      linear-gradient(
+        135deg,
+        rgba(251, 233, 221, 0.11),
+        rgba(232, 138, 123, 0.10)
+      ) !important;
+    border-color: rgba(232, 138, 123, 0.42) !important;
+    box-shadow:
+      0 8px 26px rgba(36, 16, 13, 0.28),
+      inset 0 0 24px rgba(251, 233, 221, 0.025) !important;
   }
   
-  .btn-form-contato:hover {
-	background: linear-gradient(145deg, var(--salmon-soft), var(--salmon-base)) !important;
-	color: var(--velvet-ebony) !important;
-	border-color: var(--wine-soft) !important; /* BORDA VINHO SUAVE */
-	box-shadow: 0 6px 30px rgba(168, 92, 96, 0.4) !important;
-	transform: scale(1.02);
+  .content-box p {
+    color: var(--cream-warm) !important;
   }
   
-  /* 16. FUNDO DO SIDEBAR – Degradê Aveludado (mantido) */
-  .sidebar {
-	background-image: linear-gradient(to right, rgba(168, 92, 96, 0), var(--degrade-color)) !important;
+  .content-box a,
+  .content-box .btn-form-contato-02 {
+    color: var(--cocoa-deep) !important;
+  }
+  
+  .content-box .btn-form-contato-02 {
+    background:
+      linear-gradient(
+        145deg,
+        var(--salmon-light),
+        var(--salmon-base)
+      ) !important;
+    border-color: var(--rose-deep) !important;
+    box-shadow:
+      0 5px 18px rgba(36, 16, 13, 0.28),
+      0 0 12px rgba(232, 138, 123, 0.12) !important;
+  }
+  
+  .content-box .btn-form-contato-02:hover {
+    background:
+      linear-gradient(
+        145deg,
+        var(--champagne-light),
+        var(--salmon-light)
+      ) !important;
+    border-color: var(--salmon-dark) !important;
+    box-shadow:
+      0 7px 24px rgba(36, 16, 13, 0.32),
+      0 0 18px rgba(232, 138, 123, 0.20) !important;
+  }
+  
+  
+  /* ==================================================================
+     13. BOTÃO DE FORMULÁRIO + .forminsert
+     ================================================================== */
+  
+  .forminsert {
+    color: var(--cream-warm) !important;
+  }
+  
+  .btn-form-contato,
+  .forminsert .btn-form-contato {
+    background:
+      linear-gradient(
+        145deg,
+        var(--salmon-base),
+        var(--salmon-light)
+      ) !important;
+    color: var(--cocoa-deep) !important;
+    border-color: var(--rose-deep) !important;
+    box-shadow:
+      0 5px 18px rgba(36, 16, 13, 0.30),
+      0 0 12px rgba(232, 138, 123, 0.12) !important;
+  }
+  
+  .btn-form-contato:hover,
+  .forminsert .btn-form-contato:hover {
+    background:
+      linear-gradient(
+        145deg,
+        var(--champagne-light),
+        var(--salmon-light)
+      ) !important;
+    color: var(--cocoa-deep) !important;
+    border-color: var(--salmon-dark) !important;
+    box-shadow:
+      0 7px 26px rgba(36, 16, 13, 0.34),
+      0 0 18px rgba(232, 138, 123, 0.20) !important;
+  }
+  
+  
+  /* ==================================================================
+     14. NFC + FULLSCREEN
+     ------------------------------------------------------------------
+     Mesma linguagem visual.
+     ================================================================== */
+  
+  .nfc-container,
+  .fullscreenline {
+    color: var(--cream-warm) !important;
+  }
+  
+  .nfc-button,
+  .fullscreenline button,
+  .add-to-btn {
+    background:
+      linear-gradient(
+        145deg,
+        rgba(251, 233, 221, 0.10),
+        rgba(232, 138, 123, 0.08)
+      ) !important;
+    color: var(--cream-warm) !important;
+    border-color: var(--salmon-base) !important;
+    box-shadow:
+      0 4px 14px rgba(36, 16, 13, 0.28),
+      inset 0 0 0 1px rgba(251, 233, 221, 0.05) !important;
+  }
+  
+  .nfc-button:hover,
+  .fullscreenline button:hover,
+  .add-to-btn:hover {
+    background:
+      linear-gradient(
+        145deg,
+        rgba(232, 138, 123, 0.18),
+        rgba(251, 233, 221, 0.08)
+      ) !important;
+    color: var(--champagne-light) !important;
+    border-color: var(--champagne-gold) !important;
+    box-shadow:
+      0 6px 22px rgba(36, 16, 13, 0.32),
+      0 0 14px rgba(232, 138, 123, 0.14) !important;
+  }
+  
+  .add-to-btn {
+    color: var(--cream-warm) !important;
+  }
+  
+  
+  /* ==================================================================
+     15. GALERIA + OVERLAY
+     ================================================================== */
+  
+  .gallery-container {
+    background:
+      linear-gradient(
+        135deg,
+        rgba(251, 233, 221, 0.08),
+        rgba(232, 138, 123, 0.08)
+      ) !important;
+    border-color: rgba(232, 138, 123, 0.30) !important;
+    color: var(--cream-warm) !important;
+    box-shadow:
+      inset 0 0 22px rgba(251, 233, 221, 0.025) !important;
+  }
+  
+  .gallery-overlay {
+    background:
+      rgba(36, 16, 13, 0.94) !important;
+  }
+  
+  .gallery-overlay-content {
+    background:
+      rgba(50, 23, 19, 0.96) !important;
+    border: 1px solid rgba(232, 138, 123, 0.46) !important;
+    box-shadow:
+      0 0 40px rgba(36, 16, 13, 0.72),
+      0 0 22px rgba(232, 138, 123, 0.10) !important;
+  }
+  
+  .gallery-overlay-content img,
+  .gallery-overlay-content video {
+    box-shadow:
+      0 0 22px rgba(36, 16, 13, 0.52) !important;
+  }
+  
+  .gallery-close {
+    color: var(--champagne-light) !important;
+  }
+  
+  .gallery-close:hover {
+    color: var(--salmon-light) !important;
+  }
+  
+  
+  /* ==================================================================
+     16. CARROSSEL
+     ================================================================== */
+  
+  .mj-carousel-container {
+    background:
+      linear-gradient(
+        135deg,
+        rgba(251, 233, 221, 0.06),
+        rgba(232, 138, 123, 0.06)
+      ) !important;
+    border-color: rgba(232, 138, 123, 0.24) !important;
+    box-shadow:
+      inset 0 0 24px rgba(251, 233, 221, 0.02) !important;
+  }
+  
+  .mj-image-wrapper {
+    background: var(--cocoa-deep) !important;
+    border-color: rgba(246, 181, 167, 0.30) !important;
+    box-shadow:
+      0 5px 20px rgba(36, 16, 13, 0.28) !important;
+  }
+  
+  .mj-carousel-caption {
+    color: var(--champagne-light) !important;
+    background:
+      linear-gradient(
+        to top,
+        rgba(36, 16, 13, 0.78),
+        rgba(36, 16, 13, 0)
+      ) !important;
+  }
+  
+  .mj-carousel-nav {
+    background:
+      rgba(50, 23, 19, 0.76) !important;
+    border-color: var(--rose-base) !important;
+    color: var(--champagne-light) !important;
+    box-shadow:
+      0 4px 14px rgba(36, 16, 13, 0.28) !important;
+  }
+  
+  .mj-carousel-nav:hover {
+    background:
+      rgba(232, 138, 123, 0.20) !important;
+    border-color: var(--champagne-gold) !important;
+    color: var(--cream-warm) !important;
+  }
+  
+  .mj-dot {
+    background-color: rgba(251, 233, 221, 0.34) !important;
+  }
+  
+  .mj-dot-active {
+    background:
+      var(--salmon-base) !important;
+    box-shadow:
+      0 0 10px rgba(232, 138, 123, 0.36) !important;
+  }
+  
+  .image-viewer-overlay {
+    background:
+      rgba(36, 16, 13, 0.94) !important;
+    color: var(--cream-warm) !important;
+  }
+  
+  .image-viewer-overlay img {
+    box-shadow:
+      0 0 35px rgba(36, 16, 13, 0.72),
+      0 0 18px rgba(232, 138, 123, 0.10) !important;
+  }
+  
+  #viewer-caption {
+    color: var(--champagne-light) !important;
+  }
+  
+  
+  /* ==================================================================
+     17. IMAGEM CIRCULAR DENTRO DO CONTEÚDO
+     ================================================================== */
+  
+  .content-right-circular-image {
+    border-color: var(--salmon-base) !important;
+    box-shadow:
+      0 0 14px rgba(232, 138, 123, 0.18) !important;
+  }
+  
+  
+  /* ==================================================================
+     18. MENU OVERLAY
+     ------------------------------------------------------------------
+     Links = champagne/salmão.
+     X = rosa claro diferente dos links.
+     ================================================================== */
+  
+  #overlay-menu {
+    background:
+      linear-gradient(
+        135deg,
+        rgba(50, 23, 19, 0.97),
+        rgba(36, 16, 13, 0.985)
+      ) !important;
+  }
+  
+  .overlay-list li,
+  .overlay-list li button {
+    color: var(--champagne-light) !important;
+    text-shadow:
+      0 1px 8px rgba(36, 16, 13, 0.60) !important;
+  }
+  
+  .overlay-list li:hover,
+  .overlay-list li button:hover,
+  .overlay-list li button:focus-visible {
+    color: var(--salmon-light) !important;
+    text-shadow:
+      0 0 16px rgba(232, 138, 123, 0.30) !important;
+  }
+  
+  .overlay-list li button i {
+    color: var(--salmon-base) !important;
+  }
+  
+  .menu-item-featured,
+  .menu-item-featured button {
+    color: var(--champagne-ivory) !important;
+  }
+  
+  .menu-item-featured button i {
+    color: var(--salmon-light) !important;
+  }
+  
+  .close-btn {
+    color: var(--rose-light) !important;
+    text-shadow:
+      0 0 18px rgba(217, 122, 115, 0.30) !important;
+  }
+  
+  .close-btn:hover,
+  .close-btn:focus {
+    color: var(--champagne-light) !important;
+  }
+  
+  
+  /* ==================================================================
+     19. FAQ + ACCORDION
+     ================================================================== */
+  
+  .faq-container,
+  .catalogo-accordion-container {
+    color: var(--cream-warm) !important;
+    margin-bottom: 1em !important;
+  }
+  
+  .faq-container .faq-item,
+  .catalogo-accordion-container .accordion-item {
+    background:
+      linear-gradient(
+        135deg,
+        rgba(251, 233, 221, 0.08),
+        rgba(232, 138, 123, 0.07)
+      ) !important;
+    border-color: rgba(232, 138, 123, 0.28) !important;
+    box-shadow:
+      0 4px 15px rgba(36, 16, 13, 0.18) !important;
+  }
+  
+  .faq-question,
+  .catalogo-accordion-container .accordion-header {
+    color: var(--champagne-light) !important;
+    background:
+      rgba(74, 36, 29, 0.34) !important;
+  }
+  
+  .faq-question i,
+  .catalogo-accordion-container .accordion-header i {
+    color: var(--salmon-light) !important;
+  }
+  
+  .faq-question.active,
+  .catalogo-accordion-container .accordion-header.active {
+    color: var(--salmon-light) !important;
+    background:
+      rgba(232, 138, 123, 0.12) !important;
+  }
+  
+  .faq-answer,
+  .accordion-preview,
+  .accordion-content {
+    color: var(--cream-soft) !important;
+    background:
+      rgba(36, 16, 13, 0.26) !important;
+  }
+  
+  .faq-answer a,
+  .accordion-preview a,
+  .accordion-content a {
+    color: var(--salmon-light) !important;
+  }
+  
+  
+  /* ==================================================================
+     20. FORMULÁRIO — OVERLAY + CAMPOS
+     ================================================================== */
+  
+  .form-overlay {
+    background:
+      rgba(36, 16, 13, 0.88) !important;
+  }
+  
+  .form-container {
+    background:
+      linear-gradient(
+        135deg,
+        rgba(50, 23, 19, 0.96),
+        rgba(36, 16, 13, 0.95)
+      ) !important;
+    border-color: rgba(232, 138, 123, 0.46) !important;
+    box-shadow:
+      0 14px 42px rgba(36, 16, 13, 0.60),
+      0 0 22px rgba(232, 138, 123, 0.08) !important;
+  }
+  
+  .form-container label,
+  .form-container .hs-form-field label {
+    color: var(--champagne-light) !important;
+  }
+  
+  .form-container input,
+  .form-container textarea,
+  .form-container select {
+    background:
+      rgba(255, 248, 243, 0.96) !important;
+    color: var(--cocoa-deep) !important;
+    border-color: rgba(232, 138, 123, 0.42) !important;
+  }
+  
+  .form-container input:focus,
+  .form-container textarea:focus,
+  .form-container select:focus {
+    border-color: var(--salmon-base) !important;
+    box-shadow:
+      0 0 0 2px rgba(232, 138, 123, 0.12),
+      0 0 14px rgba(232, 138, 123, 0.10) !important;
+  }
+  
+  .form-container .hs-error-msg,
+  .form-container .error,
+  .form-container .field-error {
+    color: #F2A29A !important;
+  }
+  
+  .form-container .hs-form-frame {
+    background:
+      rgba(255, 248, 243, 0.96) !important;
+    box-shadow:
+      0 4px 16px rgba(36, 16, 13, 0.22) !important;
+  }
+  
+  .form-container button[type="submit"],
+  .form-container input[type="submit"] {
+    background:
+      linear-gradient(
+        145deg,
+        var(--salmon-base),
+        var(--salmon-light)
+      ) !important;
+    color: var(--cocoa-deep) !important;
+    border-color: var(--rose-deep) !important;
+    box-shadow:
+      0 5px 18px rgba(36, 16, 13, 0.28) !important;
+  }
+  
+  .form-container button[type="submit"]:hover,
+  .form-container input[type="submit"]:hover {
+    background:
+      linear-gradient(
+        145deg,
+        var(--champagne-light),
+        var(--salmon-light)
+      ) !important;
+    color: var(--cocoa-deep) !important;
+    border-color: var(--salmon-dark) !important;
+  }
+  
+  .close-form {
+    color: var(--rose-light) !important;
+  }
+  
+  .close-form:hover {
+    color: var(--champagne-light) !important;
+  }
+  
+  
+  /* ==================================================================
+     21. MODAL
+     ================================================================== */
+  
+  .modal {
+    background-color:
+      rgba(36, 16, 13, 0.68) !important;
+  }
+  
+  .modal-content {
+    background:
+      linear-gradient(
+        145deg,
+        rgba(50, 23, 19, 0.98),
+        rgba(36, 16, 13, 0.96)
+      ) !important;
+    border-top-color: var(--salmon-base) !important;
+    box-shadow:
+      0 -8px 32px rgba(36, 16, 13, 0.48) !important;
+  }
+  
+  .modal-header {
+    background:
+      rgba(74, 36, 29, 0.18) !important;
+    border-bottom-color: rgba(232, 138, 123, 0.42) !important;
+    color: var(--cream-warm) !important;
+  }
+  
+  .modal-header h2 {
+    color: var(--champagne-light) !important;
+  }
+  
+  .modal-body {
+    color: var(--cream-soft) !important;
+  }
+  
+  .modal-body a {
+    color: var(--salmon-light) !important;
+  }
+  
+  .close {
+    color: var(--rose-light) !important;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: var(--champagne-light) !important;
+  }
+  
+  .modal .add-to-btn {
+    color: var(--cocoa-deep) !important;
+    background:
+      linear-gradient(
+        145deg,
+        var(--salmon-base),
+        var(--salmon-light)
+      ) !important;
+    border-color: var(--rose-deep) !important;
+  }
+  
+  .modal .add-to-btn:hover {
+    color: var(--cocoa-deep) !important;
+    background:
+      linear-gradient(
+        145deg,
+        var(--champagne-light),
+        var(--salmon-light)
+      ) !important;
+  }
+  
+  
+  /* ==================================================================
+     22. UPDATE BANNER
+     ------------------------------------------------------------------
+     O HTML utiliza #update-banner; também aceitamos .update-banner.
+     ================================================================== */
+  
+  #update-banner,
+  .update-banner {
+    background:
+      linear-gradient(
+        135deg,
+        rgba(50, 23, 19, 0.97),
+        rgba(36, 16, 13, 0.97)
+      ) !important;
+    border-top-color: rgba(232, 138, 123, 0.44) !important;
+    box-shadow:
+      0 -5px 24px rgba(36, 16, 13, 0.48) !important;
+    color: var(--cream-warm) !important;
+  }
+  
+  #update-banner .update-message,
+  .update-banner .update-message {
+    color: var(--cream-soft) !important;
+  }
+  
+  #update-banner .update-message i,
+  .update-banner .update-message i {
+    color: var(--salmon-light) !important;
+  }
+  
+  #update-banner .update-btn,
+  .update-banner .update-btn {
+    background:
+      linear-gradient(
+        145deg,
+        var(--salmon-base),
+        var(--salmon-light)
+      ) !important;
+    color: var(--cocoa-deep) !important;
+    border-color: var(--rose-deep) !important;
+    box-shadow:
+      0 4px 14px rgba(36, 16, 13, 0.24) !important;
+  }
+  
+  #update-banner .update-btn:hover,
+  .update-banner .update-btn:hover {
+    background:
+      linear-gradient(
+        145deg,
+        var(--champagne-light),
+        var(--salmon-light)
+      ) !important;
+    color: var(--cocoa-deep) !important;
+  }
+  
+  #update-banner .update-btn.secondary,
+  .update-banner .update-btn.secondary {
+    background:
+      rgba(251, 233, 221, 0.06) !important;
+    border-color: rgba(251, 233, 221, 0.28) !important;
+    color: var(--cream-soft) !important;
+  }
+  
+  #update-banner .update-btn.secondary:hover,
+  .update-banner .update-btn.secondary:hover {
+    background:
+      rgba(232, 138, 123, 0.10) !important;
+    border-color: var(--rose-base) !important;
+    color: var(--champagne-light) !important;
+  }
+  
+  
+  /* ==================================================================
+     23. RODAPÉ
+     ================================================================== */
+  
+  .mainfooter {
+    color: var(--mainfootertext) !important;
+    border-top-color: var(--mainfootertopborder) !important;
+  }
+  
+  .mainfooter a {
+    color: var(--mainfooterlink) !important;
+  }
+  
+  
+  /* ==================================================================
+     24. LINHAS DECORATIVAS
+     ================================================================== */
+  
+  #fullscreenbuttons,
+  .social-grid-wrapper,
+  .redesSociais,
+  .nfc-container {
+    border-top-color: var(--top-line-border) !important;
+    border-image:
+      linear-gradient(
+        to right,
+        transparent,
+        var(--top-line-border),
+        var(--top-line-border),
+        var(--top-line-border),
+        transparent
+      ) 1 !important;
+  }
+  
+  
+  /* ==================================================================
+     25. COMPATIBILIDADE COM CLASSES ALTERNATIVAS / FUTURAS
+     ================================================================== */
+  
+  .home-icon-wrapper a,
+  .home-icon-wrapper button {
+    color: var(--salmon-light) !important;
+    background:
+      transparent !important;
+  }
+  
+  .shareButtonsBackFace {
+    background:
+      linear-gradient(
+        135deg,
+        rgba(50, 23, 19, 0.95),
+        rgba(36, 16, 13, 0.94)
+      ) !important;
+    border-color: rgba(232, 138, 123, 0.48) !important;
+  }
+  
+  .image-viewer-overlay .close,
+  .image-viewer-overlay .close-trigger {
+    color: var(--rose-light) !important;
+  }
+  
+  .image-viewer-overlay .close:hover,
+  .image-viewer-overlay .close-trigger:hover {
+    color: var(--champagne-light) !important;
+  }
+  
+  
+  /* ==================================================================
+     26. CORES DE ÍCONES GENÉRICOS DENTRO DO TEMA
+     ================================================================== */
+  
+  .text-wrapper .fa-solid,
+  .text-wrapper .fas,
+  .text-wrapper .fab,
+  .text-wrapper .fa-brands {
+    color: var(--salmon-light);
+  }
+  
+  .feature-card i,
+  .feature-list li i {
+    color: var(--salmon-light) !important;
+    filter:
+      drop-shadow(0 0 5px rgba(232, 138, 123, 0.24))
+      !important;
+  }
+  
+  .feature-card,
+  .feature-card .feature-list {
+    background:
+      rgba(251, 233, 221, 0.055) !important;
+    border-color: rgba(232, 138, 123, 0.28) !important;
+    box-shadow:
+      inset 0 0 22px rgba(251, 233, 221, 0.018) !important;
+  }
+  
+  .feature-card .feature-list-title,
+  .feature-card strong.feature-list-title {
+    color: var(--champagne-light) !important;
+  }
+  
+  .feature-card span {
+    color: var(--cream-soft) !important;
+  }
+  
+  
+  /* ==================================================================
+     27. SELEÇÃO / FOCO — acabamento visual
+     ================================================================== */
+  
+  ::selection {
+    background: rgba(232, 138, 123, 0.34);
+    color: var(--cream-ivory, #FFF7F1);
+  }
+  
+  :focus-visible {
+    outline-color: var(--salmon-light) !important;
+  }
+  
+  
+  /*
+  ======================================================================
+  FIM DO TEMA
+  
+  NOTA:
+  O index.html atual contém algumas regras cromáticas inline e blocos
+  de estilos antigos. Este arquivo usa !important intencionalmente para
+  que a identidade champagne/salmão/rosa prevaleça sem modificar os
+  valores estruturais existentes.
+  ======================================================================
+  */
+  
+  
+  /* ==================================================================
+     28. CORREÇÃO FINAL — HOME / CONTATOS / REDES SOCIAIS / SCROLL
+     Identidade: Champagne + Salmão + Rosa
+  
+     IMPORTANTE:
+     - Não altera width, height, margin, padding, gap, font-size ou layout.
+     - Estes elementos compartilham a mesma linguagem visual.
+     - Contatos, redes, home e scroll permanecem visualmente estáveis
+       em hover/active, conforme especificação da identidade.
+     ================================================================== */
+  
+  /* Família cromática compartilhada */
+  :root {
+    --lh-icon-bg-1: rgba(74, 36, 29, 0.82);
+    --lh-icon-bg-2: rgba(38, 20, 18, 0.92);
+    --lh-icon-border: #D7AE8D;
+    --lh-icon-border-soft: #E8B9A5;
+    --lh-icon-champagne: #F3D4C2;
+    --lh-icon-champagne-bright: #FFF1E7;
+    --lh-icon-salmon: #E88A7B;
+    --lh-icon-rose: #D97A73;
+    --lh-icon-shadow: 0 4px 16px rgba(38, 20, 18, 0.38), 0 0 14px rgba(215, 174, 141, 0.16);
+    --lh-icon-gradient: linear-gradient(145deg, #FFF1E7 0%, #F3D4C2 35%, #E88A7B 72%, #D97A73 100%);
+    /* --------------------------------------------------------------------
+       GRADIENTES
+       -------------------------------------------------------------------- */
+       --lh-gradient-champagne:
+       linear-gradient(
+           145deg,
+           #FFF9F5 0%,
+           #FBEDE4 42%,
+           #EBC4B3 100%
+       );
+   --lh-gradient-rose:
+       linear-gradient(
+           145deg,
+           #F9D5CC 0%,
+           #E99A8B 48%,
+           #D47F7A 100%
+       );
+   --lh-gradient-metal:
+       linear-gradient(
+           145deg,
+           #FFF9F5 0%,
+           #F3D8C8 34%,
+           #E99A8B 68%,
+           #FFF9F5 100%
+       );
+    --lh-gradient-metal-2:
+    linear-gradient(
+        145deg,
+        /*
+        #FFF9F5 0%,
+        #F3D8C8 34%,
+        #E99A8B 68%,
+        #FFF9F5 100%
+        */
+        /*
+        #F3D4C2 0%,
+        #D97A73 34%,
+        #2B1512 68%,
+        #F3D4C2 100%
+        */
+        #FFF9F5 0%,
+        #D97A73 34%,
+        #F3D4C2 68%,
+        #FFF9F5 100%
+    );
+   --lh-gradient-card:
+       linear-gradient(
+           135deg,
+           rgba(255, 249, 245, 0.92),
+           rgba(251, 237, 228, 0.78)
+       );
+   --lh-gradient-cocoa:
+       linear-gradient(
+           145deg,
+           rgba(98, 65, 57, 0.92),
+           rgba(56, 35, 31, 0.94)
+       );
+    /* --------------------------------------------------------------------
+       ROSA
+       -------------------------------------------------------------------- */
+       --lh-rose-light: #F3D0CA;
+       --lh-rose: #E2A09A;
+       --lh-rose-base: #D47F7A;
+       --lh-rose-deep: #B96562;
+       --lh-rose-dark: #934946;
+
+      /* Gradientes */
+      --rg-gradient-metal:
+      linear-gradient(145deg, #FFE5D2 0%, #D0A07F 48%, #8F4D4D 100%);
+      --rg-champagne-light: #F1D8C8;
+   
+  }
+  
+  /* ---------------------------------------------------------------
+     CONTATOS — .contact-container .contact-btn
+     --------------------------------------------------------------- */
+  .contact-container .contact-btn,
+  .contact-btn {
+    background: linear-gradient(145deg, var(--lh-icon-bg-1), var(--lh-icon-bg-2)) !important;
+    background-color: var(--lh-icon-bg-2) !important;
+    border: 2px solid var(--lh-icon-border) !important;
+    border-color: var(--lh-icon-border) !important;
+    box-shadow: var(--lh-icon-shadow) !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  /*
+  .contact-container .contact-btn::before,
+  .contact-btn::before {
+    background: linear-gradient(145deg, var(--lh-icon-champagne), var(--lh-icon-salmon), var(--lh-icon-rose)) !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
   }
 
- .overlay-list li {
-    color: var(--salmon-base);
+  .contact-container .contact-btn i,
+  .contact-btn i {
+    background-image: var(--lh-icon-gradient) !important;
+    background: var(--lh-icon-gradient) !important;
+    color: var(--lh-icon-champagne-bright) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: none !important;
+    filter: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  .contact-label {
+    color: var(--cream-ivory, #FFF7F1) !important;
+    text-shadow: 0 1px 6px rgba(38, 20, 18, 0.55) !important;
+  }
+  */
+  /* Neutraliza estados antigos do HTML/theme */
+  /*
+  .contact-item:hover {
+    transform: none !important;
+  }
+  
+  .contact-item:hover .contact-btn,
+  .contact-item:active .contact-btn,
+  .contact-item:focus .contact-btn,
+  .contact-item:focus-visible .contact-btn {
+    background: linear-gradient(145deg, var(--lh-icon-bg-1), var(--lh-icon-bg-2)) !important;
+    background-color: var(--lh-icon-bg-2) !important;
+    border-color: var(--lh-icon-border) !important;
+    box-shadow: var(--lh-icon-shadow) !important;
+    transform: none !important;
+  }
+  
+  .contact-item:hover .contact-btn i,
+  .contact-item:active .contact-btn i,
+  .contact-item:focus .contact-btn i,
+  .contact-item:focus-visible .contact-btn i {
+    background-image: var(--lh-icon-gradient) !important;
+    color: var(--lh-icon-champagne-bright) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    transform: none !important;
+    text-shadow: none !important;
+  }
+  */
+  /* ---------------------------------------------------------------
+     REDES SOCIAIS — .social-container .social-btn
+     --------------------------------------------------------------- */
+  .social-container .social-btn,
+  .social-btn {
+    background: linear-gradient(145deg, var(--lh-icon-bg-1), var(--lh-icon-bg-2)) !important;
+    background-color: var(--lh-icon-bg-2) !important;
+    border: 2px solid var(--lh-icon-border) !important;
+    border-color: var(--lh-icon-border) !important;
+    box-shadow: var(--lh-icon-shadow) !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  /*
+  .social-container .social-btn i,
+  .social-container .social-btn .privacy-logo,
+  .social-btn i,
+  .social-btn .privacy-logo {
+    background-image: var(--lh-icon-gradient) !important;
+    background: var(--lh-icon-gradient) !important;
+    color: var(--lh-icon-champagne-bright) !important;
+    fill: var(--lh-icon-champagne-bright) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: none !important;
+    filter: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  .social-container .social-btn:hover,
+  .social-container .social-btn:active,
+  .social-container .social-btn:focus,
+  .social-container .social-btn:focus-visible,
+  .social-btn:hover,
+  .social-btn:active,
+  .social-btn:focus,
+  .social-btn:focus-visible {
+    background: linear-gradient(145deg, var(--lh-icon-bg-1), var(--lh-icon-bg-2)) !important;
+    background-color: var(--lh-icon-bg-2) !important;
+    border-color: var(--lh-icon-border) !important;
+    box-shadow: var(--lh-icon-shadow) !important;
+    transform: none !important;
+  }
+  
+  .social-container .social-btn:hover i,
+  .social-container .social-btn:active i,
+  .social-container .social-btn:focus i,
+  .social-container .social-btn:focus-visible i,
+  .social-container .social-btn:hover .privacy-logo,
+  .social-container .social-btn:active .privacy-logo,
+  .social-container .social-btn:focus .privacy-logo,
+  .social-container .social-btn:focus-visible .privacy-logo,
+  .social-btn:hover i,
+  .social-btn:active i,
+  .social-btn:focus i,
+  .social-btn:focus-visible i,
+  .social-btn:hover .privacy-logo,
+  .social-btn:active .privacy-logo,
+  .social-btn:focus .privacy-logo,
+  .social-btn:focus-visible .privacy-logo {
+    background-image: var(--lh-icon-gradient) !important;
+    color: var(--lh-icon-champagne-bright) !important;
+    fill: var(--lh-icon-champagne-bright) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    transform: none !important;
+    text-shadow: none !important;
+  }
+  */
+  /* ---------------------------------------------------------------
+     SCROLL — mesma família cromática de contato/rede
+     --------------------------------------------------------------- */
+  .scroll-indicator {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(246, 181, 167, 0.72) 0%,
+            rgba(217, 122, 115, 0.58) 34%,
+            rgba(116, 53, 48, 0.72) 68%,
+            rgba(74, 36, 29, 0.88) 100%
+        ) !important;
+
+    border: 1px solid rgba(255, 247, 241, 0.82) !important;
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 247, 241, 0.30),
+        inset 0 -4px 10px rgba(36, 16, 13, 0.32) !important;
+  }
+  
+  .scroll-indicator i,
+  .scroll-indicator span {
+    background-image:
+        linear-gradient(
+            145deg,
+            #FFF7F1 0%,
+            #F3CBB6 38%,
+            #E88A7B 72%,
+            #FFF7F1 100%
+        ) !important;
+
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: none !important;
+  }
+  
+  .scroll-indicator:hover,
+  .scroll-indicator:active,
+  .scroll-indicator:focus,
+  .scroll-indicator:focus-visible {
+    background: linear-gradient(145deg, var(--lh-icon-bg-1), var(--lh-icon-bg-2)) !important;
+    background-color: var(--lh-icon-bg-2) !important;
+    border-color: var(--lh-icon-border) !important;
+    box-shadow: var(--lh-icon-shadow) !important;
+    transform: translateX(-50%) !important;
+  }
+  
+  .scroll-indicator:hover i,
+  .scroll-indicator:active i,
+  .scroll-indicator:focus i,
+  .scroll-indicator:focus-visible i,
+  .scroll-indicator:hover span,
+  .scroll-indicator:active span,
+  .scroll-indicator:focus span,
+  .scroll-indicator:focus-visible span {
+    background-image: var(--lh-icon-gradient) !important;
+    color: var(--lh-icon-champagne-bright) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: none !important;
+  }
+  
+  /* ---------------------------------------------------------------
+     HOME — .home-icon-wrapper
+     Mesma identidade de contato/rede/scroll, sem hover ativo.
+     --------------------------------------------------------------- */
+  .home-icon-wrapper a,
+  .language-selector-container .home-icon-wrapper a {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(246, 181, 167, 0.72) 0%,
+            rgba(217, 122, 115, 0.58) 34%,
+            rgba(116, 53, 48, 0.72) 68%,
+            rgba(74, 36, 29, 0.88) 100%
+        ) !important;
+
+    border: 1px solid rgba(255, 247, 241, 0.82) !important;
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 247, 241, 0.30),
+        inset 0 -4px 10px rgba(36, 16, 13, 0.32) !important;
+  }
+  
+  .home-icon-wrapper a i,
+  .language-selector-container .home-icon-wrapper a i {
+    background-image:
+        linear-gradient(
+            145deg,
+            #FFF7F1 0%,
+            #F3CBB6 38%,
+            #E88A7B 72%,
+            #FFF7F1 100%
+        ) !important;
+
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: none !important;
+  }
+  
+  .home-icon-wrapper a:hover,
+  .home-icon-wrapper a:active,
+  .home-icon-wrapper a:focus,
+  .home-icon-wrapper a:focus-visible,
+  .language-selector-container .home-icon-wrapper a:hover,
+  .language-selector-container .home-icon-wrapper a:active,
+  .language-selector-container .home-icon-wrapper a:focus,
+  .language-selector-container .home-icon-wrapper a:focus-visible {
+    background: linear-gradient(145deg, var(--lh-icon-bg-1), var(--lh-icon-bg-2)) !important;
+    background-color: var(--lh-icon-bg-2) !important;
+    border-color: var(--lh-icon-border) !important;
+    box-shadow: var(--lh-icon-shadow) !important;
+    transform: none !important;
+  }
+  
+  .home-icon-wrapper a:hover i,
+  .home-icon-wrapper a:active i,
+  .home-icon-wrapper a:focus i,
+  .home-icon-wrapper a:focus-visible i,
+  .language-selector-container .home-icon-wrapper a:hover i,
+  .language-selector-container .home-icon-wrapper a:active i,
+  .language-selector-container .home-icon-wrapper a:focus i,
+  .language-selector-container .home-icon-wrapper a:focus-visible i {
+    background-image: var(--lh-icon-gradient) !important;
+    color: var(--lh-icon-champagne-bright) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    transform: none !important;
+    text-shadow: none !important;
+  }
+  
+  /* FIM DA CORREÇÃO FINAL */
+  
+
+/* ============================================================
+   CONTATOS
+   ============================================================ */
+
+.contact-btn {
+  /*
+    background:
+        radial-gradient(
+            circle at 35% 28%,
+            rgba(246, 181, 167, 0.34) 0%,
+            rgba(217, 122, 115, 0.24) 28%,
+            rgba(74, 36, 29, 0.88) 72%,
+            rgba(36, 16, 13, 0.96) 100%
+        ) !important;
+
+    border: 2px solid #F3CBB6 !important;
+
+    box-shadow:
+        0 0 0 1px rgba(255, 247, 241, 0.20),
+        0 0 12px rgba(243, 203, 182, 0.28),
+        0 5px 18px rgba(0, 0, 0, 0.45) !important;
+  */
+  background: linear-gradient(145deg, rgba(234, 166, 140, .9), rgba(245, 200, 176, .9)) !important;
+  border-color:
+      rgba(255, 255, 255, 0.84) !important;
+
+  box-shadow:
+      inset 0 1px 3px rgba(255, 255, 255, 0.62),
+      inset 0 -3px 8px rgba(116, 53, 48, 0.08) !important;
 }
-.close-btn {
-    color: var(--salmon-base);
+
+.contact-btn::before {
+  /*
+    background:
+        linear-gradient(
+            145deg,
+            rgba(246, 181, 167, 0.72) 0%,
+            rgba(217, 122, 115, 0.58) 34%,
+            rgba(116, 53, 48, 0.72) 68%,
+            rgba(74, 36, 29, 0.88) 100%
+        ) !important;
+
+    border: 1px solid rgba(255, 247, 241, 0.82) !important;
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 247, 241, 0.30),
+        inset 0 -4px 10px rgba(36, 16, 13, 0.32) !important;
+  */
+  background: linear-gradient(145deg, rgba(234, 166, 140, .9), rgba(245, 200, 176, .9)) !important;
+  border-color:
+      /*rgba(255, 255, 255, 0.84) !important;*/
+      #F9D5CC !important;
+
+  box-shadow:
+      inset 0 1px 3px rgba(255, 255, 255, 0.62),
+      inset 0 -3px 8px rgba(116, 53, 48, 0.08) !important;
 }
-.close-form {
-	color: var(--salmon-base);
+
+.contact-btn i,
+.contact-container .contact-btn i {
+  /*
+    background-image:
+        linear-gradient(
+            145deg,
+            #FFF7F1 0%,
+            #F3CBB6 38%,
+            #E88A7B 72%,
+            #FFF7F1 100%
+        ) !important;
+
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: none !important;
+  */
+  background: linear-gradient(145deg, #A9514D, rgba(40, 12, 9, 0.8)) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: none !important;
 }
-.form-container {
-	border: 1px solid rgba(168, 92, 96, 0.4);
+
+.contact-label {
+    color: var(--cream-ivory, #FFF7F1) !important;
 }
-.feature-card {
-    background: rgba(0, 0, 0, 0.45);
-	backdrop-filter: unset; */
-    -webkit-backdrop-filter: unset;
+
+.contact-item:hover .contact-btn {
+    background:
+        radial-gradient(
+            circle at 35% 25%,
+            rgba(255, 247, 241, 0.48) 0%,
+            rgba(246, 181, 167, 0.55) 25%,
+            rgba(217, 122, 115, 0.72) 58%,
+            rgba(116, 53, 48, 0.92) 100%
+        ) !important;
+
+    border-color: #FFF7F1 !important;
+
+    box-shadow:
+        0 0 0 1px rgba(255, 247, 241, 0.45),
+        0 0 16px rgba(246, 181, 167, 0.65),
+        0 0 30px rgba(232, 138, 123, 0.30),
+        0 6px 20px rgba(0, 0, 0, 0.50) !important;
+}
+
+/* ============================================================
+   REDES SOCIAIS
+   Mesmo padrão dos contatos, sem hover/ativo.
+   ============================================================ */
+/*
+.social-grid-wrapper,
+.redesSociais {
+    border-top-color: rgba(215, 169, 143, .24) !important;
+    border-image:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(215, 169, 143, .24),
+            rgba(215, 169, 143, .24),
+            transparent
+        ) 1 !important;
+}
+*/
+.social-btn {
+  /*
+    background:
+        radial-gradient(
+            circle at 35% 28%,
+            rgba(246, 181, 167, 0.34) 0%,
+            rgba(217, 122, 115, 0.24) 28%,
+            rgba(74, 36, 29, 0.88) 72%,
+            rgba(36, 16, 13, 0.96) 100%
+        ) !important;
+
+    border: 2px solid #F3CBB6 !important;
+
+    box-shadow:
+        0 0 0 1px rgba(255, 247, 241, 0.20),
+        0 0 12px rgba(243, 203, 182, 0.28),
+        0 5px 18px rgba(0, 0, 0, 0.45) !important;
+  */
+  background: linear-gradient(145deg, rgba(234, 166, 140, .8), rgba(245, 200, 176, .8)) !important;
+  border-color:
+      rgba(255, 255, 255, 0.84) !important;
+
+  box-shadow:
+      inset 0 1px 3px rgba(255, 255, 255, 0.62),
+      inset 0 -3px 8px rgba(116, 53, 48, 0.08) !important;
+}
+
+.social-btn::before {
+  /*
+    background:
+        linear-gradient(
+            145deg,
+            rgba(246, 181, 167, 0.72) 0%,
+            rgba(217, 122, 115, 0.58) 34%,
+            rgba(116, 53, 48, 0.72) 68%,
+            rgba(74, 36, 29, 0.88) 100%
+        ) !important;
+
+    border: 1px solid rgba(255, 247, 241, 0.82) !important;
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 247, 241, 0.30),
+        inset 0 -4px 10px rgba(36, 16, 13, 0.32) !important;
+  */
+  background: linear-gradient(145deg, rgba(234, 166, 140, .9), rgba(245, 200, 176, .9)) !important;
+  border-color:
+      /*rgba(255, 255, 255, 0.84) !important;*/
+      #F9D5CC !important;
+
+  box-shadow:
+      inset 0 1px 3px rgba(255, 255, 255, 0.62),
+      inset 0 -3px 8px rgba(116, 53, 48, 0.08) !important;
+}
+
+.social-btn i,
+.social-btn .privacy-logo {
+  /*
+    background-image:
+        linear-gradient(
+            145deg,
+            #FFF7F1 0%,
+            #F3CBB6 38%,
+            #E88A7B 72%,
+            #FFF7F1 100%
+        ) !important;
+
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: none !important;
+  */
+  background: linear-gradient(145deg, #A9514D, rgba(40, 12, 9, 0.8)) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: none !important;
+}
+
+.social-btn:hover,
+.social-btn:active {
+    background:
+        radial-gradient(
+            circle at 35% 25%,
+            rgba(255, 247, 241, 0.48) 0%,
+            rgba(246, 181, 167, 0.55) 25%,
+            rgba(217, 122, 115, 0.72) 58%,
+            rgba(116, 53, 48, 0.92) 100%
+        ) !important;
+
+    border-color: #FFF7F1 !important;
+
+    box-shadow:
+        0 0 0 1px rgba(255, 247, 241, 0.45),
+        0 0 16px rgba(246, 181, 167, 0.65),
+        0 0 30px rgba(232, 138, 123, 0.30),
+        0 6px 20px rgba(0, 0, 0, 0.50) !important;
+}
+
+.social-btn:hover i,
+.social-btn:active i,
+.social-btn:hover .privacy-logo,
+.social-btn:active .privacy-logo {
+  /*
+    background:
+        radial-gradient(
+            circle at 35% 25%,
+            rgba(255, 247, 241, 0.48) 0%,
+            rgba(246, 181, 167, 0.55) 25%,
+            rgba(217, 122, 115, 0.72) 58%,
+            rgba(116, 53, 48, 0.92) 100%
+        ) !important;
+
+    border-color: #FFF7F1 !important;
+
+    box-shadow:
+        0 0 0 1px rgba(255, 247, 241, 0.45),
+        0 0 16px rgba(246, 181, 167, 0.65),
+        0 0 30px rgba(232, 138, 123, 0.30),
+        0 6px 20px rgba(0, 0, 0, 0.50) !important;
+  */
+}
+
+/* ============================================================
+   LAURA HATHAWAY
+   NAVEGAÇÃO LATERAL — ESTILO ALTERNATIVO
+   ------------------------------------------------------------
+   Conceito:
+   Champagne Jewelry / Rose Satin / Dark Cocoa
+   ============================================================ */
+
+
+/* ============================================================
+   .NAV-ICONS — BASE
+   ============================================================ */
+
+   .nav-icons a {
+    /*
+    background:
+        linear-gradient(
+            145deg,
+            rgba(92, 49, 43, 0.72) 0%,
+            rgba(55, 27, 24, 0.84) 52%,
+            rgba(34, 16, 14, 0.94) 100%
+        ) !important;
+
+    border-color:
+        rgba(243, 212, 194, 0.78) !important;
+
+    box-shadow:
+        0 2px 8px rgba(24, 10, 8, 0.42),
+        inset 0 1px 1px rgba(255, 247, 241, 0.14),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.22) !important;
+    */
+    background:
+        linear-gradient(
+            145deg,
+            rgba(246, 181, 167, 0.92) 0%,
+            rgba(217, 122, 115, 0.88) 34%,
+            rgba(116, 53, 48, 0.92) 68%,
+            rgba(74, 36, 29, 0.98) 100%
+    ) !important;
+
+    border: 1px solid rgba(255, 247, 241, 0.82) !important;
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 247, 241, 0.30),
+        inset 0 -4px 10px rgba(36, 16, 13, 0.32) !important;
+}
+
+
+/* ============================================================
+   SUPERFÍCIE INTERNA
+   ------------------------------------------------------------
+   O ::before cria o acabamento acetinado do botão.
+   ============================================================ */
+
+   .nav-icons a, .nav-icons a::before {
+    /*
+    background:
+        linear-gradient(
+            135deg,
+            rgba(246, 181, 167, 0.42) 0%,
+            rgba(217, 122, 115, 0.26) 34%,
+            rgba(116, 53, 48, 0.38) 67%,
+            rgba(74, 36, 29, 0.56) 100%
+        ) !important;
+
+    border-color:
+        rgba(255, 247, 241, 0.50) !important;
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 247, 241, 0.20),
+        inset 0 -3px 7px rgba(36, 16, 13, 0.26) !important;
+    */
+    /*
+    background: linear-gradient(145deg, rgba(234, 166, 140, .8), rgba(245, 200, 176, .8)) !important;
+    border-color:
+        rgba(255, 255, 255, 0.84) !important;
+
+    box-shadow:
+        inset 0 1px 3px rgba(255, 255, 255, 0.62),
+        inset 0 -3px 8px rgba(116, 53, 48, 0.08) !important;
+    */
+    /*
+  background:
+    linear-gradient(
+        145deg,
+        #6f4b42 0%,
+        #4b302c 38%,
+        #382321 68%,
+        #563831 100%
+    ) !important;
+
+    border: 1px solid #d2aa94 !important;
+
+    box-shadow:
+        0 4px 12px rgba(65, 35, 30, .24),
+        inset 0 1px 2px rgba(255, 239, 227, .20),
+        inset 0 -2px 5px rgba(38, 20, 18, .25) !important;
+    */
+    /*
+    background-image:
+        linear-gradient(
+            145deg,
+            #D97A73 0%,
+            #4b302c 38%,
+            #382321 68%,
+            #563831 100%
+        ) !important;
+      */
+    background: 
+      linear-gradient( 
+        145deg, 
+        #D97A73 0%, 
+        #56352f 30%, 
+        #452a26 65%, 
+        #35201d 100% 
+      ) !important;
+
+    box-shadow: 0 4px 12px rgba(55, 29, 24, .28), 0 1px 3px rgba(55, 29, 24, .20), inset 0 1px 2px rgba(255, 246, 234, .25), inset 0 -2px 5px rgba(35, 18, 16, .28) !important;
+
+    border: 2px solid #d2aa94 !important;
+
+    opacity: 1 !important; color: transparent !important; overflow: hidden; transition: transform .25s ease, border-color .25s ease, background .25s ease, box-shadow .25s ease !important;
+    /*
+    transition:
+        background 0.30s ease,
+        border-color 0.30s ease,
+        box-shadow 0.30s ease !important;
+    */
+}
+
+
+/* ============================================================
+   ÍCONES
+   ------------------------------------------------------------ */
+
+.nav-icons a i,
+.nav-icons a .fa,
+.nav-icons a .fas,
+.nav-icons a .far,
+.nav-icons a .fab {
+    color:
+        #F9E5D8 !important;
+    /*
+    background-image:
+        linear-gradient(
+            145deg,
+            #FFF7F1 0%,
+            #F3D4C2 42%,
+            #E8B09D 72%,
+            #FFF7F1 100%
+        ) !important;
+    */
+    /*
+    background-image: 
+      linear-gradient( 
+        145deg, 
+        #fffdf8 0%, 
+        #fff0de 17%, 
+        #f3d1ad 36%, 
+        #dcae86 53%, 
+        #f5d7b7 72%, 
+        #fff9ed 90%, 
+        #f8e0c8 100% 
+      ) !important;
+    */
+    background-image: 
+      linear-gradient(
+        145deg,
+        #FFF9F5 0%,
+        #F3D8C8 34%,
+        #E99A8B 68%,
+        #FFF9F5 100%
+      ) !important;
+
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+
+    -webkit-text-fill-color: transparent !important;
+
+    color: transparent !important;
+    
+    text-shadow: none !important;
+    
+    /*text-shadow:
+        0 1px 2px rgba(36, 16, 13, 0.50) !important;*/
+}
+
+
+/* ============================================================
+   TEXTO
+   ============================================================ */
+
+.nav-icons .contact-label {
+    color:
+        #F3D4C2 !important;
+
+    /*text-shadow:
+        0 1px 3px rgba(24, 10, 8, 0.65) !important;*/
+
+    transition:
+        color 0.30s ease,
+        text-shadow 0.30s ease !important;
+}
+
+
+/* ============================================================
+   HOVER
+   ------------------------------------------------------------
+   Mais refinado que o estilo anterior:
+   pouco brilho, mais profundidade.
+   ============================================================ */
+
+.nav-icons a:hover {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(137, 68, 62, 0.74) 0%,
+            rgba(91, 43, 39, 0.84) 48%,
+            rgba(51, 24, 21, 0.94) 100%
+        ) !important;
+
+    border-color:
+        rgba(255, 247, 241, 0.96) !important;
+
+    box-shadow:
+        0 2px 10px rgba(24, 10, 8, 0.48),
+        0 0 8px rgba(243, 212, 194, 0.28),
+        inset 0 1px 2px rgba(255, 247, 241, 0.20),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.20) !important;
+
+    filter:
+        brightness(1.06) !important;
+}
+
+
+.nav-icons a:hover::before {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 247, 241, 0.54) 0%,
+            rgba(246, 181, 167, 0.42) 32%,
+            rgba(217, 122, 115, 0.36) 62%,
+            rgba(116, 53, 48, 0.52) 100%
+        ) !important;
+
+    border-color:
+        rgba(255, 247, 241, 0.76) !important;
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 247, 241, 0.28),
+        inset 0 -3px 7px rgba(36, 16, 13, 0.20) !important;
+}
+
+
+.nav-icons a:hover i,
+.nav-icons a:hover .fa,
+.nav-icons a:hover .fas,
+.nav-icons a:hover .far,
+.nav-icons a:hover .fab {
+    filter:
+        brightness(1.12) !important;
+
+    transform:
+        translateY(-1px) !important;
+}
+
+
+.nav-icons a:hover .contact-label {
+    color:
+        #FFF7F1 !important;
+
+    text-shadow:
+        0 0 6px rgba(243, 212, 194, 0.22),
+        0 1px 3px rgba(24, 10, 8, 0.65) !important;
+}
+
+
+/* ============================================================
+   ATIVO
+   ------------------------------------------------------------
+   Aparência de "joia" / item selecionado.
+   ============================================================ */
+
+.nav-icons a.active,
+.nav-icons a[aria-current="page"],
+.nav-icons a.is-active,
+.nav-icons a.current,
+.nav-icons a.selected {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(207, 108, 101, 0.74) 0%,
+            rgba(165, 72, 67, 0.78) 42%,
+            rgba(92, 39, 35, 0.92) 100%
+        ) !important;
+
+    border-color:
+        #FFF7F1 !important;
+
+    box-shadow:
+        0 0 0 1px rgba(243, 212, 194, 0.28),
+        0 0 10px rgba(232, 176, 157, 0.32),
+        0 4px 14px rgba(24, 10, 8, 0.52),
+        inset 0 1px 2px rgba(255, 247, 241, 0.30),
+        inset 0 -3px 7px rgba(74, 36, 29, 0.24) !important;
+
+    filter:
+        brightness(1.05) !important;
+}
+
+
+.nav-icons a.active::before,
+.nav-icons a[aria-current="page"]::before,
+.nav-icons a.is-active::before,
+.nav-icons a.current::before,
+.nav-icons a.selected::before {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 247, 241, 0.64) 0%,
+            rgba(246, 181, 167, 0.54) 30%,
+            rgba(217, 122, 115, 0.48) 62%,
+            rgba(116, 53, 48, 0.64) 100%
+        ) !important;
+
+    border-color:
+        rgba(255, 247, 241, 0.88) !important;
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 247, 241, 0.32),
+        inset 0 -3px 7px rgba(74, 36, 29, 0.20) !important;
+}
+
+
+.nav-icons a.active i,
+.nav-icons a.active .fa,
+.nav-icons a.active .fas,
+.nav-icons a.active .far,
+.nav-icons a.active .fab,
+.nav-icons a[aria-current="page"] i,
+.nav-icons a[aria-current="page"] .fa,
+.nav-icons a[aria-current="page"] .fas,
+.nav-icons a[aria-current="page"] .far,
+.nav-icons a[aria-current="page"] .fab {
+    filter:
+        brightness(1.16)
+        drop-shadow(
+            0 0 3px rgba(255, 247, 241, 0.26)
+        ) !important;
+
+    transform:
+        translateY(-1px) !important;
+}
+
+
+.nav-icons a.active .contact-label,
+.nav-icons a[aria-current="page"] .contact-label,
+.nav-icons a.is-active .contact-label,
+.nav-icons a.current .contact-label,
+.nav-icons a.selected .contact-label {
+    color:
+        #FFF7F1 !important;
+
+    text-shadow:
+        0 0 7px rgba(243, 212, 194, 0.26),
+        0 1px 3px rgba(24, 10, 8, 0.65) !important;
+}
+
+
+/* ============================================================
+   FOCUS
+   ------------------------------------------------------------
+   Acessibilidade sem modificar a geometria.
+   ============================================================ */
+
+.nav-icons a:focus-visible {
+    outline:
+        1px solid rgba(255, 247, 241, 0.90) !important;
+
+    outline-offset:
+        4px !important;
+
+    box-shadow:
+        0 0 0 1px rgba(243, 212, 194, 0.30),
+        0 0 9px rgba(232, 176, 157, 0.28) !important;
+}
+
+
+/* ============================================================
+   PRIVACY
+   ============================================================ */
+
+.nav-icons a .privacy-logo {
+    filter:
+        brightness(1.05)
+        saturate(0.65)
+        drop-shadow(
+            0 1px 2px rgba(36, 16, 13, 0.45)
+        ) !important;
+
+    opacity:
+        0.96 !important;
+}
+
+
+.nav-icons a:hover .privacy-logo,
+.nav-icons a.active .privacy-logo,
+.nav-icons a[aria-current="page"] .privacy-logo {
+    filter:
+        brightness(1.12)
+        saturate(0.75)
+        drop-shadow(
+            0 0 3px rgba(255, 247, 241, 0.24)
+        ) !important;
+}
+
+/* ============================================================
+   X / TWITTER CTA
+   ============================================================ */
+
+   .x-cta-link {
+    /*
+    background: var(--rg-gradient-metal) !important;
+    border-color: transparent !important;
+    color: var(--rg-espresso) !important;
+    box-shadow: var(--rg-shadow-soft), var(--rg-glow-gold);
+    text-align: center;
+    */
+    background: linear-gradient(145deg, var(--salmon-base), var(--salmon-light)) !important;
+    color: var(--cocoa-deep) !important;
+    border-color: var(--rose-deep) !important;
+    box-shadow: 0 5px 18px rgba(36, 16, 13, 0.30), 0 0 12px rgba(232, 138, 123, 0.12) !important;
+    text-align: center;
+}
+.x-avatar {
+  /*border: 2px solid var(--gold-primary, #D4AF37) !important;*/
+  border: 2px solid var(--content-circular-image-border) !important;
+}
+.media-overlay-close {
+    /*color: var(--rg-champagne) !important;*/
+    color: var(--rose-light) !important;
+    text-shadow: 0 0 18px rgba(217, 122, 115, 0.30) !important;
+}
+
+/* ============================================================
+   LINHA DECORATIVA
+   ============================================================ */
+
+.line-image i {
+    background-image: var(--rg-gradient-metal) !important;
+    color: var(--rg-champagne-light) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: none !important;
+}
+
+.line-image .bottom-line {
+    background:
+        radial-gradient(
+            circle,
+            rgba(216, 183, 158, 0) 0%,
+            rgba(216, 183, 158, 0) 4%,
+            rgba(216, 183, 158, 1) 8%,
+            rgba(216, 183, 158, 0) 100%
+        ) !important;
 }
