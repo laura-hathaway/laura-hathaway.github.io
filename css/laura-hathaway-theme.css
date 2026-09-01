@@ -2692,6 +2692,7 @@ champagne claro + salmão sofisticado + rosa queimado + cacau.
    ================================================================ */
 
 .lh-booking-cta {
+    padding: 1em;
     background:
         linear-gradient(
             135deg,
